@@ -25,9 +25,9 @@
     ?>
         <div class="login">
             <h2>Sign up</h2>
-            <form action="php/initDB.php" method="post">
+            <!-- <form action="php/initDB.php" method="post">
             <input type="submit" name="ins" value="Réinitialiser la base de données" >
-        </form>
+        </form> -->
         <form action="sign_up_bd.php" method="post">
             <input type="text" name="username" placeholder="Pseudo">
             <input type="password" name="mdp" placeholder="Mot de passe" >
