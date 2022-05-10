@@ -8,6 +8,8 @@ $password = "root";
 $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
