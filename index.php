@@ -5,7 +5,7 @@
     <h1 class="title">Hi and welcome on Maggle</h1>
 </header>
 
-<form action="database/initDB.php" method="post">
+<form action="database/create_db.php" method="post">
         <input type="submit" name="ins" value="Créer la base de données" >
 </form>
 
