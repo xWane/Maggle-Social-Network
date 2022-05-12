@@ -1,0 +1,25 @@
+
+@import url(./landing.css);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.index_title {
+    margin: 2rem;
+}
+.index_article {
+    text-align: center;
+    width: 100%;
+    padding: 20rem;
+}
+
+.login {
+    margin: 2rem;
+}
+
+.index_form h2 {
+    padding: 1rem;
+}
+
