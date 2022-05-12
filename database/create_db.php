@@ -114,18 +114,18 @@
       FOREIGN KEY (`member`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
     
-    CREATE TABLE IF NOT EXISTS `page_member`(
-      `page_id` VARCHAR(255) NOT NULL,
-      `user_id` INT NOT NULL,
-      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`),
-      FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
-      ) ENGINE=InnoDB;
-    
     CREATE TABLE IF NOT EXISTS `page_list`(
-      `pages` VARCHAR(255) NOT NULL,
+      `pages`  INT NOT NULL AUTO_INCREMENT,
       FOREIGN KEY (`pages`) REFERENCES `page`(`page_id`)
       ) ENGINE=InnoDB;
-  
+    
+    CREATE TABLE IF NOT EXISTS `page_member`(
+      `page_id`  INT NOT NULL AUTO_INCREMENT,
+      `user_id` INT NOT NULL,
+      FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`),
+      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
+      ) ENGINE=InnoDB;
+
   ");
   $maRequete->execute();
 
