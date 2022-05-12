@@ -24,7 +24,7 @@
     </div>
     <div class="sign-up">
         <div class="mail">
-            <form method="post">
+            <form method="post" action="./profil/profil.php">
                     <input type="text" name="username" placeholder="Mail Hetic">
                 </div>
                 <div class="mdp">
