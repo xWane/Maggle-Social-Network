@@ -1,11 +1,6 @@
 <?php
-  
-  $engine = "mysql";
-  $host = "localhost";
-  $port = 3306;
-  $dbname = "db_maggle";
-  $username = "root";
-  $password = "root";
+
+  require_once 'pdo.php';
 
   $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
 

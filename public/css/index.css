@@ -41,10 +41,15 @@ body {
   padding: 3rem;
 }
 
+.sign-up.hidden {
+  display: none;
+}
+
 .mail,
 .mdp,
 .mdp-comfirm,
-.create-account {
+.create-account,
+.log-account {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,17 +66,35 @@ body {
   cursor: pointer;
 }
 
-.sign-in button {
+.sign-button {
   cursor: pointer;
   text-decoration: none;
+  text-align: center;
   color: inherit;
 }
 
-.sign-in button:hover {
+.sign-button button:hover {
   color: #c1c1c1;
 }
-.sign-in.hidden {
+
+.sign-in.show {
+  background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 24rem;
+  width: 25rem;
+  border-radius: 10px;
+  padding: 3rem;
+}
+.sign-in {
   display: none;
+}
+.log-account {
+  background-color: var(--bg-color);
+  color: white;
+  cursor: pointer;
 }
 input {
   all: unset;
