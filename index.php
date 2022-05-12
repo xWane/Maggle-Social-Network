@@ -1,14 +1,21 @@
-    <?php
+<style>
+    <?php 
+        include 'public/css/index.css';
+        include 'public/css/global.css';
+    ?>
+</style>
+
+<?php
+    require 'html_partial/head.php';
+
     require 'database/create_db.php';
+
     if (isset($_POST['signUP'])) {
         include 'php_partial/sign_up_bd.php';
         echo addDB();
     }
-    require 'html_partial/head.php';
-    ?>
-    <style>
-    <?php include 'css/index.css';?>
-    </style>
+?>
+
     <div class="landing-title">
         <h1>Maggle</h1>
         <div class="landing-sub-title">
