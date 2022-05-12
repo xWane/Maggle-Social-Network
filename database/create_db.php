@@ -1,5 +1,5 @@
 <?php
-  require_once '../database/pdo.php';
+  require_once 'database/pdo.php';
 
 
   $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
@@ -128,6 +128,4 @@
 
   ");
   $maRequete->execute();
-
-  echo ("la db est installé")
 ?>
