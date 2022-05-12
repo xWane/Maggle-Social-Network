@@ -18,18 +18,18 @@ body {
     overflow: hidden;
 }
 
-.landing_title {
+.landing-title {
     color: white;
     font-size: 6rem;
     font-weight: 600;
 }
 
-.landing_sub_title {
+.landing-sub-title {
     margin-top: 3rem;
     font-size: 2rem;
 }
 
-.sign_up {
+.sign-up {
     background: white;
     color: black;
     display: flex;
@@ -41,7 +41,7 @@ body {
     padding: 3rem;
     }
 
-.mail, .mdp, .mdp_comfirm, .create_account {
+.mail, .mdp, .mdp_comfirm, .create-account {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,22 +52,22 @@ body {
     text-align: center  ;
 }
 
-.create_account {
+.create-account {
     background-color: var(--bg-color);
     color: white;
     cursor: pointer;
 }
 
-.sign_in button {
+.sign-in button {
     cursor: pointer;
     text-decoration: none;
     color: inherit;
 }
 
-.sign_in button:hover {
+.sign-in button:hover {
     color:#C1C1C1;
 }
-.sign_in.hidden {
+.sign-in.hidden {
     display: none;
 }
 input {

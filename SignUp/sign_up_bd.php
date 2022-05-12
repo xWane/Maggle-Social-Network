@@ -26,7 +26,7 @@
     $resultat = mysqli_query($link, "INSERT INTO profil_info (mail, mdp) VALUES ('" . $mail . "', '" . $mdp . "')");
 
     if ($resultat) {
-      print '<p>Compte ajouter à votre base!</p>';
+      print '<p>Compte ajouté à votre base!</p>';
     } else {
       print '<p>Compte pas inseré</p>';
     }
