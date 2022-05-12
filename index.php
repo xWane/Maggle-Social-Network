@@ -22,6 +22,7 @@
             <p>Partagez et restez en contact avec étudiants et alumnis!</p>
         </div>
     </div>
+
     <div class="sign-up ">
         <div class="mail">
             <form method="post" action="./profil/profil.php">
@@ -41,6 +42,7 @@
             <button type="button">Vous êtes déjà inscrit? Connectez-vous!</button>
         </div>
     </div>
+
     <div class="sign-in ">
         <div class="mail">
         <form action="SignUp/sign_in_bd.php" method="post">
@@ -56,7 +58,7 @@
     <div class="sign-button">
         <button type="button">Pas de compte? Inscrivez-vous!</button>
     </div>
-    </div>
+    
     <script type="text/javascript" src="../js/index_swap.js"></script>
 </body>
 </html>

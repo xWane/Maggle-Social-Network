@@ -115,8 +115,8 @@
       ) ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `page_list`(
-      `pages`  INT NOT NULL AUTO_INCREMENT,
-      FOREIGN KEY (`pages`) REFERENCES `page`(`page_id`)
+      `page_id`  INT NOT NULL AUTO_INCREMENT,
+      FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
       ) ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `page_member`(
