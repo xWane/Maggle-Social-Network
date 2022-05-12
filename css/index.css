@@ -5,8 +5,11 @@
     font-family: sans-serif;
 }
 
+:root {
+    --bg-color: #54a0d6;
+}
 body {
-    background: #427AA1;
+    background: var(--bg-color);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -50,7 +53,7 @@ body {
 }
 
 .create_account {
-    background-color: #427AA1;
+    background-color: var(--bg-color);
     color: white;
     cursor: pointer;
 }
