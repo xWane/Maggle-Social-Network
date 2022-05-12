@@ -1,7 +1,7 @@
 <style>
     <?php 
-        include 'public/css/index.css';
         include 'public/css/global.css';
+        include 'public/css/index.css';
     ?>
 </style>
 
@@ -16,49 +16,50 @@
     }
 ?>
 
-    <div class="landing-title">
-        <h1>Maggle</h1>
+    <section class="landing-title">
+        <h1>maggle</h1>
         <div class="landing-sub-title">
-            <p>Partagez et restez en contact avec étudiants et alumnis!</p>
+            <p>Partagez et restez en contact avec les étudiants et les alumnis d’Hetic.</p>
         </div>
-    </div>
+    </section>
 
-    <div class="sign-up ">
-        <div class="mail">
-            <form method="post" action="./profil/profil.php">
-                <input type="text" name="username" placeholder="Mail Hetic">
+    <section class="sign-up">
+        <form method="post" action="./profil/profil.php">
+            <div class="mail">
+                <input type="text" name="username" placeholder="Mail étudiant">
             </div>
             <div class="mdp">
                 <input type="password" name="mdp" placeholder="Mot de passe">
             </div>
             <div class="mdp-comfirm">
-                <input type="password_comfirm" name="mdp_comfirm" placeholder="confirmation">
+                <input type="password" name="mdp_comfirm" placeholder="Confirmation du mot de passe">
             </div> 
             <div class="create-account">
                 <input type="submit" name="signUP" value="Créer un compte">
-            </form>
-        </div>
-        <div class="sign-button">
-            <button type="button">Vous êtes déjà inscrit? Connectez-vous!</button>
-        </div>
-    </div>
-
-    <div class="sign-in ">
-        <div class="mail">
-        <form action="SignUp/sign_in_bd.php" method="post">
-            <input type="text" name="username" placeholder="Mail Hetic">
-        </div>
-        <div class="mdp">
-            <input type="password" name="mdp" placeholder="Mot de passe">
-        </div>
-        <div class="log-account">
-            <input type="submit" name="insc" value="Sign in">
+            </div>
         </form>
-    </div>
-    <div class="sign-button">
-        <button type="button">Pas de compte? Inscrivez-vous!</button>
-    </div>
-    
+        <div class="sign-button">
+            <p>Déjà inscrit ? <span class="underline">Connectez-vous</span></p>
+        </div>
+    </section>
+
+    <section class="sign-in">
+        <form action="SignUp/sign_in_bd.php" method="post">
+            <div class="mail">
+                <input type="text" name="username" placeholder="Mail étudiant">
+            </div>
+            <div class="mdp">
+                <input type="password" name="mdp" placeholder="Mot de passe">
+            </div>
+            <div class="log-account">
+                <input type="submit" name="insc" value="S'identifier">
+            </div>
+        </form>
+        <div class="sign-button">
+            <p>Première visite ? <span class="underline">Inscrivez-vous</span></p>
+        </div>
+    </section>
+
     <script type="text/javascript" src="../js/index_swap.js"></script>
 </body>
 </html>
