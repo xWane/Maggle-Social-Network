@@ -1,36 +1,36 @@
 @font-face {
   font-family: URWForm-ExtraLight;
-  src: url(../assets/fonts/URWForm-ExtraLight.otf);
+  src: url(/public/fonts/URWForm-ExtraLight.otf);
 }
 
 @font-face {
   font-family: URWForm-Light;
-  src: url(../assets/fonts/URWForm-Light.otf);
+  src: url(/public/fonts/fonts/URWForm-Light.otf);
 }
 
 @font-face {
   font-family: URWForm-Regular;
-  src: url(../assets/fonts/URWForm-Regular.otf);
+  src: url(/public/fonts/RWForm-Regular.otf);
 }
 
 @font-face {
   font-family: URWForm-Medium;
-  src: url(../assets/fonts/URWForm-Medium.otf);
+  src: url(/public/fonts/URWForm-ExtraLight.otf);
 }
 
 @font-face {
   font-family: URWForm-Bold;
-  src: url(../assets/fonts/URWForm-Bold.otf);
+  src: url(/public/fonts/URWForm-Bold.otf);
 }
 
 @font-face {
   font-family: URWForm-ExtraBold;
-  src: url(../assets/fonts/URWForm-ExtraBold.otf);
+  src: url(/public/fonts/URWForm-ExtraBold.otf);
 }
 
 @font-face {
   font-family: URWForm-Heavy;
-  src: url(../assets/fonts/URWForm-Heavy.otf);
+  src: url(/public/fonts/URWForm-Heavy.otf);
 }
 
 body {

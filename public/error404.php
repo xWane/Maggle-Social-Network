@@ -1,8 +1,8 @@
     <style>
-        <?php 
-            include 'css/global.css';
-            include 'css/error404.css';
-        ?>
+      <?php 
+        include 'css/global.css'; 
+        include 'css/error404.css';
+      ?>
     </style>
 
     <?php
