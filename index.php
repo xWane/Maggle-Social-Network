@@ -24,7 +24,7 @@
 </section>
 
 <section class="sign-up">
-    <form method="post" action="./profil/profil.php">
+    <form method="post" action="/public/post.php">
         <div class="mail">
             <input type="text" name="username" placeholder="Mail étudiant">
         </div>

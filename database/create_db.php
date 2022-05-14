@@ -28,13 +28,13 @@
       `publi_id` INT NOT NULL AUTO_INCREMENT,
       `user_id` INT NOT NULL,
       `content` LONGTEXT NOT NULL,
-      `publi_pic` VARCHAR(255) NOT NULL,
+      `publi_pic` VARCHAR(255),
       `creation_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
       `reaction_nb` INT NOT NULL,
       PRIMARY KEY (`publi_id`),
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
-      
+
     CREATE TABLE IF NOT EXISTS `comment`(
       `id` INT NOT NULL AUTO_INCREMENT,
       `publi_id` INT NOT NULL,
