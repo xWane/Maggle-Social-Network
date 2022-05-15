@@ -22,7 +22,7 @@
       }
       else
       {
-        $article_content = 1;
+        $article_content = "1";
       }
 
       if(!empty($_POST['image-content']))
@@ -31,16 +31,12 @@
       }
       else
       {
-        $image_content = 1;
+        $image_content = "1";
       }
 
-      $publi_id = 1;
-      $user_id = 1;
-      $reaction_nb = 1;
-
-      $ins = $pdo->prepare('INSERT INTO publication (publi_id, user_id, reaction_nb, content, publi_pic, creation_date)
-        VALUES (?, ?, ?, ?, ?, NOW())');
-      $ins->execute(array($publi_id, $user_id, $reaction_nb, $article_content, $image_content));
+      $ins = $pdo->prepare('INSERT INTO publication (content, publi_pic, creation_date)
+        VALUES ( ?, ?, NOW())');
+      $ins->execute(array($article_content, $image_content));
 
       $message = 'Votre article a bien été posté';
     }
@@ -68,3 +64,5 @@
 
 
 <?php require '../html_partial/footer.php'; ?>
+
+<?php error_reporting(E_ALL); ?>

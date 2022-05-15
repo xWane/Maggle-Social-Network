@@ -1,36 +1,61 @@
 @font-face {
   font-family: URWForm-ExtraLight;
-  src: url(/public/fonts/URWForm-ExtraLight.otf);
+  src: url(/public/fonts/URWForm-ExtraLight.otf),
+    url(/public/fonts/URWForm-ExtraLight.eot),
+    url(/public/fonts/URWForm-ExtraLight.ttf),
+    url(/public/fonts/URWForm-ExtraLight.woff),
+    url(/public/fonts/URWForm-ExtraLight.woff2);
 }
 
 @font-face {
   font-family: URWForm-Light;
-  src: url(/public/fonts/fonts/URWForm-Light.otf);
+  src: url(/public/fonts/fonts/URWForm-Light.otf),
+    url(/public/fonts/fonts/URWForm-Light.eot),
+    url(/public/fonts/fonts/URWForm-Light.ttf),
+    url(/public/fonts/fonts/URWForm-Light.woff),
+    url(/public/fonts/fonts/URWForm-Light.woff2);
 }
 
 @font-face {
   font-family: URWForm-Regular;
-  src: url(/public/fonts/RWForm-Regular.otf);
+  src: url(/public/fonts/URWForm-Regular.otf),
+    url(/public/fonts/URWForm-Regular.eot),
+    url(/public/fonts/URWForm-Regular.ttf),
+    url(/public/fonts/URWForm-Regular.woff),
+    url(/public/fonts/URWForm-Regular.woff2);
 }
 
 @font-face {
   font-family: URWForm-Medium;
-  src: url(/public/fonts/URWForm-ExtraLight.otf);
+  src: url(/public/fonts/URWForm-ExtraLight.otf),
+    url(/public/fonts/URWForm-ExtraLight.eot),
+    url(/public/fonts/URWForm-ExtraLight.ttf),
+    url(/public/fonts/URWForm-ExtraLight.woff),
+    url(/public/fonts/URWForm-ExtraLight.woff2);
 }
 
 @font-face {
   font-family: URWForm-Bold;
-  src: url(/public/fonts/URWForm-Bold.otf);
+  src: url(/public/fonts/URWForm-Bold.otf), url(/public/fonts/URWForm-Bold.eot),
+    url(/public/fonts/URWForm-Bold.ttf), url(/public/fonts/URWForm-Bold.woff),
+    url(/public/fonts/URWForm-Bold.woff2);
 }
 
 @font-face {
   font-family: URWForm-ExtraBold;
-  src: url(/public/fonts/URWForm-ExtraBold.otf);
+  src: url(/public/fonts/URWForm-ExtraBold.otf),
+    url(/public/fonts/URWForm-ExtraBold.eot),
+    url(/public/fonts/URWForm-ExtraBold.ttf),
+    url(/public/fonts/URWForm-ExtraBold.woff),
+    url(/public/fonts/URWForm-ExtraBold.woff2);
 }
 
 @font-face {
   font-family: URWForm-Heavy;
-  src: url(/public/fonts/URWForm-Heavy.otf);
+  src: url(/public/fonts/URWForm-Heavy.otf),
+    url(/public/fonts/URWForm-Heavy.eot), url(/public/fonts/URWForm-Heavy.ttf),
+    url(/public/fonts/URWForm-Heavy.woff),
+    url(/public/fonts/URWForm-Heavy.woff2);
 }
 
 body {
