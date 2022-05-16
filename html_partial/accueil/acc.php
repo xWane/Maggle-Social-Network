@@ -3,10 +3,3 @@
 <?php require 'center-acc.php'; ?>
 <?php require 'right-acc.php'; ?>
 <?php require '../footer.php'; ?>
-
-
-
-    
-
-    
-
