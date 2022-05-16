@@ -375,15 +375,16 @@ h2 {
 
 .info {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin: 20px 0 50px;
+    position: relative;
     
 }
 
 .pp {
-    margin-left: 20px;
     position: absolute;
+    left: 30px;
     height: 150px;
     width: 150px;
     object-fit: cover;
@@ -398,7 +399,7 @@ h2 {
 }
 
 .profil {
-    left: 45%;
+    left: 32%;
     position: absolute;
 }
 

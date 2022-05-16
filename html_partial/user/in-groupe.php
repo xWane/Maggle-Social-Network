@@ -1,14 +1,5 @@
-<?php require '../head.php'; ?>
-<?php require '../left.php'; ?>
-<style>
-<?php include '../../public/css/style.css' ?>
-</style>
-
-<!-- SECTION : Center Container -->
-<main class="container-center">
-
 <!-- User text -->
-<div class="border">
+<div class="border marg-top">
 
     <div class="user-text align">
 
@@ -145,7 +136,7 @@
             <span class="name-publication">Fabien</span>
             <span class="date-publication">07/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="little-icon"> </a>
+        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
     </div>
 
     <div class="text-publication">
@@ -187,8 +178,3 @@
     </div>
 
 </div>
-
-</main>
-
-<?php require 'right-acc.php'; ?>
-<?php require '../footer.php'; ?>
