@@ -1,10 +1,10 @@
 <?php 
     $statut = true;
     $idPage = "...";
-    $namePage = ucfirst("the pug page");
+    $namePage = ucfirst("the pug community");
     $admin = true;
-    $bannerpa = "bg.jpg";
-    $pppa = "pp-g.jpg"
+    $bannerpa = "backpa.jpg";
+    $pppa = "pppa.jpg"
 ?>
 
 <?php require '../head.php'; ?>
@@ -48,26 +48,13 @@
 
 </div>
 
-<!-- User text -->
-<div class="border marg-top">
+<?php 
 
-    <div class="user-text align">
+    if($admin == true) {
+        require 'in-page.php';
+    }
 
-        <div class="align">
-            <img src="../../public/img/pp.jpg" alt="Profile" class="pic profile-picture img-vide">
-        </div>
-        <input type="text" name="" class="read-text" placeholder="Écrire une publication ...">
-
-    </div>
-
-    <div class="user-send align">
-
-        <input type="file" name="" id="">
-        <a href="" class="align"> <img src="../../public/icon/image.svg" alt="Image" class="icon img"> </a>
-        <button type="button" class="btn-send"><a href="" class="btn">Envoyer</a></button>
-
-    </div>
-</div>
+?>
 
 <!-- publication -->
 <div class="border publication">
@@ -79,7 +66,12 @@
             <span class="name-publication">Jhon Doe</span>
             <span class="date-publication">10/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>
+        <?php 
+            if($admin == true) {
+                echo '<a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>';
+            }
+        ?>
+        
     </div>
 
     <div class="text-publication">
@@ -133,7 +125,11 @@
             <span class="name-publication">Brontis</span>
             <span class="date-publication">08/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
+        <?php 
+            if($admin == true) {
+                echo '<a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>';
+            }
+        ?>
     </div>
 
     <div class="text-publication">
@@ -186,7 +182,11 @@
             <span class="name-publication">Fabien</span>
             <span class="date-publication">07/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
+        <?php 
+            if($admin == true) {
+                echo '<a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>';
+            }
+        ?>
     </div>
 
     <div class="text-publication">

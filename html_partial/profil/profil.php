@@ -66,7 +66,11 @@ if($you == true) {
             <span class="name-publication">Jhon Doe</span>
             <span class="date-publication">10/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>
+        <?php 
+            if($you == true) {
+                echo '<a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>';
+            }
+        ?>
     </div>
 
     <div class="text-publication">
@@ -117,10 +121,14 @@ if($you == true) {
 
         <a href="" class="align"> <img src="../../public/img/br.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
         <div class="user-publication">
-            <span class="name-publication">Brontis</span>
+            <span class="name-publication">Jhon Doe</span>
             <span class="date-publication">08/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
+        <?php 
+            if($you == true) {
+                echo '<a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>';
+            }
+        ?>
     </div>
 
     <div class="text-publication">
@@ -170,10 +178,14 @@ if($you == true) {
 
         <a href="" class="align"> <img src="../../public/img/fa.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
         <div class="user-publication">
-            <span class="name-publication">Fabien</span>
+            <span class="name-publication">Jhon Doe</span>
             <span class="date-publication">07/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
+        <?php 
+            if($you == true) {
+                echo '<a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>';
+            }
+        ?>
     </div>
 
     <div class="text-publication">
