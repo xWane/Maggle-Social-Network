@@ -13,7 +13,7 @@
     <div class="user-text align">
 
         <div class="align">
-            <img src="../../public/img/pp.jpg" alt="Profile" class="pic profile-picture">
+            <img src="../../public/img/pp.jpg" alt="Profile" class="pic profile-picture img-vide">
         </div>
         <input type="text" name="" class="read-text" placeholder="Écrire une publication ...">
 
@@ -32,7 +32,7 @@
 
     <div class="align">
 
-        <a href="" class="align"> <img src="../../public/img/jh.jpg" alt="Profile" class="pic profile-picture"> </a>
+        <a href="" class="align"> <img src="../../public/img/jh.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
         <div class="user-publication">
             <span class="name-publication">Jhon Doe</span>
             <span class="date-publication">10/05/2022</span>
@@ -47,7 +47,7 @@
         </p>
         <div class="img-publication">
 
-            <img src="../../public/img/img-random.jpg" alt="" class="img-user">
+            <img src="../../public/img/img-random.jpg" alt="" class="img-user img-vide">
         </div>
         
     </div>
@@ -86,7 +86,7 @@
 
     <div class="align">
 
-        <a href="" class="align"> <img src="../../public/img/br.jpg" alt="Profile" class="pic profile-picture"> </a>
+        <a href="" class="align"> <img src="../../public/img/br.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
         <div class="user-publication">
             <span class="name-publication">Brontis</span>
             <span class="date-publication">08/05/2022</span>
@@ -139,7 +139,7 @@
 
     <div class="align">
 
-        <a href="" class="align"> <img src="../../public/img/fa.jpg" alt="Profile" class="pic profile-picture"> </a>
+        <a href="" class="align"> <img src="../../public/img/fa.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
         <div class="user-publication">
             <span class="name-publication">Fabien</span>
             <span class="date-publication">07/05/2022</span>
@@ -154,7 +154,7 @@
         </p>
         <div class="img-publication">
 
-            <img src="../../public/img/img-test.jpg" alt="" class="img-user">
+            <img src="../../public/img/img-test.jpg" alt="" class="img-user img-vide">
         </div>
         
     </div>

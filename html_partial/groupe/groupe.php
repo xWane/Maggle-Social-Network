@@ -19,12 +19,12 @@
 <!-- Info groupe -->
 
 <div class="bg">
-    <img src="../../public/img/<?php echo $bannerg ?>" alt="Banière de groupe" class="bg-img">
+    <img src="../../public/img/<?php echo $bannerg ?>" alt="Banière de groupe" class="bg-img img-vide">
 </div>
 
 <div class="info">
 
-    <img src="../../public/img/<?php echo $ppg ?>" alt="Image de groupe" class="pp">
+    <img src="../../public/img/<?php echo $ppg ?>" alt="Image de groupe" class="pp img-vide">
     <div></div>
     <h2 class="profil"><?php echo $nameGroupe ?></h2>
     <?php 

@@ -111,6 +111,10 @@ h2 {
     justify-content: flex-end;
 }
 
+.img-vide {
+    background-color: yellow;
+}
+
 
 /* SECTION : Left Container */
 
