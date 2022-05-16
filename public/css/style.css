@@ -327,6 +327,7 @@ h2 {
 .name-trend {
     font-size: var(--font-size-h5);
     font-weight: 500;
+    color: var(--ctaColor);
 }
 
 .publication-trend {

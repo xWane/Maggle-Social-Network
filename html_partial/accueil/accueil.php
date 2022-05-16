@@ -1,3 +1,9 @@
+<?php require '../head.php'; ?>
+<?php require '../left.php'; ?>
+<style>
+<?php include '../../public/css/style.css' ?>
+</style>
+
 <!-- SECTION : Center Container -->
 <main class="container-center">
 
@@ -182,3 +188,6 @@
 </div>
 
 </main>
+
+<?php require 'right-acc.php'; ?>
+<?php require '../footer.php'; ?>
