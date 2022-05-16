@@ -15,7 +15,7 @@
 
     --font-size-h1: 32px;
     --font-size-h2: 32px;
-    --font-size-h3: 22px;
+    --font-size-h3: 24px;
     --font-size-h4: 18px;
     --font-size-h5: 16px;
     --font-size-text: 14px;
@@ -102,6 +102,11 @@ a {
 
 h2 {
     font-size: var(--font-size-h2);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--font-size-h3);
     font-weight: 600;
 }
 
@@ -427,4 +432,23 @@ h2 {
 
 .mod-icon {
     width: 24px;
+}
+
+/* SECTION : notification */
+
+.notif:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.marg-bot {
+    margin-bottom: 50px;
+}
+
+.mid-icon {
+    width: 26px;
+    margin-right: 10px;
+}
+
+.text-notif {
+    font-size: var(--font-size-h5);
 }

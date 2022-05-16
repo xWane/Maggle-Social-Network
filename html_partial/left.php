@@ -38,7 +38,7 @@
   }
 ?>
 
-<style>.color<?php echo $nb ?> {font-weight: bold; color: #427AA1;}</style>
+<style>.color<?php echo $nb ?> {font-weight: bold; color: #84B59F;}</style>
 
 <!-- SECTION : Left Container -->
 <main class="container-left ">
@@ -66,7 +66,7 @@
             <a href="" class="color5 align"> <img src="../../public/icon/chat.svg" alt="Messages" class="icon"> <span class="text-nav-bar">Messages</span> </a>
         </div>
         <div class="item">
-            <a href="" class="color6 align"> <img src="../../public/icon/bell.svg" alt="Notications" class="icon"> <span class="text-nav-bar">Notications</span> </a>
+            <a href="../notification/notification.php" class="color6 align"> <img src="../../public/icon/bell.svg" alt="Notications" class="icon"> <span class="text-nav-bar">Notications</span> </a>
         </div>
         <div class="item">
             <a href="" class="color7 align"> <img src="../../public/icon/add.svg" alt="Demandes" class="icon"> <span class="text-nav-bar">Demandes</span> </a>
