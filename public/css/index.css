@@ -47,6 +47,10 @@ body {
   color: black;
 }
 
+.sign-up {
+  height: 450px;
+}
+
 .sign-up.hidden,
 .sign-in {
   display: none;
@@ -54,26 +58,19 @@ body {
 
 .mail,
 .mdp,
-.mdp-comfirm {
+.mdp-comfirm,
+.name {
   border-radius: 50px;
   height: 40px;
   display: flex;
   justify-content: left;
   padding: 5px 20px 0 20px;
+  margin: 30px;
 
   background-color: #f4f4f4;
   color: black;
   font-size: 0.9rem;
   font-family: URWForm-Medium;
-}
-
-.mail {
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-.mdp-comfirm {
-  margin-top: 30px;
 }
 
 .create-account,

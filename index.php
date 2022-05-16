@@ -25,6 +25,9 @@
 
     <section class="sign-up">
         <form method="post" action="public/post.php">
+            <div class="name">
+                <input type="text" name="name" placeholder="Nom">
+            </div>
             <div class="mail">
                 <input type="text" name="username" placeholder="Mail étudiant">
             </div>
@@ -32,7 +35,7 @@
                 <input type="password" name="mdp" placeholder="Mot de passe">
             </div>
             <div class="mdp-comfirm">
-                <input type="password" name="mdp_comfirm" placeholder="Confirmation du mot de passe">
+                <input type="password" name="mdp_confirm" placeholder="Confirmation du mot de passe">
             </div> 
             <div class="create-account">
                 <input type="submit" name="signUP" value="Créer un compte">
