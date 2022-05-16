@@ -434,7 +434,7 @@ h3 {
     width: 24px;
 }
 
-/* SECTION : notification */
+/* SECTION : Notification */
 
 .notif:not(:last-child) {
     margin-bottom: 20px;
@@ -451,4 +451,43 @@ h3 {
 
 .text-notif {
     font-size: var(--font-size-h5);
+}
+
+/* SECTION : List */
+
+.g {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.list {
+    width: 47%;
+    height: auto;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.bg-list {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.pp-list {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primaryColor);
+    position: absolute;
+    left: 20px;
+    top: 100px;
+}
+
+.text-list {
+    font-size: var(--font-size-h4);
+    font-weight: 600;
+    margin-left: 32%;
 }
