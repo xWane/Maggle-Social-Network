@@ -6,6 +6,9 @@ if ($pot[6] == "profil") {
   } else if ($pot[6] == "groupe") {
     $blockOne = "Admins";
     $blockTwo = "Membres";
+  } else if ($pot[6] == "page") {
+    $blockOne = "Admins";
+    $blockTwo = "Membres";
   }
 
 

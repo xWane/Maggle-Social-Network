@@ -2,7 +2,7 @@
     $statut = false;
     $idGroupe = "...";
     $nameGroupe = ucfirst("the pomme groupe");
-    $admin = false;
+    $admin = true;
     $bannerg = "bg.jpg";
     $ppg = "pp-g.jpg"
 ?>

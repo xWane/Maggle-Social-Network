@@ -1,11 +1,10 @@
 <?php 
-    $ami = true;
-    $idProfil = "...";
-    $nameProfil = ucfirst("jhon");
-    $lastNameProfil = ucfirst("doe");
-    $you = true;
-    $bannerp = "chevre.webp";
-    $ppp = "pp.jpg"
+    $statut = true;
+    $idPage = "...";
+    $namePage = ucfirst("the pug page");
+    $admin = true;
+    $bannerpa = "bg.jpg";
+    $pppa = "pp-g.jpg"
 ?>
 
 <?php require '../head.php'; ?>
@@ -17,20 +16,19 @@
 <!-- SECTION : Center Container -->
 <main class="container-center">
 
-<!-- Info profil -->
+<!-- Info page -->
 
 <div class="bg">
-    <img src="../../public/img/<?php echo $bannerp ?>" alt="Banière de profil" class="bg-img img-vide">
+    <img src="../../public/img/<?php echo $bannerpa ?>" alt="Banière de page" class="bg-img img-vide">
 </div>
 
 <div class="info">
 
-    <img src="../../public/img/<?php echo $ppp ?>" alt="Image de profil" class="pp img-vide">
-    <div></div>
-    <h2 class="profil"><?php echo $nameProfil ?> <?php echo $lastNameProfil ?></h2>
+    <img src="../../public/img/<?php echo $pppa ?>" alt="Image de page" class="pp img-vide">
+    <h2 class="profil"><?php echo $namePage ?></h2>
     <?php 
-    if($you == false) {
-        if($ami == false) {
+    if($admin == false) {
+        if($statut == true) {
             $ing = "un";
             $sui = "Suivre";
         } else {
@@ -50,11 +48,26 @@
 
 </div>
 
-<?php
-if($you == true) {
-    require 'post-profil.php';
-}
-?>
+<!-- User text -->
+<div class="border marg-top">
+
+    <div class="user-text align">
+
+        <div class="align">
+            <img src="../../public/img/pp.jpg" alt="Profile" class="pic profile-picture img-vide">
+        </div>
+        <input type="text" name="" class="read-text" placeholder="Écrire une publication ...">
+
+    </div>
+
+    <div class="user-send align">
+
+        <input type="file" name="" id="">
+        <a href="" class="align"> <img src="../../public/icon/image.svg" alt="Image" class="icon img"> </a>
+        <button type="button" class="btn-send"><a href="" class="btn">Envoyer</a></button>
+
+    </div>
+</div>
 
 <!-- publication -->
 <div class="border publication">
@@ -215,7 +228,6 @@ if($you == true) {
     </div>
 
 </div>
-
 
 </main>
 

@@ -25,6 +25,8 @@
     $nb = 2;
   } else if ($pot[6] == "groupe") {
     $nb = 3;
+  } else if ($pot[6] == "page") {
+    $nb = 4;
   }
 ?>
 
@@ -50,7 +52,7 @@
             <a href="../groupe/groupe.php" class="color3 align"> <img src="../../public/icon/groupes.svg" alt="Groupes" class="icon"> <span class="text-nav-bar">Groupes</span> </a>
         </div>
         <div class="item">
-            <a href="" class="color4 align"> <img src="../../public/icon/page.svg" alt="Plus" class="icon"> <span class="text-nav-bar">Pages</span> </a>
+            <a href="../page/page.php" class="color4 align"> <img src="../../public/icon/page.svg" alt="Plus" class="icon"> <span class="text-nav-bar">Pages</span> </a>
         </div>
         <div class="item">
             <a href="" class="color5 align"> <img src="../../public/icon/chat.svg" alt="Messages" class="icon"> <span class="text-nav-bar">Messages</span> </a>
