@@ -27,6 +27,14 @@
     $nb = 3;
   } else if ($pot[6] == "page") {
     $nb = 4;
+  } else if ($pot[6] == "message") {
+    $nb = 5;
+  } else if ($pot[6] == "notification") {
+    $nb = 6;
+  } else if ($pot[6] == "demande") {
+    $nb = 7;
+  } else if ($pot[6] == "plus") {
+    $nb = 8;
   }
 ?>
 

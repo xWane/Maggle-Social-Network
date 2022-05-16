@@ -190,5 +190,5 @@
 
 </main>
 
-<?php require 'right-accueil.php'; ?>
+<?php require '../right-fovoris.php'; ?>
 <?php require '../footer.php'; ?>
