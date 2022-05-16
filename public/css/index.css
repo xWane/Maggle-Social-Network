@@ -4,9 +4,9 @@
   padding: 0;
 }
 
-.landing-container {
+body {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 0 120px 0 120px;
   height: 100vh;

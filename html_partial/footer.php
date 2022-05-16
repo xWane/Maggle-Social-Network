@@ -1,6 +1,6 @@
     <!-- SECTION : Footer -->
-    <footer class="footer">
+    <!-- <footer class="footer">
 
-    </footer>
-</body>
+    </footer> -->
+    </body>
 </html>

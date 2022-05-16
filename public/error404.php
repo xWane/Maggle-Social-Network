@@ -1,6 +1,6 @@
     <style>
       <?php 
-        include 'css/global.css'; 
+        include 'global.css'; 
         include 'css/error404.css';
       ?>
     </style>
@@ -8,7 +8,7 @@
     <?php
         require '../html_partial/head.php';
     ?>
-
+  <body class="body">
     <a href= "../index.php"> Retourner sur le site</a>
 
     <section id="error404"> 
