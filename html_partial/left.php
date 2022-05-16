@@ -1,29 +1,31 @@
 <?php 
-  // if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
-  //   $url = "https"; 
-  // else
-  //   $url = "http"; 
+  if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
+    $url = "https"; 
+  else
+    $url = "http"; 
     
-  // // Ajoutez // à l'URL.
-  // $url .= "://"; 
+  // Ajoutez // à l'URL.
+  $url .= "://"; 
     
-  // // Ajoutez l'hôte (nom de domaine, ip) à l'URL.
-  // $url .= $_SERVER['HTTP_HOST']; 
+  // Ajoutez l'hôte (nom de domaine, ip) à l'URL.
+  $url .= $_SERVER['HTTP_HOST']; 
     
-  // // Ajouter l'emplacement de la ressource demandée à l'URL
-  // $url .= $_SERVER['REQUEST_URI'];
+  // Ajouter l'emplacement de la ressource demandée à l'URL
+  $url .= $_SERVER['REQUEST_URI'];
 
-  //   $pos = $url;
-  //   $pos = explode(".",$pos);
+    $pos = $url;
+    $pos = explode(".",$pos);
 
-  //   $pot = $pos[0];
-  //   $pot = explode("/",$pot);
+    $pot = $pos[0];
+    $pot = explode("/",$pot);
 
-  // if ($pot[6] == "accueil") {
-  //   $nb = 1;
-  // } else if ($pot[6] == "groupe") {
-  //   $nb = 3;
-  // }
+  if ($pot[6] == "accueil") {
+    $nb = 1;
+    } else if ($pot[6] == "profil") {
+    $nb = 2;
+  } else if ($pot[6] == "groupe") {
+    $nb = 3;
+  }
 ?>
 
 <style>.color<?php echo $nb ?> {font-weight: bold; color: #427AA1;}</style>

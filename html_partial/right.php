@@ -1,3 +1,16 @@
+<?php
+
+if ($pot[6] == "profil") {
+    $blockOne = "Amis";
+    $blockTwo = "Groupes";
+  } else if ($pot[6] == "groupe") {
+    $blockOne = "Admins";
+    $blockTwo = "Membres";
+  }
+
+
+?>
+
 <!-- SECTION : Right Container -->
 <main class="container-right">
 
@@ -13,7 +26,7 @@
 
     <div class="block">
 
-<span class="title-block">Admin</span>
+<span class="title-block"><?php echo $blockOne ?></span>
 
 <div class="item-block">
     <div class="fovoris">
@@ -34,7 +47,7 @@
 
 <div class="block">
 
-<span class="title-block">Membres</span>
+<span class="title-block"><?php echo $blockTwo ?></span>
 
 <div class="item-block">
     <div class="fovoris">

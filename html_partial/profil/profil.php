@@ -20,12 +20,12 @@
 <!-- Info groupe -->
 
 <div class="bg">
-    <img src="../../public/img/<?php echo $bannerp ?>" alt="Banière de groupe" class="bg-img img-vide">
+    <img src="../../public/img/<?php echo $bannerp ?>" alt="Banière de profil" class="bg-img img-vide">
 </div>
 
 <div class="info">
 
-    <img src="../../public/img/<?php echo $ppp ?>" alt="Image de groupe" class="pp img-vide">
+    <img src="../../public/img/<?php echo $ppp ?>" alt="Image de profil" class="pp img-vide">
     <div></div>
     <h2 class="profil"><?php echo $nameProfil ?> <?php echo $lastNameProfil ?></h2>
     <?php 
@@ -219,5 +219,5 @@ if($you == true) {
 
 </main>
 
-<?php require 'right-profil.php'; ?>
+<?php require '../right.php'; ?>
 <?php require '../footer.php'; ?>
