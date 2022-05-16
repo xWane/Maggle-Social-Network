@@ -59,5 +59,5 @@
 
 </main>
 
-<?php require 'right-gro.php'; ?>
+<?php require 'right-profil.php'; ?>
 <?php require '../footer.php'; ?>

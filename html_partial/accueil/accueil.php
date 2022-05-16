@@ -190,5 +190,5 @@
 
 </main>
 
-<?php require 'right-acc.php'; ?>
+<?php require 'right-accueil.php'; ?>
 <?php require '../footer.php'; ?>

@@ -58,5 +58,5 @@
 
 </main>
 
-<?php require 'right-gro.php'; ?>
+<?php require 'right-groupe.php'; ?>
 <?php require '../footer.php'; ?>
