@@ -60,7 +60,7 @@
     </div>
 </section>
 
-<script type="text/javascript" src="../js/index_swap.js"></script>
+<script type="text/javascript" src="public/js/index_swap.js"></script>
 </div>
 
 <?php require 'html_partial/footer.php'; ?>
