@@ -12,6 +12,7 @@
 
     <div class="user-send align">
 
+        <input type="file" name="" id="">
         <a href="" class="align"> <img src="../../public/icon/image.svg" alt="Image" class="icon img"> </a>
         <button type="button" class="btn-send"><a href="" class="btn">Envoyer</a></button>
 

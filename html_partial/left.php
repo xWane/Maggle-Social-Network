@@ -48,10 +48,19 @@
             <a href="../groupe/groupe.php" class="color3 align"> <img src="../../public/icon/groupes.svg" alt="Groupes" class="icon"> <span class="text-nav-bar">Groupes</span> </a>
         </div>
         <div class="item">
-            <a href="" class="color4 align"> <img src="../../public/icon/chat.svg" alt="Messages" class="icon"> <span class="text-nav-bar">Messages</span> </a>
+            <a href="" class="color4 align"> <img src="../../public/icon/page.svg" alt="Plus" class="icon"> <span class="text-nav-bar">Pages</span> </a>
         </div>
         <div class="item">
-            <a href="" class="color5 align"> <img src="../../public/icon/more.svg" alt="Plus" class="icon"> <span class="text-nav-bar">Plus</span> </a>
+            <a href="" class="color5 align"> <img src="../../public/icon/chat.svg" alt="Messages" class="icon"> <span class="text-nav-bar">Messages</span> </a>
+        </div>
+        <div class="item">
+            <a href="" class="color6 align"> <img src="../../public/icon/bell.svg" alt="Notications" class="icon"> <span class="text-nav-bar">Notications</span> </a>
+        </div>
+        <div class="item">
+            <a href="" class="color7 align"> <img src="../../public/icon/add.svg" alt="Demandes" class="icon"> <span class="text-nav-bar">Demandes</span> </a>
+        </div>
+        <div class="item">
+            <a href="" class="color8 align"> <img src="../../public/icon/more.svg" alt="Plus" class="icon"> <span class="text-nav-bar">Plus</span> </a>
         </div>
     </div>
 
