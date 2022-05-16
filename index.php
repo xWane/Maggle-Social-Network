@@ -15,7 +15,7 @@
         echo addDB();
     }
 ?>
-
+<div class="landing-container">
 <section class="landing-title">
     <h1>maggle</h1>
     <div class="landing-sub-title">
@@ -61,6 +61,7 @@
 </section>
 
 <script type="text/javascript" src="../js/index_swap.js"></script>
+</div>
 
 <?php require 'html_partial/footer.php'; ?>
 

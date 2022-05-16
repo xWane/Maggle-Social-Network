@@ -4,7 +4,7 @@
   padding: 0;
 }
 
-body {
+.landing-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
