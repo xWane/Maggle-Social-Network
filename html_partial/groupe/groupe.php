@@ -1,7 +1,7 @@
 <?php 
     $statut = false;
     $idGroupe = "...";
-    $nameGroupe = "The pomme groupe";
+    $nameGroupe = ucfirst("the pomme groupe");
     $admin = false;
     $bannerg = "bg.jpg";
     $ppg = "pp-g.jpg"

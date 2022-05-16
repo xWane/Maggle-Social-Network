@@ -13,7 +13,7 @@
 
     <div class="block">
 
-<span class="title-block">Admin</span>
+<span class="title-block">Amis</span>
 
 <div class="item-block">
     <div class="fovoris">
@@ -34,7 +34,7 @@
 
 <div class="block">
 
-<span class="title-block">Membres</span>
+<span class="title-block">Groupes</span>
 
 <div class="item-block">
     <div class="fovoris">
