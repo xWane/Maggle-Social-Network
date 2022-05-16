@@ -56,12 +56,14 @@
       FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`)
       ) ENGINE=InnoDB;
 
-    CREATE TABLE IF NOT EXISTS `friends`(
-      `friend_request` TINYINT(1) NOT NULL,
+      CREATE TABLE IF NOT EXISTS `friends`(
+      `id` INT(255) NOT NULL AUTO_INCREMENT,
       `user_id` INT NOT NULL,
       `friend_id` INT NOT NULL,
+      `status` INT(255) NOT NULL,
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`),
-      FOREIGN KEY (`friend_id`) REFERENCES `user`(`user_id`)
+      FOREIGN KEY (`friend_id`) REFERENCES `user`(`user_id`),
+      PRIMARY KEY(`id`)
       )ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `group`(
