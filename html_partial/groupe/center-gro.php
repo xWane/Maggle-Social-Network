@@ -16,12 +16,12 @@
 <!-- Info groupe -->
 
 <div class="bg">
-    <img src="bg.jpg" alt="Banière de groupe" class="bg-img">
+    <img src="../../public/img/bg.jpg" alt="Banière de groupe" class="bg-img">
 </div>
 
 <div class="info">
 
-    <img src="pp-g.jpg" alt="Image de groupe" class="pp">
+    <img src="../../public/img/pp-g.jpg" alt="Image de groupe" class="pp">
 
     <h2 class="profil">The pomme groupe</h2>
 

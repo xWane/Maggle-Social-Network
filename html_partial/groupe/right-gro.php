@@ -5,7 +5,7 @@
 
     <div class="research align">
 
-        <a href="" class="align"> <img src="search.svg" alt="Rechercher" class="little-icon"> </a>
+        <a href="" class="align"> <img src="../../public/icon/search.svg" alt="Rechercher" class="little-icon"> </a>
         <input type="search" name="" class="search" placeholder="Recherche">
 
     </div>

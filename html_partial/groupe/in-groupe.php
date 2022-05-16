@@ -4,7 +4,7 @@
     <div class="user-text align">
 
         <div class="align">
-            <img src="pp.jpg" alt="Profile" class="pic profile-picture">
+            <img src="../../public/img/pp.jpg" alt="Profile" class="pic profile-picture">
         </div>
         <input type="text" name="" class="read-text" placeholder="Écrire une publication ...">
 
@@ -12,7 +12,7 @@
 
     <div class="user-send align">
 
-        <a href="" class="align"> <img src="image.svg" alt="Image" class="icon img"> </a>
+        <a href="" class="align"> <img src="../../public/icon/image.svg" alt="Image" class="icon img"> </a>
         <button type="button" class="btn-send"><a href="" class="btn">Envoyer</a></button>
 
     </div>
@@ -23,12 +23,12 @@
 
     <div class="align">
 
-        <a href="" class="align"> <img src="jh.jpg" alt="Profile" class="pic profile-picture"> </a>
+        <a href="" class="align"> <img src="../../public/img/jh.jpg" alt="Profile" class="pic profile-picture"> </a>
         <div class="user-publication">
             <span class="name-publication">Jhon Doe</span>
             <span class="date-publication">10/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="more-horiz.svg" alt="Image" class="icon img"> </a>
+        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>
     </div>
 
     <div class="text-publication">
@@ -38,7 +38,7 @@
         </p>
         <div class="img-publication">
 
-            <img src="img-random.jpg" alt="" class="img-user">
+            <img src="../../public/img/img-random.jpg" alt="" class="img-user">
         </div>
         
     </div>
@@ -48,24 +48,24 @@
 
         <div class="react-like flex-end">
                 <div class="all-react align">
-                    <div class="border-react"><img src="like.svg" alt="Like" class="react-list"></div>
-                    <div class="border-react"><img src="love.svg" alt="Love" class="react-list"></div>
-                    <div class="border-react"><img src="wow.svg" alt="Wow" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
 
                     <span class="nb-react">18 567</span>
                     
                 </div>
-                <button type="button" class="btn-react"><a href="" class=" align"> <img src="like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
+                <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
         </div>
 
         <div class="react-share flex-end">
-            <button type="button" class="btn-react"><a href="" class=" align"> <img src="share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
+            <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
         </div>
 
         <div class="comment flex-end">
             
                 <span class="nb-comment">4 287 Commentaires</span>
-            <button type="button" class="btn-react"><a href="" class="end"> <img src="comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
+            <button type="button" class="btn-react"><a href="" class="end"> <img src="../../public/icon/comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
         </div>
 
     </div>
@@ -77,7 +77,7 @@
 
     <div class="align">
 
-        <a href="" class="align"> <img src="br.jpg" alt="Profile" class="pic profile-picture"> </a>
+        <a href="" class="align"> <img src="../../public/img/br.jpg" alt="Profile" class="pic profile-picture"> </a>
         <div class="user-publication">
             <span class="name-publication">Brontis</span>
             <span class="date-publication">08/05/2022</span>
@@ -101,24 +101,24 @@
 
         <div class="react-like flex-end">
                 <div class="all-react align">
-                    <div class="border-react"><img src="like.svg" alt="Like" class="react-list"></div>
-                    <div class="border-react"><img src="love.svg" alt="Love" class="react-list"></div>
-                    <div class="border-react"><img src="wow.svg" alt="Wow" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
 
                     <span class="nb-react">25 123</span>
                     
                 </div>
-                <button type="button" class="btn-react"><a href="" class=" align"> <img src="like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
+                <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
         </div>
 
         <div class="react-share flex-end">
-            <button type="button" class="btn-react"><a href="" class=" align"> <img src="share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
+            <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
         </div>
 
         <div class="comment flex-end">
             
                 <span class="nb-comment">7 456 Commentaires</span>
-            <button type="button" class="btn-react"><a href="" class="end"> <img src="comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
+            <button type="button" class="btn-react"><a href="" class="end"> <img src="../../public/icon/comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
         </div>
 
     </div>
@@ -130,12 +130,12 @@
 
     <div class="align">
 
-        <a href="" class="align"> <img src="fa.jpg" alt="Profile" class="pic profile-picture"> </a>
+        <a href="" class="align"> <img src="../../public/img/fa.jpg" alt="Profile" class="pic profile-picture"> </a>
         <div class="user-publication">
             <span class="name-publication">Fabien</span>
             <span class="date-publication">07/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="more-horiz.svg" alt="Image" class="little-icon"> </a>
+        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="little-icon"> </a>
     </div>
 
     <div class="text-publication">
@@ -145,7 +145,7 @@
         </p>
         <div class="img-publication">
 
-            <img src="img-test.jpg" alt="" class="img-user">
+            <img src="../../public/img/img-test.jpg" alt="" class="img-user">
         </div>
         
     </div>
@@ -154,24 +154,24 @@
 
         <div class="react-like flex-end">
                 <div class="all-react align">
-                    <div class="border-react"><img src="like.svg" alt="Like" class="react-list"></div>
-                    <div class="border-react"><img src="love.svg" alt="Love" class="react-list"></div>
-                    <div class="border-react"><img src="wow.svg" alt="Wow" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
 
                     <span class="nb-react">180 789</span>
                     
                 </div>
-                <button type="button" class="btn-react"><a href="" class=" align"> <img src="like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
+                <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
         </div>
 
         <div class="react-share flex-end">
-            <button type="button" class="btn-react"><a href="" class=" align"> <img src="share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
+            <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
         </div>
 
         <div class="comment flex-end">
             
                 <span class="nb-comment">12 903 Commentaires</span>
-            <button type="button" class="btn-react"><a href="" class="end"> <img src="comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
+            <button type="button" class="btn-react"><a href="" class="end"> <img src="../../public/icon/comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
         </div>
 
     </div>
