@@ -9,7 +9,11 @@
   $maRequete->execute();
 
   $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
+  if (!$pdo){
+    die("La connexion a échoué." . Mysqli_connect_error());
+  };
   $maRequete = $pdo->prepare(
+
 
     "CREATE TABLE IF NOT EXISTS `user` (
       `user_id` INT NOT NULL AUTO_INCREMENT,

@@ -47,10 +47,6 @@ body {
   color: black;
 }
 
-.sign-up {
-  height: 450px;
-}
-
 .sign-up.hidden,
 .sign-in {
   display: none;
@@ -121,6 +117,10 @@ input {
 .create-account input,
 .log-account input {
   width: auto;
+}
+
+* button {
+  all: unset;
 }
 
 @media screen and (max-width: 1200px) {

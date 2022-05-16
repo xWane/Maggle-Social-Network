@@ -24,21 +24,24 @@
     </section>
 
     <section class="sign-up">
-        <form method="post" action="public/post.php">
+        <form method="post" action="php_partial/sign_up.php">
             <div class="name">
-                <input type="text" name="name" placeholder="Nom">
+                <input type="text" name="name" placeholder="Nom...">
+            </div>
+            <div class="name">
+                <input type="text" name="surname" placeholder="Prénom...">
             </div>
             <div class="mail">
-                <input type="text" name="username" placeholder="Mail étudiant">
+                <input type="text" name="email" placeholder="Mail étudiant...">
             </div>
             <div class="mdp">
-                <input type="password" name="mdp" placeholder="Mot de passe">
+                <input type="password" name="password" placeholder="Mot de passe...">
             </div>
             <div class="mdp-comfirm">
-                <input type="password" name="mdp_confirm" placeholder="Confirmation du mot de passe">
+                <input type="password" name="password_repeat" placeholder="Confirmation du mot de passe!">
             </div> 
             <div class="create-account">
-                <input type="submit" name="signUP" value="Créer un compte">
+                <button type="submit" name="submit">Créer un compte</button>
             </div>
         </form>
         <div class="sign-button">
