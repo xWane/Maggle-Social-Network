@@ -82,7 +82,7 @@
             <span class="name-publication">Brontis</span>
             <span class="date-publication">08/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="more-horiz.svg" alt="Image" class="icon"> </a>
+        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
     </div>
 
     <div class="text-publication">
@@ -135,7 +135,7 @@
             <span class="name-publication">Fabien</span>
             <span class="date-publication">07/05/2022</span>
         </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="little-icon"> </a>
+        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
     </div>
 
     <div class="text-publication">

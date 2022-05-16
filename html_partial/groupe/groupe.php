@@ -1,13 +1,10 @@
 <?php 
-    $statut = true;
-    $prive = false;
-    $nbMember = "70";
-
-    if($prive == true) {
-        $groupe = "Privé";
-    } else {
-        $groupe = "Public";
-    }
+    $statut = false;
+    $idGroupe = "...";
+    $nameGroupe = "The pomme groupe";
+    $admin = false;
+    $bannerg = "bg.jpg";
+    $ppg = "pp-g.jpg"
 ?>
 
 <?php require '../head.php'; ?>
@@ -22,22 +19,29 @@
 <!-- Info groupe -->
 
 <div class="bg">
-    <img src="../../public/img/bg.jpg" alt="Banière de groupe" class="bg-img">
+    <img src="../../public/img/<?php echo $bannerg ?>" alt="Banière de groupe" class="bg-img">
 </div>
 
 <div class="info">
 
-    <img src="../../public/img/pp-g.jpg" alt="Image de groupe" class="pp">
-
-    <h2 class="profil">The pomme groupe</h2>
-
-    <div class="stats">
-        <span> Groupe <?php echo $groupe ?></span>
-        <span><?php echo $nbMember ?> Membres</span>
-
-    </div>
+    <img src="../../public/img/<?php echo $ppg ?>" alt="Image de groupe" class="pp">
+    <div></div>
+    <h2 class="profil"><?php echo $nameGroupe ?></h2>
+    <?php 
+    if($admin == false) {
+        if($statut == true) {
+            $ing = "un";
+            $sui = "Suivre";
+        } else {
+            $ing = "deux";
+            $sui = "Suivie";
+        }
+        echo "<a href='' class='btn-bio $ing '><span class='text-bio'> $sui </span></a>";
+    } else {
+        echo "<a href='' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
+    }
+    ?>
 </div>
-
 <!-- Description -->
 <div class="border">
 <span class="title-bio">Desciption</span>
@@ -47,14 +51,11 @@
 
 <?php 
 
-    if($statut == true) {
-        require 'not-groupe.php';
-    } else {
+    if($statut == false) {
         require 'in-groupe.php';
     }
 
 ?>
-
 
 </main>
 
