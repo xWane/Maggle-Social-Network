@@ -22,8 +22,17 @@
 
     <div class="block">
 
-        <span class="title-block">Favoris</span>
+    <?php
 
+        if ($pot[6] == "ami") {
+            echo '<a href="ami.php"><span class="title-block">Favoris</span></a>';
+        } else if($pot[6] == "ami"){
+            echo '<a href="./ami/ami.php"><span class="title-block">Favoris</span></a>';
+        } else {
+            echo '<a href="../ami/ami.php"><span class="title-block">Favoris</span></a>';
+        }
+    ?>
+        
         <div class="item-block">
             <div class="fovoris">
                 <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Fabien</span> </a>

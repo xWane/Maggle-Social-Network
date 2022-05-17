@@ -3,15 +3,10 @@
 if ($pot[6] == "profil") {
     $blockOne = "Amis";
     $blockTwo = "Groupes";
-  } else if ($pot[6] == "groupe") {
-    $blockOne = "Admins";
-    $blockTwo = "Membres";
-  } else if ($pot[6] == "page") {
+  } else {
     $blockOne = "Admins";
     $blockTwo = "Membres";
   }
-
-
 ?>
 
 <!-- SECTION : Right Container -->
@@ -28,8 +23,14 @@ if ($pot[6] == "profil") {
 
 
     <div class="block">
+<?php
+    if ($pot[6] == "profil") {
+    echo "<a href='../ami/ami.php'><span class='title-block'>$blockOne</span></a>";
+  } else {
+    echo "<a href=''><span class='title-block'><$blockOne</span></a>";
+  }
+?>
 
-<span class="title-block"><?php echo $blockOne ?></span>
 
 <div class="item-block">
     <div class="fovoris">
@@ -50,7 +51,13 @@ if ($pot[6] == "profil") {
 
 <div class="block">
 
-<span class="title-block"><?php echo $blockTwo ?></span>
+<?php
+    if ($pot[6] == "profil") {
+        echo "<a href='../list/list-g.php'><span class='title-block'>$blockTwo</span></a>";
+  } else {
+    echo "<a href=''><span class='title-block'><$blockTwo</span></a>";
+  }
+?>
 
 <div class="item-block">
     <div class="fovoris">
