@@ -2,13 +2,13 @@
 
   require_once 'pdo.php';
 
-  $pdo = new PDO("$engine:host=$host:$port;", $username, $userPwd);
+  $pdo = new PDO("$engine:host=$host:$port;", $username, $_password);
 
   $maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
   $maRequete->execute();
 
-  $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $userPwd);
+  $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $_password);
   if (!$pdo){
     die("La connexion a échoué." . Mysqli_connect_error());
   };

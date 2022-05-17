@@ -44,11 +44,11 @@ if (isset($_POST["submit"])){
     require_once '../database/create_db.php';
     require_once 'functions.php';
     
-    if (emptyInputSignUp($name,$surname,$email,$password,$password_repeat) !== false){
+    if (emptyInputSignUp($name,$surname,$email,$password,$password_repeat) === true){
         header("location: ../index.php?error=emptyinput");
         exit();
     }
-    if (invalidUid($name,$surname) !== false){
+    if (invalidUid($name) === true || invalidUid($surname) === true){
         header("location: ../index.php?error=invalidUid");
         exit();
     }
@@ -60,11 +60,14 @@ if (isset($_POST["submit"])){
         header("location: ../index.php?error=passwordsNotMatch");
         exit();
     }
-    if (uidExists($pdo,$email) !== false){
+    if (uidExists($mysqli,$email) == true){
         header("location: ../index.php?error=emailTaken");
         exit();
     }
-}
-else{
-     header("location: ./html_partial/accueil/accueil.php");
+
+    CreatUser($mysqli,$name,$surname,$email,$password);
+    // TODO INSCRIPTION BDD
+    // TODO CONNEXION?
+    // header("location: ./html_partial/accueil/accueil.php");
+    // exit();
 }
