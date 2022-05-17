@@ -15,16 +15,16 @@
   $maRequete = $pdo->prepare(
 
 
-    "CREATE TABLE IF NOT EXISTS `user` (
-      `user_id` INT NOT NULL AUTO_INCREMENT,
-      `mail` VARCHAR(255) NOT NULL,
-      `password` VARCHAR(256) NOT NULL,
-      `name` VARCHAR(255) NOT NULL,
-      `surname` VARCHAR(255) NOT NULL,
-      `profil_pic` VARCHAR(255) NOT NULL,
-      `profil_banner` VARCHAR(255) NOT NULL,
+    "CREATE TABLE IF NOT EXISTS `users` (
+      `userId` INT NOT NULL AUTO_INCREMENT,
+      `userMail` VARCHAR(255) NOT NULL,
+      `userPwd` VARCHAR(256) NOT NULL,
+      `userName` VARCHAR(255) NOT NULL,
+      `userSurname` VARCHAR(255) NOT NULL,
+      `userPic` VARCHAR(255) IS NULL,
+      `userBanner` VARCHAR(255) IS NULL,
       `visibility` TINYINT(1) NOT NULL,
-      `biograph` LONGTEXT NOT NULL,
+      `biograph` LONGTEXT IS NULL,
       PRIMARY KEY (`user_id`)
       ) ENGINE=InnoDB;
 
