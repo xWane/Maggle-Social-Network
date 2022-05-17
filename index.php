@@ -10,7 +10,7 @@
 
     require 'database/create_db.php';
 
-    if (isset($_POST['signUP'])) {
+    if (isset($_POST['submit'])) {
         include 'php_partial/sign_up_bd.php';
         echo addDB();
     }

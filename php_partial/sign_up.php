@@ -41,7 +41,7 @@ if (isset($_POST["submit"])){
     $password = $_POST["password"];
     $password_repeat = $_POST["password_repeat"];
 
-    require_once 'create_db.php';
+    require_once '../database/create_db.php';
     require_once 'functions.php';
     
     if (emptyInputSignUp($name,$surname,$email,$password,$password_repeat) !== false){
@@ -66,5 +66,5 @@ if (isset($_POST["submit"])){
     }
 }
 else{
-     header("location: ../index.php");
+     header("location: ./html_partial/accueil/accueil.php");
 }
