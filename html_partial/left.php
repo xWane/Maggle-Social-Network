@@ -27,7 +27,7 @@
     $nb = 3;
   } else if ($pot[6] == "list-p" or $pot[6] == "page") {
     $nb = 4;
-  } else if ($pot[6] == "message") {
+  } else if ($pot[6] == "messagerie") {
     $nb = 5;
   } else if ($pot[6] == "notification") {
     $nb = 6;
@@ -63,7 +63,7 @@
             <a href="../list/list-p.php" class="color4 align"> <img src="../../public/icon/page.svg" alt="Plus" class="icon"> <span class="text-nav-bar">Pages</span> </a>
         </div>
         <div class="item">
-            <a href="" class="color5 align"> <img src="../../public/icon/chat.svg" alt="Messages" class="icon"> <span class="text-nav-bar">Messages</span> </a>
+            <a href="../messagerie/messagerie.php" class="color5 align"> <img src="../../public/icon/chat.svg" alt="Messages" class="icon"> <span class="text-nav-bar">Messages</span> </a>
         </div>
         <div class="item">
             <a href="../notification/notification.php" class="color6 align"> <img src="../../public/icon/bell.svg" alt="Notications" class="icon"> <span class="text-nav-bar">Notications</span> </a>
