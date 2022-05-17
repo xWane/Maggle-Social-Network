@@ -21,7 +21,7 @@
 
   if ($pot[6] == "accueil") {
     $nb = 1;
-    } else if ($pot[6] == "profil") {
+    } else if ($pot[6] == "profil" or $pot[6] == "ami") {
     $nb = 2;
   } else if ($pot[6] == "list-g" or $pot[6] == "groupe") {
     $nb = 3;
@@ -69,7 +69,7 @@
             <a href="../notification/notification.php" class="color6 align"> <img src="../../public/icon/bell.svg" alt="Notications" class="icon"> <span class="text-nav-bar">Notications</span> </a>
         </div>
         <div class="item">
-            <a href="" class="color7 align"> <img src="../../public/icon/add.svg" alt="Demandes" class="icon"> <span class="text-nav-bar">Demandes</span> </a>
+            <a href="../demande/demande.php" class="color7 align"> <img src="../../public/icon/add.svg" alt="Demandes" class="icon"> <span class="text-nav-bar">Demandes</span> </a>
         </div>
         <div class="item">
             <a href="" class="color8 align"> <img src="../../public/icon/more.svg" alt="Plus" class="icon"> <span class="text-nav-bar">Plus</span> </a>

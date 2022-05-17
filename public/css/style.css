@@ -455,8 +455,7 @@ h3 {
 
 /* SECTION : List */
 
-.g,
-.u {
+.g {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -492,14 +491,19 @@ h3 {
     margin-left: 32%;
 }
 
-/* SECTION : Ami */ 
+/* SECTION : Ami & Demande */ 
+.u {
+    display: grid;
+    grid-template: repeat(10, auto) / 1fr 1fr 1fr;
+    column-gap: 30px;
+}
 
 .user {
-    width: 30%;
+    width: 100%;
     margin-bottom: 30px;
 }
 
-.img-user {
+.img-use {
     width: 70px;
     height: 70px;
     object-fit: cover;
@@ -511,6 +515,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .t-u {
@@ -518,9 +523,22 @@ h3 {
 }
 
 .btn-user {
+    font-size: var(--font-size-small-text);
     display: flex;
     justify-content: center;
-    padding: 4px 25px;
+    padding: 4px 15px;
     border-radius: 20px;
     margin-top: 10px;
+}
+
+.hor {
+    display: flex;
+}
+
+.m {
+    margin-right: 5px;
+}
+
+.demande:not(:first-child) {
+    margin-top: 90px;
 }
