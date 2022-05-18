@@ -44,7 +44,7 @@ $surname = ucfirst($data['userSurname']);
 
   if ($pot[6] == "accueil") {
     $nb = 1;
-    } else if ($pot[6] == "profil" or $pot[6] == "ami") {
+    } else if ($pot[6] == "profil" or $pot[6] == "ami" or $pot[6] == "profil-modif") {
     $nb = 2;
   } else if ($pot[6] == "list-g" or $pot[6] == "groupe") {
     $nb = 3;
