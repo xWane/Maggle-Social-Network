@@ -246,10 +246,6 @@ require '../../database/create_db.php';
         }else{ header('Location: profil-modif.php?reg_err=manque_nouveau_mdp'); die();}
     }
 
-
-
-
-                
-
+    
     header('location: profil.php');
 ?>
