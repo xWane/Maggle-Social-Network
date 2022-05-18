@@ -83,9 +83,6 @@ require '../../database/create_db.php';
             ));
         }
 
-        
-        
-
     }
 
 
