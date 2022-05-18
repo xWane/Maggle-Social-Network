@@ -29,7 +29,6 @@
       `publi_id` INT NOT NULL AUTO_INCREMENT,
       `userId` INT NOT NULL,
       `content` VARCHAR(255),
-      `publi_pic` VARCHAR(255),
       `creation_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
       `reaction_nb` INT,
       PRIMARY KEY (`publi_id`),

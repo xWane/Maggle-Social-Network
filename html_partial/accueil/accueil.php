@@ -1,36 +1,85 @@
 <?php require '../head.php'; ?>
 <?php require '../left.php'; ?>
 <?php require_once '../../database/create_db.php'; ?>
+
+<?php require '../publication/get_post.php';?> 
+
 <style>
 <?php include '../../public/css/style.css' ?>
 </style>
 
 <!-- SECTION : Center Container -->
 <main class="container-center">
+    <!-- User text -->
+    <div class="border">
+        <div class="user-text align">
+            <div class="align">
+                <img src="../../public/img/<?php echo $profilPic ?>" alt="Profile" class="pic profile-picture img-vide">
+            </div>
 
-<!-- User text -->
-<div class="border">
-
-    <div class="user-text align">
-
-        <div class="align">
-            <img src="../../public/img/<?php echo $profilPic ?>" alt="Profile" class="pic profile-picture img-vide">
+            <form method="POST" action="../publication/post.php"> 
+                <textarea  minlength="1" name="publi-content" class="read-text" placeholder="Écrire une publication ..."></textarea>
+                <input type="submit" value="Envoyer" class="btn-send" onclick="clearTextarea()"/>
+            </form>
         </div>
-        <input type="text" name="" class="read-text" placeholder="Écrire une publication ...">
-
+        <div class="user-send align">
+            <button type="button" class="btn-send"><a href="" class="btn">Envoyer</a></button>
+        </div>
     </div>
+    <!-- Clear textarea -->
+    <script> 
+        const textarea = document.querySelector(".read-text")
+        if (textarea.value !== '') {
+            textarea.value = ''; // pour vider l'input
+    }
+    </script>
 
-    <div class="user-send align">
+    <!-- Create publication -->
 
-        <input type="file" name="" id="">
-        <a href="" class="align"> <img src="../../public/icon/image.svg" alt="Image" class="icon img"> </a>
-        <button type="button" class="btn-send"><a href="" class="btn">Envoyer</a></button>
+    <?php foreach($publications as $publication){
 
-    </div>
-</div>
+        $user = $pdo->prepare("SELECT userName, userSurname, profil_pic FROM `user` WHERE `user_id` = :id");
+        $user->execute(array(
+        ":id" => $publication['userId'] ,
+        ));
+        $name = $user->fetch()
+    
+        ?>
+        <div class="border publication">
+            <div class="align">
+                <a href="" class="align"> <img src="../../public/img/<?= ucfirst($name['profil_pic']) ?>" alt="Profile" class="pic profile-picture img-vide"> </a>
+                <div class="user-publication">
+                    <span class="name-publication"><?= ucfirst($name['userName']) ?> <?= ucfirst($name['userSurname']) ?></span>
+                    <span class="date-publication"><?= $publication['creation_date'] ?></span>
+                </div>
+                <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>
+            </div>
+
+            <div class="text-publication">
+                <p class="text-user"><?= $publication['content'] ?></p>
+            </div>
+            <div class="react">
+
+            <div class="react-like flex-end">
+                <div class="all-react align">
+                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
+                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
+                    <span class="nb-react"><?= $publication['reaction_nb'] ?></span>
+                </div>
+            </div>
+
+            <div class="comment flex-end">
+                <span class="nb-comment"> Commentaires</span>
+            </div>
+            </div> 
+        </div>
+    <?php } ?>
+</main>
+
 
 <!-- publication -->
-<div class="border publication">
+<!-- <div class="border publication">
 
     <div class="align">
 
@@ -52,10 +101,10 @@
             <img src="../../public/img/img-random.jpg" alt="" class="img-user img-vide">
         </div>
         
-    </div>
+    </div> -->
 
     <!-- Reaction -->
-    <div class="react">
+    <!-- <div class="react">
 
         <div class="react-like flex-end">
                 <div class="all-react align">
@@ -185,9 +234,9 @@
             <button type="button" class="btn-react"><a href="" class="end"> <img src="../../public/icon/comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
         </div>
 
-    </div>
+    </div> 
 
-</div>
+</div> -->
 
 </main>
 
