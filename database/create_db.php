@@ -7,6 +7,7 @@
   $maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
   $maRequete->execute();
+  $maRequete->closeCursor();
 
   $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
   $maRequete = $pdo->prepare(
@@ -130,4 +131,5 @@
 
   ");
   $maRequete->execute();
+  $maRequete->closeCursor();
 ?>
