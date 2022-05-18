@@ -17,6 +17,7 @@ $data = $req->fetch();
 $userId = $data['user_id'];
 $mail = $data['userMail'];
 $bio = $data['biograph'];
+$visi= $data['visibility'];
 $profilPic = $data['profil_pic'];
 $profilBanner = $data['profil_banner'];
 $name = ucfirst($data['userName']);

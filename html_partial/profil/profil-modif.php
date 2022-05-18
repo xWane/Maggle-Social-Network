@@ -27,6 +27,14 @@
 
 </div>
 
+<?php 
+if($visi == 1) {
+    $vis = "checked";
+} else {
+    $vis = "";
+}
+?>
+
 <form class="modif-profil" method="POST" action="change-img-profil.php" enctype="multipart/form-data">
     <a href='' class='btn-bio un'><input type="file" name="avatar" id=""><span class='text-bio'>Photo</span></a>
     <a href='' class='btn-bio un'><input type="file" name="back" id=""><span class='text-bio'>Bannière</span></a>
@@ -42,7 +50,11 @@
     <input type="password" name="oldpwd" placeholder="Ancien mot de passe">
     <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
     <input type="password" name="rptpwd" name="" placeholder="Répéter nouveau mot de passe">
-    inpu
+    <span>Visible</span>
+    <input type="checkbox" name="visibility" <?php echo $vis ?>>
+    <span>Supprimer le compte</span>
+    <input type="checkbox" name="sup">
+
     <button type="submit">Ajouter</button>
 </form>
 

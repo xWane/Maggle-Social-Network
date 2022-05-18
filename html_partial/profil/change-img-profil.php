@@ -18,6 +18,15 @@ $userId = $data['user_id'];
 
 require '../../database/create_db.php';
 
+
+if(isset($_POST['sup'])) {
+    $add = $pdo->prepare('DELETE from user WHERE user_id = :id');
+    $add->execute(array(
+    ':id' => $userId
+    ));
+    header('location: ../../index.php');die();
+}
+
     if(!empty($_FILES['avatar']))
     {
         
@@ -246,6 +255,21 @@ require '../../database/create_db.php';
         }else{ header('Location: profil-modif.php?reg_err=manque_nouveau_mdp'); die();}
     }
 
+    if(isset($_POST['visibility'])) {
+        $add = $pdo->prepare('UPDATE user SET visibility = :visi WHERE user_id = :id');
+        $add->execute(array(
+        ':visi' => 1,
+        ':id' => $userId
+        ));
+    } else if (!isset($_POST['visibility'])){
+        $add = $pdo->prepare('UPDATE user SET visibility = :visi WHERE user_id = :id');
+        $add->execute(array(
+        ':visi' => 0,
+        ':id' => $userId
+        ));
+    }
+
     
+
     header('location: profil.php');
 ?>
