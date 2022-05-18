@@ -18,7 +18,7 @@
     <img src="../../public/img/<?php echo $profilPic ?>" alt="Image de profil" class="pp img-vide">
     <div></div>
     <h2 class="profil"><?php echo $name ?> <?php echo $surname ?></h2>
-    <a href='' class='btn-bio deux'><span class='text-bio'>Retour</span></a>
+    <a href='change-img-profil.php' class='btn-bio deux'><span class='text-bio'>Retour</span></a>
 </div>
 <!-- Description -->
 <div class="border">

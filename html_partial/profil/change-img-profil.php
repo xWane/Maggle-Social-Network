@@ -1,7 +1,23 @@
 <?php
+
+session_start() ;
+
 require '../../database/create_db.php';
 
-$uid = uniqid();
+if(!isset($_SESSION['user'])){
+    header('Location:../../index.php');
+    die();
+}
+
+// On récupere les données de l'utilisateur
+$req = $pdo->prepare('SELECT * FROM user WHERE user_id = :id');
+$req->execute(array(':id' => $_SESSION['user']));
+$data = $req->fetch();
+
+$userId = $data['user_id'];
+
+require '../../database/create_db.php';
+
     if(!empty($_FILES['avatar']))
     {
         
@@ -18,12 +34,13 @@ $uid = uniqid();
         // On récupère
         $extensione = explode('.', $nameFile);
         // Max size
-        $max_size = 100000;
-
+        $max_size = 10000000;
 
         // On vérifie que le type est autorisés
         if(in_array($typeFile, $type))
         {
+            $uid = uniqid();
+            $point = ".";
             // On vérifie que il n'y a que deux extensions
             if(count($extensione) <= 2 && in_array(strtolower(end($extensione)), $extensions))
             {
@@ -55,12 +72,26 @@ $uid = uniqid();
             echo "Type non autorisé";
         }
 
+        
+            $profilImg = $uid . $point . strtolower(end($extensione));
+        
+        if ($profilImg !== "") {
+            $add = $pdo->prepare('UPDATE user SET profil_pic = :imgProfil WHERE user_id = :id');
+            $add->execute(array(
+            ':imgProfil' => $profilImg,
+            ':id' => $userId
+            ));
+        }
+
+        
+        
 
     }
 
-$ubid = uniqid();
+
     if(!empty($_FILES['back']))
     {
+        
         
         $nameFile = $_FILES['back']['name'];
         $typeFile = $_FILES['back']['type'];
@@ -75,12 +106,14 @@ $ubid = uniqid();
         // On récupère
         $extension = explode('.', $nameFile);
         // Max size
-        $max_size = 100000;
+        $max_size = 10000000;
 
 
         // On vérifie que le type est autorisés
         if(in_array($typeFile, $type))
         {
+            $ubid = uniqid();
+            $pointe = ".";
             // On vérifie que il n'y a que deux extensions
             if(count($extension) <= 2 && in_array(strtolower(end($extension)), $extensions))
             {
@@ -112,25 +145,21 @@ $ubid = uniqid();
             echo "Type non autorisé";
         }
 
+        
+            $backImg = $ubid . $pointe . strtolower(end($extension));
+
+            if ($backImg !== "") {
+            $add = $pdo->prepare('UPDATE user SET profil_banner = :bannerProfil WHERE user_id = :id');
+            $add->execute(array(
+            ':bannerProfil' => $backImg,
+            ':id' => $userId
+            ));
+
+            }
+
+        
 
     }
-
-$backImg = $ubid . "." . strtolower(end($extension));
-$profilImg = $uid . "." . strtolower(end($extensione));
-
-if (empty($backImg)){
-    $backImg = "pp.png";
-}
-
-if (empty($profilImg)){
-    $profilImg = "banner.jpg";
-}
-
-    $add = $pdo->prepare('UPDATE user SET profil_pic = :imgProfil, profil_banner = :bannerProfil)');
-    $add->execute(array(
-        ':imgProfil' => $profilImg,
-        ':bannerProfil' => $profilImg
-    ));
 
     header('location: profil.php');
 ?>
