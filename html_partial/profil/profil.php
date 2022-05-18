@@ -36,8 +36,8 @@
 </div>
 <!-- Description -->
 <div class="border">
-<span class="title-bio">Desciption</span>
-<p class="text-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. A mollitia soluta qui, maxime, libero voluptatibus id dolor ad placeat necessitatibus voluptatem expedita quas nihil exercitationem. Iste quis exercitationem velit quos?</p>
+<span class="title-bio">Bio</span>
+<p class="text-bio"><?php echo $bio ?></p>
 
 </div>
 

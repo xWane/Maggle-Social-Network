@@ -22,14 +22,27 @@
 </div>
 <!-- Description -->
 <div class="border">
-<span class="title-bio">Desciption</span>
-<p class="text-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. A mollitia soluta qui, maxime, libero voluptatibus id dolor ad placeat necessitatibus voluptatem expedita quas nihil exercitationem. Iste quis exercitationem velit quos?</p>
+<span class="title-bio">Bio</span>
+<p class="text-bio"><?php echo $bio ?></p>
 
 </div>
 
 <form class="modif-profil" method="POST" action="change-img-profil.php" enctype="multipart/form-data">
     <a href='' class='btn-bio un'><input type="file" name="avatar" id=""><span class='text-bio'>Photo</span></a>
     <a href='' class='btn-bio un'><input type="file" name="back" id=""><span class='text-bio'>Bannière</span></a>
+    <span>Prénom</span>
+    <input type="text" placeholder="<?php echo $name ?>">
+    <span>Nom</span>
+    <input type="text" placeholder="<?php echo $surname ?>">
+    <span>Bio</span>
+    <textarea type="text" placeholder="<?php echo $bio ?>"></textarea>
+    <span>Email</span>
+    <input type="email" placeholder="<?php echo $mail ?>">
+    <span>Mot de passe</span>
+    <input type="password" placeholder="Ancien mot de passe">
+    <input type="password" placeholder="Nouveau mot de passe">
+    <input type="password" name="" id="Répéter nouveau mot de passe">
+    inpu
     <button type="submit">Ajouter</button>
 </form>
 
