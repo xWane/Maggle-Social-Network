@@ -28,9 +28,9 @@
             $ing = "deux";
             $sui = "Suivie";
         }
-        echo "<a href='' class='btn-bio $ing '><span class='text-bio'> $sui </span></a>";
+        echo "<a href='' class='btn-bio $ing '><span class='text-bio'>$sui</span></a>";
     } else {
-        echo "<a href='' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
+        echo "<a href='profil-modif.php' class='btn-bio un'><span class='text-bio'>Modifier</span></a>";
     }
     ?>
 </div>
