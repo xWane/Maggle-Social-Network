@@ -1,4 +1,19 @@
 <?php 
+
+// session_start() ;
+
+require '../../database/create_db.php';
+
+// if(!isset($_SESSION['user'])){
+//     header('Location:../index.php');
+//     die();
+// }
+
+// On récupere les données de l'utilisateur
+// $req = $pdo->prepare('SELECT * FROM user WHERE userId = ?');
+// $req->execute(array($_SESSION['user']));
+// $data = $req->fetch();
+
   if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
     $url = "https"; 
   else
@@ -78,6 +93,7 @@
 
     <!-- Button publish -->
     <button type="button" class="btn-publish"><a href="" class="btn btn-publish">Publier</a></button>
+    <button type="button" class="btn-publish"><a href="../public/deconexion.php" class="btn btn-publish">Déconexion</a></button>
 </div>
 
 </main>

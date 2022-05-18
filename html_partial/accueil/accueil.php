@@ -1,5 +1,6 @@
 <?php require '../head.php'; ?>
 <?php require '../left.php'; ?>
+<?php require_once '../../database/create_db.php'; ?>
 <style>
 <?php include '../../public/css/style.css' ?>
 </style>
