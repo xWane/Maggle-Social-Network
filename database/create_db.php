@@ -26,13 +26,13 @@
 
     CREATE TABLE IF NOT EXISTS `publication`(
       `publi_id` INT NOT NULL AUTO_INCREMENT,
-      `user_id` INT NOT NULL,
-      `content` LONGTEXT NOT NULL,
+      `userId` INT NOT NULL,
+      `content` LONGTEXT,
       `publi_pic` VARCHAR(255),
       `creation_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
-      `reaction_nb` INT NOT NULL,
+      `reaction_nb` INT,
       PRIMARY KEY (`publi_id`),
-      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
+      FOREIGN KEY (`userId`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
 
     CREATE TABLE IF NOT EXISTS `comment`(
