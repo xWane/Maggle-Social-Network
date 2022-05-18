@@ -26,5 +26,5 @@
     }
   } 
 
-  header('Location: /html_partial/accueil/accueil.php');
+  header('Location: ../accueil/accueil.php');
 ?>
