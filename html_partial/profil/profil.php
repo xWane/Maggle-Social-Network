@@ -1,13 +1,3 @@
-<?php 
-    $ami = true;
-    $idProfil = "...";
-    $nameProfil = ucfirst("jhon");
-    $lastNameProfil = ucfirst("doe");
-    $you = true;
-    $bannerp = "chevre.webp";
-    $ppp = "pp.jpg"
-?>
-
 <?php require '../head.php'; ?>
 <?php require '../left.php'; ?>
 <style>
@@ -20,15 +10,16 @@
 <!-- Info profil -->
 
 <div class="bg">
-    <img src="../../public/img/<?php echo $bannerp ?>" alt="Banière de profil" class="bg-img img-vide">
+    <img src="../../public/img/<?php echo $profilBanner ?>" alt="Banière de profil" class="bg-img img-vide">
 </div>
 
 <div class="info">
 
-    <img src="../../public/img/<?php echo $ppp ?>" alt="Image de profil" class="pp img-vide">
+    <img src="../../public/img/<?php echo $profilPic ?>" alt="Image de profil" class="pp img-vide">
     <div></div>
-    <h2 class="profil"><?php echo $nameProfil ?> <?php echo $lastNameProfil ?></h2>
+    <h2 class="profil"><?php echo $name ?> <?php echo $surname ?></h2>
     <?php 
+    $you = true;
     if($you == false) {
         if($ami == false) {
             $ing = "un";

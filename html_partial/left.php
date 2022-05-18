@@ -14,6 +14,11 @@ $req = $pdo->prepare('SELECT * FROM user WHERE user_id = :id');
 $req->execute(array(':id' => $_SESSION['user']));
 $data = $req->fetch();
 
+$profilPic = $data['profil_pic'];
+$profilBanner = $data['profil_banner'];
+$name = ucfirst($data['userName']);
+$surname = ucfirst($data['userSurname']);
+
   if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
     $url = "https"; 
   else
@@ -69,7 +74,7 @@ $data = $req->fetch();
             <a href="../accueil/accueil.php" class="color1 align"> <img src="../../public/icon/home.svg" alt="Accueil" class="icon"> <span class="text-nav-bar">Accueil</span> </a>
         </div>
         <div class="item">
-            <a href="../profil/profil.php" class="color2 align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-nav-bar"><?php echo $data['userName'] ?></span> </a>
+            <a href="../profil/profil.php" class="color2 align"> <img src="../../public/img/<?php echo $profilPic ?>" alt="Profile" class="icon profile-picture img-vide"> <span class="text-nav-bar">Profil</span> </a>
         </div>
         <div class="item">
             <a href="../list/list-g.php" class="color3 align"> <img src="../../public/icon/groupes.svg" alt="Groupes" class="icon"> <span class="text-nav-bar">Groupes</span> </a>

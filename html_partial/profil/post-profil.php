@@ -4,7 +4,7 @@
     <div class="user-text align">
 
         <div class="align">
-            <img src="../../public/img/<?php echo $ppp ?>" alt="Profile" class="pic profile-picture img-vide">
+            <img src="../../public/img/<?php echo $profilPic ?>" alt="Profile" class="pic profile-picture img-vide">
         </div>
         <input type="text" name="" class="read-text" placeholder="Écrire une publication ...">
 

@@ -34,12 +34,14 @@
                            
 
                             // On insère dans la base de données
-                            $insert = $pdo->prepare("INSERT INTO user (userMail, userPwd, userName, userSurname, visibility) VALUES (:email, :pass, :name, :surname, 1)");
+                            $insert = $pdo->prepare("INSERT INTO user (userMail, userPwd, userName, userSurname, profil_pic, profil_banner, visibility) VALUES (:email, :pass, :name, :surname, :imgProfil, :bannerProfil, 1)");
                             $insert->execute(array(
                                 ':email' => $email,
                                 ':pass' => $pass,
                                 ':name' => $name,
-                                ':surname' => $surname
+                                ':surname' => $surname,
+                                ':imgProfil' => "pp.png",
+                                ':bannerProfil' => "banner.jpg"
                             ));
                             
                             // On redirige avec le message de succès
