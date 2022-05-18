@@ -14,21 +14,21 @@
 
     "CREATE TABLE IF NOT EXISTS `user` (
       `user_id` INT NOT NULL AUTO_INCREMENT,
-      `mail` VARCHAR(255) NOT NULL,
-      `password` VARCHAR(256) NOT NULL,
-      `name` VARCHAR(255) NOT NULL,
-      `surname` VARCHAR(255) NOT NULL,
-      `profil_pic` VARCHAR(255) NOT NULL,
-      `profil_banner` VARCHAR(255) NOT NULL,
+      `userMail` VARCHAR(255) NOT NULL,
+      `userPwd` VARCHAR(256) NOT NULL,
+      `userName` VARCHAR(255) NOT NULL,
+      `userSurname` VARCHAR(255),
+      `profil_pic` VARCHAR(255),
+      `profil_banner` VARCHAR(255),
       `visibility` TINYINT(1) NOT NULL,
-      `biograph` LONGTEXT NOT NULL,
+      `biograph` VARCHAR(255),
       PRIMARY KEY (`user_id`)
       ) ENGINE=InnoDB;
 
     CREATE TABLE IF NOT EXISTS `publication`(
       `publi_id` INT NOT NULL AUTO_INCREMENT,
       `userId` INT NOT NULL,
-      `content` LONGTEXT,
+      `content` VARCHAR(255),
       `publi_pic` VARCHAR(255),
       `creation_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
       `reaction_nb` INT,

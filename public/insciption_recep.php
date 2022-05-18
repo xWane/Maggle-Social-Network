@@ -11,6 +11,7 @@
         $pass = htmlspecialchars($_POST['pass']);
         $pass_repeat = htmlspecialchars($_POST['pass_repeat']);
 
+        // PAS TOUCHE
         // On vérifie si l'utilisateur existe
         // $check = $pdo->prepare('SELECT userName, userSurname, userMail, userPwd, userId FROM user');
         // $check->execute();
@@ -35,7 +36,6 @@
                             $cost = ['cost' => 12];
                             $pass = password_hash($pass, PASSWORD_BCRYPT, $cost);
                            
-
                             // On insère dans la base de données
                             $insert = $pdo->prepare("INSERT INTO user (userMail, userPwd, userName, userSurname, visibility) VALUES (:email, :pass, :name, :surname, 1)");
                             $insert->execute(array(

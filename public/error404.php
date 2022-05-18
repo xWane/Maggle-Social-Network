@@ -8,8 +8,10 @@
     <?php
         require '../html_partial/head.php';
     ?>
+
   <body class="body">
-    <a href= "../index.php"> Retourner sur le site</a>
+  
+    <button id="button" onclick="history.back()">Retourner sur le site</button>
 
     <section id="error404"> 
       <h1>404</h1>

@@ -16,15 +16,10 @@
     $userId = 1;
     $publi_content = $_POST['publi-content'];
     $image_content = $_POST['image-content'];
-    $reaction_nb = 3;
-    var_dump($userId);
-    var_dump($publi_content);
-    var_dump($image_content);
-    var_dump($reaction_nb);
+    $reaction_nb = 0;
 
     $query = $pdo->prepare("INSERT INTO `publication` (userId, content, publi_pic, creation_date, reaction_nb)
     VALUES (:userId, :publi_content, :image_content, CURRENT_TIMESTAMP, :reaction_nb)");
-    // VALUES ( 1, 'qdq', 'dzed', CURRENT_TIMESTAMP, 2);
     $query->execute([
       ":userId" => $userId,
       ":publi_content" => $publi_content,
