@@ -153,10 +153,103 @@ require '../../database/create_db.php';
             ));
 
             }
-
-        
-
     }
+
+    if(!empty($_POST['name'])) {
+
+        $name_mod = htmlspecialchars($_POST['name']);
+        $name_mod = strtolower($name_mod);
+
+        $add = $pdo->prepare('UPDATE user SET userName = :name WHERE user_id = :id');
+            $add->execute(array(
+            ':name' => $name_mod,
+            ':id' => $userId
+            ));
+    }
+
+    if(!empty($_POST['surname'])) {
+
+        $surname_mod = htmlspecialchars($_POST['surname']);
+        $surname_mod = strtolower($surname_mod);
+
+        $add = $pdo->prepare('UPDATE user SET userSurname = :surname WHERE user_id = :id');
+            $add->execute(array(
+            ':surname' => $surname_mod,
+            ':id' => $userId
+            ));
+    }
+
+    if(!empty($_POST['bio'])) {
+
+        $bio_mod = htmlspecialchars($_POST['bio']);
+        $bio_mod = strtolower($bio_mod);
+
+        $add = $pdo->prepare('UPDATE user SET biograph = :biog WHERE user_id = :id');
+            $add->execute(array(
+            ':biog' => $bio_mod,
+            ':id' => $userId
+            ));
+    }
+
+    if(!empty($_POST['mail'])) {
+
+        $mail_mod = htmlspecialchars($_POST['mail']);
+        $mail_mod = strtolower($mail_mod);
+
+        // On vérifie si l'utilisateur existe
+        $check = $pdo->prepare('SELECT userMail FROM user WHERE userMail = :email');
+        $check->execute(array(':email' => $mail_mod));
+        $row = $check->rowCount();
+
+        if($row == 0){
+            if(filter_var($mail_mod, FILTER_VALIDATE_EMAIL)){
+                $add = $pdo->prepare('UPDATE user SET userMail = :mailm WHERE user_id = :id');
+                $add->execute(array(
+                ':mailm' => $mail_mod,
+                ':id' => $userId
+                ));
+            }else{ header('Location: profil-modif.php?reg_err=email_pas_de_bonne_forme'); die();}
+        }else{ header('Location: profil-modif.php?reg_err=utilisateur_existe_deja'); die();}
+    }
+
+    if(!empty($_POST['oldpwd'])) {
+        if(!empty($_POST['newpwd'])) {
+            if(!empty($_POST['rptpwd'])) {
+
+                $old_pass = htmlspecialchars($_POST['oldpwd']);
+                $old_pass = strtolower($old_pass);
+
+                $new_pass = htmlspecialchars($_POST['newpwd']);
+                $new_pass = strtolower($new_pass);
+
+                $rpt_pass = htmlspecialchars($_POST['rptpwd']);
+                $rpt_pass = strtolower($rpt_pass);
+
+                if(password_verify($old_pass, $data['userPwd']))
+                {
+                    if($new_pass === $rpt_pass){
+
+                        $cost = ['cost' => 12];
+                        $new_pass = password_hash($new_pass, PASSWORD_BCRYPT, $cost);
+
+                        $add = $pdo->prepare('UPDATE user SET userPwd = :pass WHERE user_id = :id');
+                        $add->execute(array(
+                        ':pass' => $new_pass,
+                        ':id' => $userId
+                        ));
+                    }else{ header("Location: profil-modif.php?login_err=password_et_password_repeat_different"); die(); }
+
+
+                    
+                }else{ header("Location: profil-modif.php?login_err=ancient_password_incorect"); die(); }
+                    }else{ header('Location: profil-modif.php?reg_err=manque_mdp_repeat'); die();}
+        }else{ header('Location: profil-modif.php?reg_err=manque_nouveau_mdp'); die();}
+    }
+
+
+
+
+                
 
     header('location: profil.php');
 ?>

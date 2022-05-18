@@ -11,15 +11,16 @@
         $pass = htmlspecialchars($_POST['pass']);
         $pass_repeat = htmlspecialchars($_POST['pass_repeat']);
 
+        $name = strtolower($name); // on transforme toute les lettres majuscule en minuscule pour éviter que Foo@gmail.com et foo@gmail.com soient deux compte différents ..
+        $surname = strtolower($surname);
+        $email = strtolower($email);
+
         // On vérifie si l'utilisateur existe
         $check = $pdo->prepare('SELECT userMail, userPwd, user_id  FROM user WHERE userMail = :email');
         $check->execute(array(':email' => $email));
         $data = $check->fetch();
         $row = $check->rowCount();
 
-        $name = strtolower($name); // on transforme toute les lettres majuscule en minuscule pour éviter que Foo@gmail.com et foo@gmail.com soient deux compte différents ..
-        $surname = strtolower($surname);
-        $email = strtolower($email);
         
         // Si la requete renvoie un 0 alors l'utilisateur n'existe pas 
         if($row == 0){ 

@@ -31,17 +31,17 @@
     <a href='' class='btn-bio un'><input type="file" name="avatar" id=""><span class='text-bio'>Photo</span></a>
     <a href='' class='btn-bio un'><input type="file" name="back" id=""><span class='text-bio'>Bannière</span></a>
     <span>Prénom</span>
-    <input type="text" placeholder="<?php echo $name ?>">
+    <input type="text" name="name" placeholder="<?php echo $name ?>">
     <span>Nom</span>
-    <input type="text" placeholder="<?php echo $surname ?>">
+    <input type="text" name="surname" placeholder="<?php echo $surname ?>">
     <span>Bio</span>
-    <textarea type="text" placeholder="<?php echo $bio ?>"></textarea>
+    <input type="text" name="bio" placeholder="<?php echo $bio ?>">
     <span>Email</span>
-    <input type="email" placeholder="<?php echo $mail ?>">
+    <input type="email" name="mail" placeholder="<?php echo $mail ?>">
     <span>Mot de passe</span>
-    <input type="password" placeholder="Ancien mot de passe">
-    <input type="password" placeholder="Nouveau mot de passe">
-    <input type="password" name="" id="Répéter nouveau mot de passe">
+    <input type="password" name="oldpwd" placeholder="Ancien mot de passe">
+    <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
+    <input type="password" name="rptpwd" name="" placeholder="Répéter nouveau mot de passe">
     inpu
     <button type="submit">Ajouter</button>
 </form>
