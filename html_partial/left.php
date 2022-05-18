@@ -1,18 +1,18 @@
 <?php 
 
-// session_start() ;
+session_start() ;
 
 require '../../database/create_db.php';
 
-// if(!isset($_SESSION['user'])){
-//     header('Location:../index.php');
-//     die();
-// }
+if(!isset($_SESSION['user'])){
+    header('Location:../../index.php');
+    die();
+}
 
 // On récupere les données de l'utilisateur
-// $req = $pdo->prepare('SELECT * FROM user WHERE userId = ?');
-// $req->execute(array($_SESSION['user']));
-// $data = $req->fetch();
+$req = $pdo->prepare('SELECT * FROM user WHERE user_id = :id');
+$req->execute(array(':id' => $_SESSION['user']));
+$data = $req->fetch();
 
   if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') 
     $url = "https"; 
@@ -69,7 +69,7 @@ require '../../database/create_db.php';
             <a href="../accueil/accueil.php" class="color1 align"> <img src="../../public/icon/home.svg" alt="Accueil" class="icon"> <span class="text-nav-bar">Accueil</span> </a>
         </div>
         <div class="item">
-            <a href="../profil/profil.php" class="color2 align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-nav-bar">Profil</span> </a>
+            <a href="../profil/profil.php" class="color2 align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-nav-bar"><?php echo $data['userName'] ?></span> </a>
         </div>
         <div class="item">
             <a href="../list/list-g.php" class="color3 align"> <img src="../../public/icon/groupes.svg" alt="Groupes" class="icon"> <span class="text-nav-bar">Groupes</span> </a>
@@ -93,7 +93,7 @@ require '../../database/create_db.php';
 
     <!-- Button publish -->
     <button type="button" class="btn-publish"><a href="" class="btn btn-publish">Publier</a></button>
-    <button type="button" class="btn-publish"><a href="../public/deconexion.php" class="btn btn-publish">Déconexion</a></button>
+    <button type="button" class="btn-publish"><a href="../../public/deconexion.php" class="btn btn-publish">Déconexion</a></button>
 </div>
 
 </main>
