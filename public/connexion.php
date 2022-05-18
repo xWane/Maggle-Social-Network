@@ -11,8 +11,8 @@
         $email = strtolower($email); // email transformé en minuscule
         
         // On regarde si l'utilisateur est inscrit dans la table utilisateurs
-        $check = $pdo->prepare('SELECT userMail, userPwd, userId  FROM user WHERE email = ?');
-        $check->execute(array($email));
+        $check = $pdo->prepare('SELECT userMail, userPwd, userId  FROM user WHERE email = :email');
+        $check->execute(array(':email' => $email));
         $data = $check->fetch();
         $row = $check->rowCount();
         
@@ -28,7 +28,7 @@
                 {
 
                     // On créer la session et on redirige sur landing.php
-                    $_SESSION['user'] = 1;
+                    $_SESSION['user'] = $data['userId'];
                     header('Location: ../html_partial/accueil/accueil.php');
                     die();
                 }else{ header("Location: ../index.php?login_err=password_incorect"); die(); }

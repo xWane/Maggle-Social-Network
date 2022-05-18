@@ -11,15 +11,11 @@
         $pass = htmlspecialchars($_POST['pass']);
         $pass_repeat = htmlspecialchars($_POST['pass_repeat']);
 
-        // PAS TOUCHE
         // On vérifie si l'utilisateur existe
-        // $check = $pdo->prepare('SELECT userName, userSurname, userMail, userPwd, userId FROM user');
-        // $check->execute();
-        // var_dump($check);
-        // $check->execute(array("userMail"));
-        // $data = $check->fetch();
-        // $row = $check->rowCount();
-        // // $check->closeCursor();
+        $check = $pdo->prepare('SELECT userMail, userPwd, userId  FROM user WHERE email = :email');
+        $check->execute(array(':email' => $email));
+        $data = $check->fetch();
+        $row = $check->rowCount();
 
         $name = strtolower($name); // on transforme toute les lettres majuscule en minuscule pour éviter que Foo@gmail.com et foo@gmail.com soient deux compte différents ..
         $surname = strtolower($surname);
@@ -36,6 +32,7 @@
                             $cost = ['cost' => 12];
                             $pass = password_hash($pass, PASSWORD_BCRYPT, $cost);
                            
+
                             // On insère dans la base de données
                             $insert = $pdo->prepare("INSERT INTO user (userMail, userPwd, userName, userSurname, visibility) VALUES (:email, :pass, :name, :surname, 1)");
                             $insert->execute(array(
