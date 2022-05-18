@@ -12,7 +12,7 @@
         $pass_repeat = htmlspecialchars($_POST['pass_repeat']);
 
         // On vérifie si l'utilisateur existe
-        $check = $pdo->prepare('SELECT userMail, userPwd, userid  FROM user WHERE email = :email');
+        $check = $pdo->prepare('SELECT userMail, userPwd, user_id  FROM user WHERE userMail = :email');
         $check->execute(array(':email' => $email));
         $data = $check->fetch();
         $row = $check->rowCount();
