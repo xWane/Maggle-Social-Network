@@ -9,21 +9,6 @@
 <!-- SECTION : Center Container -->
 <main class="container-center">
 
-<form class="modif-profil g4" method="POST" action="export_groupe.php">
-
-    <label class="custom-file-upload deux">
-        <input type="text" name="name_groupe" id=""/>
-        <p>Nom du groupe</p> 
-    </label>
-</form>
-
-</main>
-
-<?php require '../right.php'; ?>
-<?php require '../footer.php'; ?>
-<!--
-<main class="container-center">
-
 
 <div class="bg">
     <img src="../../public/img/chevre.webp" alt="Banière de profil" class="bg-img img-vide">
@@ -76,4 +61,8 @@
         <p>Créer</p> 
     </label>
 
-</main> -->
+</main>
+
+<?php require '../right.php'; ?>
+<?php require '../footer.php'; ?>
+
