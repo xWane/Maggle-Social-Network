@@ -1,7 +1,13 @@
 <?php
 
-  require_once 'pdo.php';
+$engine = "mysql";
+$host = "localhost";
+$port = 3306;
+$dbname = "db_maggle";
+$username = "root";
+$password = "root";
 
+  $pdo = new PDO("$engine:host=$host:$port", $username, $password);
   $maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
   $maRequete->execute();
@@ -116,23 +122,26 @@
     
     CREATE TABLE IF NOT EXISTS `page_list`(
       `page_id`  INT NOT NULL AUTO_INCREMENT,
+      PRIMARY KEY (`page_id`),
       FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
       ) ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `page_member`(
       `page_id`  INT NOT NULL AUTO_INCREMENT,
       `user_id` INT NOT NULL,
+      PRIMARY KEY (`page_id`),
       FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`),
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
 
       CREATE TABLE IF NOT EXISTS `message`(
-      `message_id`  INT NOT NULL AUTO_INCREMENT,
-      `userId` INT NOT NULL,
-      `userIdAmi` INT NOT NULL,
+      `message_id`  INT AUTO_INCREMENT,
+      `userId` INT,
+      `userIdAmi` INT,
       `text` VARCHAR(255) NOT NULL,
       FOREIGN KEY (`userId`) REFERENCES `user`(`user_id`),
-      FOREIGN KEY (`userIdAmi`) REFERENCES `user`(`user_id`)
+      FOREIGN KEY (`userIdAmi`) REFERENCES `user`(`user_id`),
+      PRIMARY KEY(`message_id`)
       ) ENGINE=InnoDB;
 
   ");

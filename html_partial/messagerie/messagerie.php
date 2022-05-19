@@ -5,22 +5,36 @@
 </style>
 
 <?php
-$message = $pdo->prepare("SELECT * FROM message ORDER BY creation_date DESC"); 
-$message->execute(array(
-    ':email' => $email,
-    ':pass' => $pass,
-    ':name' => $name,
-    ':surname' => $surname,
-    ':imgProfil' => "pp.png",
-    ':bannerProfil' => "banner.jpg"
-));?>
+if($_SERVER["REQUEST_METHOD"] === "GET"){
+    $message = $pdo->prepare("SELECT * FROM `message`"); 
+    $message->execute();
+    $ressult = $message->fetchAll(PDO::FETCH_ASSOC);
+    var_dump($ressult);
+    json_encode([
+        "ressult" => $ressult
+    ]);
+}
+
+if($_SERVER["REQUEST_METHOD"] === "POST") {
+    $text = $_POST["text"];
+
+    $query = $pdo->prepare("INSERT INTO `message` (text) VALUES (:text)");
+    $query->execute([
+        ":text" => $text
+    ]);
+}
+?>
 
 <!-- SECTION : Center Container -->
 <main class="container-center">
+<section id="theSection" class="modif-profil g4">
+    
+</section>
 
-<form class="modif-profil g4" method="POST" action="post_message.js">
-</form>
-
+<form id="new_message_form"  method="POST">
+    <textarea name="text" id="textArea" cols="30" rows="10" required></textarea>
+    <button>Envoyer</button>
+</form >
 </main>
 
 <?php require '../right-fovoris.php'; ?>
