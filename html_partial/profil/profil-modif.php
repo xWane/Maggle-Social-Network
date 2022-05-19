@@ -33,7 +33,7 @@
 if($visi == 1) {
     $vis = "checked";
 } else {
-    $vis = "";
+    $vis = 'id=""';
 }
 ?>
 
@@ -69,18 +69,11 @@ if($visi == 1) {
         <input class="modif-box" type="password" name="rptpwd" placeholder="Répéter mdp">
     </label>
 
-    <!-- <span>Email</span>
-    <input type="email" name="mail" placeholder="<?php echo $mail ?>">
-    <span>Mot de passe</span>
-    <input type="password" name="oldpwd" placeholder="Ancien mot de passe">
-    <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
-    <input type="password" name="rptpwd" name="" placeholder="Répéter nouveau mot de passe"> -->
 
-
-    <!-- <span>Visible</span>
+    <span>Visible</span>
     <input type="checkbox" name="visibility" <?php echo $vis ?>>
     <span>Supprimer le compte</span>
-    <input type="checkbox" name="sup"> -->
+    <input type="checkbox" name="sup">
 
     <label class="custom-file-upload un">
         <input type="submit" class="hidden"/>

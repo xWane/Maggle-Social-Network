@@ -49,7 +49,7 @@ $nb = 8;
 }
 ?>
 
-<style>.color<?php echo $nb ?> {font-weight: bold; color: #84B59F;}</style>
+<style>.color<?php echo $nb ?> {font-weight: bold; color: #be3443;}</style>
 
 <!-- SECTION : Left Container -->
 <main class="container-left ">

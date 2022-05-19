@@ -126,6 +126,15 @@
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
 
+      CREATE TABLE IF NOT EXISTS `message`(
+      `message_id`  INT NOT NULL AUTO_INCREMENT,
+      `userId` INT NOT NULL,
+      `userIdAmi` INT NOT NULL,
+      `text` VARCHAR(255) NOT NULL,
+      FOREIGN KEY (`userId`) REFERENCES `user`(`user_id`),
+      FOREIGN KEY (`userIdAmi`) REFERENCES `user`(`user_id`)
+      ) ENGINE=InnoDB;
+
   ");
   $maRequete->execute();
   $maRequete->closeCursor();
