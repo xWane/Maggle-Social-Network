@@ -9,6 +9,34 @@
 <?php include '../../public/css/style.css' ?>
 </style>
 
+<?php
+$you = true;
+
+$pose = $url;
+$pose = explode(".php",$pose);
+
+
+if($pose[1] !== "") {
+    $you = false;
+    $pose = $url;
+    $pose = explode("err=",$pose);
+
+    $req = $pdo->prepare('SELECT * FROM user WHERE user_id = :id');
+    $req->execute(array(':id' => $pose[1]));
+    $data = $req->fetch();
+
+    $userId = $data['user_id'];
+    $profilPic = $data['profil_pic'];
+    $profilBanner = $data['profil_banner'];
+    $name = ucfirst($data['userName']);
+    $surname = ucfirst($data['userSurname']);
+    $bio = ucfirst($data['biograph']);
+    $visi = $data['visibility'];
+}
+
+$amies = false;
+?>
+
 <!-- SECTION : Center Container -->
 <main class="container-center">
 
@@ -24,9 +52,10 @@
     <div></div>
     <h2 class="profil"><?php echo $name ?> <?php echo $surname ?></h2>
     <?php 
-    $you = true;
+
+
     if($you == false) {
-        if($ami == false) {
+        if($amies == false) {
             $ing = "un";
             $sui = "Suivre";
         } else {
