@@ -1,5 +1,5 @@
 <?php 
   require 'post.php';
 
-  header('Location: /html_partial/groupe/groupe.php');
+  header('Location: /reseaux_php/html_partial/groupe/groupe.php');
 ?>
