@@ -7,7 +7,7 @@ setInterval(() => {
 },2000);
 
 function appelAPI() {
-    fetch(`/reseaux_php-1/html_partial/messagerie/messagerie-js.php`)
+    fetch(`/reseaux_php/html_partial/messagerie/messagerie-js.php`)
     .then((response) => {
         return response.json();
     })
@@ -24,7 +24,7 @@ function appelAPI() {
 
 document.querySelector("#new_message_form").addEventListener("submit", function(event) {
     event.preventDefault()
-    fetch(`/reseaux_php-1/html_partial/messagerie/messagerie.php`, {
+    fetch(`/reseaux_php/html_partial/messagerie/messagerie.php`, {
         method: "POST",
         body: new FormData(this)
     }) .then(() => {
