@@ -2,8 +2,6 @@
 
   require_once 'pdo.php';
 
-  $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
-
   $maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
   $maRequete->execute();
