@@ -5,15 +5,6 @@
 </style>
 
 <?php
-if($_SERVER["REQUEST_METHOD"] === "GET"){
-    $message = $pdo->prepare("SELECT * FROM `message`"); 
-    $message->execute();
-    $ressult = $message->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($ressult);
-    json_encode([
-        "ressult" => $ressult
-    ]);
-}
 
 if($_SERVER["REQUEST_METHOD"] === "POST") {
     $text = $_POST["text"];
@@ -32,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 </section>
 
 <form id="new_message_form"  method="POST">
-    <textarea name="text" id="textArea" cols="30" rows="10" required></textarea>
+    <textarea name="text" id="textArea" cols="30" rows="10" required style=" padding: 5px;"></textarea>
     <button>Envoyer</button>
 </form >
 </main>

@@ -12,7 +12,6 @@ function appelAPI() {
         return response.json();
     })
     .then((data) => {
-        console.log(data);
         theSection.innerHTML = "";
         // stock les donner envoyé par l'API
         data.ressult.forEach(ressult => {
@@ -23,9 +22,9 @@ function appelAPI() {
     })
 }
 
-document.querySelector("#textArea").addEventListener("submit", function(event) {
+document.querySelector("#new_message_form").addEventListener("submit", function(event) {
     event.preventDefault()
-    fetch(`/reseaux_php-1/html_partial/messagerie/messagerie-js.php`, {
+    fetch(`/reseaux_php-1/html_partial/messagerie/messagerie.php`, {
         method: "POST",
         body: new FormData(this)
     }) .then(() => {
