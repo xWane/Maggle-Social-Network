@@ -70,17 +70,24 @@ $password = "root";
       PRIMARY KEY(`id`)
       )ENGINE=InnoDB;
     
-    CREATE TABLE IF NOT EXISTS `group`(
+      CREATE TABLE IF NOT EXISTS `group`(
       `group_id` INT NOT NULL AUTO_INCREMENT,
       `members` INT NOT NULL,
       `private` TINYINT(1) NOT NULL,
-      `publi_id` INT NOT NULL,
+      `publi_id` INT,
       `group_name` VARCHAR(255) NOT NULL,
       `group_pic` VARCHAR(255) NOT NULL,
       `group_ banner` VARCHAR(255) NOT NULL,
       PRIMARY KEY (`group_id`),
-      FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`),
-      FOREIGN KEY (`members`) REFERENCES `user`(`user_id`)
+      FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`)
+      ) ENGINE=InnoDB;
+
+    CREATE TABLE IF NOT EXISTS `group_user`(
+      `group_id` INT,
+      `user_id` INT,
+      `admin` INT(1),
+      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`),
+      FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
       ) ENGINE=InnoDB;
 
     CREATE TABLE IF NOT EXISTS `group_list`(
@@ -99,12 +106,6 @@ $password = "root";
       `groupe_id` INT NOT NULL AUTO_INCREMENT,
       `user_id` INT NOT NULL,
       PRIMARY KEY (`groupe_id`),
-      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
-      ) ENGINE=InnoDB;
-
-    CREATE TABLE IF NOT EXISTS `group_member`(
-      `group_id` VARCHAR(255) NOT NULL,
-      `user_id` INT NOT NULL,
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
 
@@ -139,6 +140,7 @@ $password = "root";
       `userId` INT,
       `userIdAmi` INT,
       `text` VARCHAR(255) NOT NULL,
+      `creation_date` DATETIME DEFAULT CURRENT_TIMESTAMP,
       FOREIGN KEY (`userId`) REFERENCES `user`(`user_id`),
       FOREIGN KEY (`userIdAmi`) REFERENCES `user`(`user_id`),
       PRIMARY KEY(`message_id`)
