@@ -658,3 +658,17 @@ input[type='file'] {
   display: flex;
   align-items: center;
 }
+
+/* SECTION : Messages */
+
+.user-messages {
+  width: 35%;
+  height: 100%;
+  border: 1px solid var(--borderColor);
+  border-radius: 8px 0 0 8px;
+  padding: 15px;
+}
+
+.mess:not(:first-child) {
+  margin-top: 15px;
+}

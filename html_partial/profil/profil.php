@@ -24,7 +24,7 @@ if($pose[1] !== "") {
     $req->execute(array(':id' => $pose[1]));
     $datase = $req->fetch();
 
-    $userId = $datase['user_id'];
+    $userId = $datase['user_id']; // suprimer pour utiliser pour ajouter aux amis
     $profilPic = $datase['profil_pic'];
     $profilBanner = $datase['profil_banner'];
     $name = ucfirst($datase['userName']);

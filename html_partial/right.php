@@ -61,7 +61,7 @@ if ($pot[6] == "profil") {
             $user_surnames = $datas['userSurname'];
             $user_visibilis = $datas['visibility'];
             if ($user_visibilis == 1) {
-            echo    "<div class='favoris $user_ids'>
+            echo    "<div class='favoris'>
                     <a href='profil.php?reg_err=$user_ids' class=' align'> <img src='../../public/img/$user_pics' alt='Profile' class='icon profile-picture img-vide'>$user_names $user_surnames<span class='text-fovoris'></span> </a>
                     </div>";
             }
