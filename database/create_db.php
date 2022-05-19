@@ -1,5 +1,5 @@
 <?php
-
+require "pdo.php";
 $engine = "mysql";
 $host = "localhost";
 $port = 3306;
@@ -7,13 +7,11 @@ $dbname = "db_maggle";
 $username = "root";
 $password = "root";
 
-  $pdo = new PDO("$engine:host=$host:$port", $username, $password);
   $maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
   $maRequete->execute();
   $maRequete->closeCursor();
 
-  $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
   $maRequete = $pdo->prepare(
 
     "CREATE TABLE IF NOT EXISTS `user` (
