@@ -9,7 +9,21 @@
 <!-- SECTION : Center Container -->
 <main class="container-center">
 
-<!-- Info profil -->
+<form class="modif-profil g4" method="POST" action="export_groupe.php">
+
+    <label class="custom-file-upload deux">
+        <input type="text" name="name_groupe" id=""/>
+        <p>Nom du groupe</p> 
+    </label>
+</form>
+
+</main>
+
+<?php require '../right.php'; ?>
+<?php require '../footer.php'; ?>
+<!--
+<main class="container-center">
+
 
 <div class="bg">
     <img src="../../public/img/chevre.webp" alt="Banière de profil" class="bg-img img-vide">
@@ -22,20 +36,12 @@
     <a href='change-img-profil.php' class='btn-bio un visibility-none'><span class='text-bio'>Créer</span></a>
 </div>
 
-<!-- Description -->
+
 <div class="border">
 <span class="title-bio">Bio</span>
 <p class="text-bio">Ajouter bio du groupe</p>
 
 </div>
-
-<?php 
-if($visi == 1) {
-    $vis = "checked";
-} else {
-    $vis = "";
-}
-?>
 
 <form class="modif-profil g4" method="POST" action="change-img-profil.php" enctype="multipart/form-data">
 
@@ -70,8 +76,4 @@ if($visi == 1) {
         <p>Créer</p> 
     </label>
 
-</main>
-
-<?php require '../right.php'; ?>
-<?php require '../footer.php'; ?>
-
+</main> -->
