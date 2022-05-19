@@ -23,15 +23,15 @@ if($pose[1] !== "") {
 
     $req = $pdo->prepare('SELECT * FROM user WHERE user_id = :id');
     $req->execute(array(':id' => $pose[1]));
-    $data = $req->fetch();
+    $datase = $req->fetch();
 
-    $userId = $data['user_id'];
-    $profilPic = $data['profil_pic'];
-    $profilBanner = $data['profil_banner'];
-    $name = ucfirst($data['userName']);
-    $surname = ucfirst($data['userSurname']);
-    $bio = ucfirst($data['biograph']);
-    $visi = $data['visibility'];
+    $userId = $datase['user_id'];
+    $profilPic = $datase['profil_pic'];
+    $profilBanner = $datase['profil_banner'];
+    $name = ucfirst($datase['userName']);
+    $surname = ucfirst($datase['userSurname']);
+    $bio = ucfirst($datase['biograph']);
+    $visi = $datase['visibility'];
 }
 
 $amies = false;
