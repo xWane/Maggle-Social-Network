@@ -447,12 +447,31 @@ ul a:hover {
   display: inline-block;
   padding: 4px 0;
   cursor: pointer;
-  width: 120px;
+  width: 110px;
 }
 
 .custom-file-upload p {
   margin: auto;
   width: fit-content;
+}
+
+.custom-file-upload ::placeholder {
+  color: var(--ctaColor);
+  font-family: URWForm-Medium;
+  font-size: 16px;
+}
+
+.modif-box {
+  width: 110px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 0 10px;
+  color: var(--ctaColor);
+  display: inline-block;
+  text-align: center;
+  font-family: URWForm-Medium;
+  font-size: 16px;
 }
 
 .hidden {

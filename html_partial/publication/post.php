@@ -26,5 +26,4 @@
     }
   } 
 
-  header('Location: ../accueil/accueil.php');
 ?>

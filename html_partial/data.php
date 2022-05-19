@@ -9,4 +9,5 @@ $profilPic = $data['profil_pic'];
 $profilBanner = $data['profil_banner'];
 $name = ucfirst($data['userName']);
 $surname = ucfirst($data['userSurname']);
+$bio = ucfirst($data['biograph'])
 ?>
