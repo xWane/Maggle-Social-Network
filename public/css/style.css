@@ -355,6 +355,10 @@ ul a:hover {
   margin-bottom: var(--margin);
 }
 
+.trend:nth-child(5) {
+  margin-bottom: 0;
+}
+
 .text-trend {
   display: flex;
   flex-direction: column;
@@ -635,4 +639,22 @@ input[type='file'] {
 
 .btn-cursor {
   cursor: pointer;
+}
+
+.search-input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-family: URWForm-Regular;
+}
+
+.btn-style {
+  border: none;
+  background-color: transparent;
+}
+
+.search-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }

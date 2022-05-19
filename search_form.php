@@ -6,7 +6,6 @@ if(isset($_POST["submit"]));
     $ask = $_POST["search"];
     $asl = htmlspecialchars($ask);
     $ask = strtolower($ask);
-    
     $reply = $pdo->prepare("SELECT * FROM `user` WHERE userName = :ask OR userSurname = :ask");
 
     $reply -> setFetchMode(PDO:: FETCH_OBJ);
@@ -15,15 +14,20 @@ if(isset($_POST["submit"]));
     ]);
 
     if($row = $reply->fetch())
+        
     {
         ?>
-        <?php echo $row ->user_id; ?>
-        <?php echo $row ->userName; ?>
-        <?php echo $row ->userSurname; ?>
+        <?php $id = $row->user_id;?>
 
+        <!-- <?php echo $row ->user_id; ?> -->
+        <!-- <?php echo $row ->userName; ?> -->
+        <!-- <?php echo $row ->userSurname; ?> -->
         <?php
     }
-        else{
-            echo "Name does not exist";
+    else{
+        header('Location: /reseaux_php/html_partial/accueil/accueil.php');
     }
-    ?> 
+
+
+?> 
+

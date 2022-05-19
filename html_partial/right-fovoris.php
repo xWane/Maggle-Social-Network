@@ -6,14 +6,10 @@
 <div class="sticky">
 
     <div class="research align">
-
-    <form method="post" action="/reseaux_php/search.form.php">
-        <input type="text" name="search" placeholder="Search..." >
-        <input type="submit" name="submit">
-    </form>
-        <!-- <a href="" class="align"> <img src="../../public/icon/search.svg" alt="Rechercher" class="little-icon"> </a>
-        <input type="search" name="" class="search" placeholder="Recherche"> -->
-
+        <form class="search-form" method="post" action="/reseaux_php/html_partial/profil/profil_search.php">
+            <button class="btn-style" type="submit" name="submit"><img src="../../public/icon/search.svg" class="little-icon"></button>
+            <input class="search-input" type="text" name="search" placeholder="Rechercher" >
+        </form>
     </div>
 
     <?php
