@@ -1,16 +1,15 @@
 <?php
-
-  require_once 'pdo.php';
-
-  $maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
+require_once 'pdo.php';
+$pdo = new PDO("$engine:host=$host:$port;dbname=", $username, $password);
+$maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
-  $maRequete->execute();
-  $maRequete->closeCursor();
+$maRequete->execute();
+$maRequete->closeCursor();
 
-  $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
-  $maRequete = $pdo->prepare(
+$pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
+$maRequete = $pdo->prepare(
 
-    "CREATE TABLE IF NOT EXISTS `user` (
+  "CREATE TABLE IF NOT EXISTS `user` (
       `user_id` INT NOT NULL AUTO_INCREMENT,
       `userMail` VARCHAR(255) NOT NULL,
       `userPwd` VARCHAR(256) NOT NULL,
@@ -68,13 +67,12 @@
       `group_id` INT NOT NULL AUTO_INCREMENT,
       `members` INT NOT NULL,
       `private` TINYINT(1) NOT NULL,
-      `publi_id` INT NOT NULL,
+      `publi_id` INT,
       `group_name` VARCHAR(255) NOT NULL,
       `group_pic` VARCHAR(255) NOT NULL,
       `group_ banner` VARCHAR(255) NOT NULL,
       PRIMARY KEY (`group_id`),
-      FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`),
-      FOREIGN KEY (`members`) REFERENCES `user`(`user_id`)
+      FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`)
       ) ENGINE=InnoDB;
 
     CREATE TABLE IF NOT EXISTS `group_list`(
@@ -89,17 +87,12 @@
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
 
-    CREATE TABLE IF NOT EXISTS `group_admin`(
-      `groupe_id` INT NOT NULL AUTO_INCREMENT,
-      `user_id` INT NOT NULL,
-      PRIMARY KEY (`groupe_id`),
-      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
-      ) ENGINE=InnoDB;
-
-    CREATE TABLE IF NOT EXISTS `group_member`(
-      `group_id` VARCHAR(255) NOT NULL,
-      `user_id` INT NOT NULL,
-      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
+    CREATE TABLE IF NOT EXISTS `group_user`(
+      `group_id` INT,
+      `user_id` INT,
+      `admin` INT(1),
+      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`),
+      FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
       ) ENGINE=InnoDB;
 
     CREATE TABLE IF NOT EXISTS `page`(
@@ -131,11 +124,12 @@
       `userId` INT NOT NULL,
       `userIdAmi` INT NOT NULL,
       `text` VARCHAR(255) NOT NULL,
+      PRIMARY KEY (`message_id`),
       FOREIGN KEY (`userId`) REFERENCES `user`(`user_id`),
       FOREIGN KEY (`userIdAmi`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
 
-  ");
-  $maRequete->execute();
-  $maRequete->closeCursor();
-?>
+  "
+);
+$maRequete->execute();
+$maRequete->closeCursor();

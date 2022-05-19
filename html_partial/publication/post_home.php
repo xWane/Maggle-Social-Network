@@ -1,5 +1,4 @@
 <?php 
   require 'post.php';
 
-  header('Location: /html_partial/accueil/accueil.php');
-?>
+  header('Location: /reseaux_php/html_partial/accueil/accueil.php');
