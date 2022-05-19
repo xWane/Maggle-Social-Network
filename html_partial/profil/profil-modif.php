@@ -37,7 +37,7 @@ if($visi == 1) {
 }
 ?>
 
-<form class="modif-profil" method="POST" action="change-img-profil.php" enctype="multipart/form-data">
+<form class="modif-profil g5" method="POST" action="change-img-profil.php" enctype="multipart/form-data">
 
     <label class="custom-file-upload deux">
         <input type="file" name="avatar" id=""/>
@@ -50,23 +50,34 @@ if($visi == 1) {
     <label class="custom-file-upload deux">
         <input class="modif-box" type="text" name="name" placeholder="Prénom">
     </label>
-
     <label class="custom-file-upload deux">
         <input class="modif-box" type="text" name="surname" placeholder="Nom">
     </label>
-
     <label class="custom-file-upload deux">
         <input class="modif-box" type="text" name="bio" placeholder="Bio">
     </label>
-
+    <label class="custom-file-upload deux">
+        <input class="modif-box" type="email" name="mail" placeholder="Mail">
+    </label>
+    <label class="custom-file-upload deux">
+        <input class="modif-box" type="password" name="oldpwd" placeholder="Ancien mdp">
+    </label>
+    <label class="custom-file-upload deux">
+        <input class="modif-box" type="password" name="newpwd" placeholder="Nouveau mdp">
+    </label>
+    <label class="custom-file-upload deux">
+        <input class="modif-box" type="password" name="rptpwd" placeholder="Répéter mdp">
+    </label>
 
     <!-- <span>Email</span>
     <input type="email" name="mail" placeholder="<?php echo $mail ?>">
     <span>Mot de passe</span>
     <input type="password" name="oldpwd" placeholder="Ancien mot de passe">
     <input type="password" name="newpwd" placeholder="Nouveau mot de passe">
-    <input type="password" name="rptpwd" name="" placeholder="Répéter nouveau mot de passe">
-    <span>Visible</span>
+    <input type="password" name="rptpwd" name="" placeholder="Répéter nouveau mot de passe"> -->
+
+
+    <!-- <span>Visible</span>
     <input type="checkbox" name="visibility" <?php echo $vis ?>>
     <span>Supprimer le compte</span>
     <input type="checkbox" name="sup"> -->
@@ -74,7 +85,8 @@ if($visi == 1) {
     <label class="custom-file-upload un">
         <input type="submit" class="hidden"/>
         <p>Retour</p> 
-    </label></form>
+    </label>
+</form>
 
 
 </main>

@@ -438,16 +438,27 @@ ul a:hover {
 }
 
 .modif-profil {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
+  margin-top: 30px;
+
+  grid-gap: 20px;
 }
+
+.g4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.g5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 .custom-file-upload {
   border-radius: 50px;
   display: inline-block;
   padding: 4px 0;
   cursor: pointer;
-  width: 110px;
+  width: 130px;
 }
 
 .custom-file-upload p {
@@ -462,7 +473,7 @@ ul a:hover {
 }
 
 .modif-box {
-  width: 110px;
+  width: 130px;
   border: none;
   background-color: transparent;
   outline: none;
@@ -529,6 +540,7 @@ input[type='file'] {
 /* SECTION : List */
 
 .g {
+  margin-top: 50px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -614,4 +626,13 @@ input[type='file'] {
 
 .demande:not(:first-child) {
   margin-top: 90px;
+}
+
+.name-section {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cursor {
+  cursor: pointer;
 }
