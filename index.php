@@ -25,24 +25,12 @@
 
     <section class="sign-up">
         <form method="post" action="./public/insciption_recep.php">
-            <div class="name">
-                <input type="text" name="name" placeholder="Nom...">
-            </div>
-            <div class="name">
-                <input type="text" name="surname" placeholder="Prénom...">
-            </div>
-            <div class="mail">
-                <input type="text" name="email" placeholder="Mail étudiant...">
-            </div>
-            <div class="mdp">
-                <input type="password" name="pass" placeholder="Mot de passe...">
-            </div>
-            <div class="mdp-comfirm">
-                <input type="password" name="pass_repeat" placeholder="Confirmation du mot de passe!">
-            </div> 
-            <div class="create-account">
-                <button type="submit" name="submit">Créer un compte</button>
-            </div>
+            <input class="name" type="text" name="name" placeholder="Prénom">
+            <input class="surname" type="text" name="surname" placeholder="Nom">
+            <input class="mail" type="text" name="email" placeholder="Mail étudiant">
+            <input class="password" type="password" name="pass" placeholder="Mot de passe">
+            <input class="password-confirm" type="password" name="pass_repeat" placeholder="Confirmation du mot de passe">
+            <input class="create-account" type="submit" name="submit" value="Créer un compte">
         </form>
         <div class="sign-button">
             <p>Déjà inscrit ? <span class="underline">Connectez-vous</span></p>
@@ -51,15 +39,9 @@
 
     <section class="sign-in">
         <form action="./public/connexion.php" method="post">
-            <div class="mail">
-                <input type="mail" name="email" placeholder="Mail étudiant">
-            </div>
-            <div class="mdp">
-                <input type="password" name="mdp" placeholder="Mot de passe">
-            </div>
-            <div class="log-account">
-                <input type="submit" name="insc" value="S'identifier">
-            </div>
+            <input class="mail" type="mail" name="email" placeholder="Mail étudiant">
+            <input class="password" type="password" name="mdp" placeholder="Mot de passe">
+            <input class="log-account" type="submit" name="insc" value="S'identifier">
         </form>
         <div class="sign-button">
             <p>Première visite ? <span class="underline">Inscrivez-vous</span></p>

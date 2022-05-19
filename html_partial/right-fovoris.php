@@ -34,26 +34,26 @@
     ?>
         
         <div class="item-block">
-            <div class="fovoris">
-                <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Fabien</span> </a>
+            <div class="favoris">
+                <a href="https://github.com/Cammyxalot" target="_blank" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Fabien Renoir</span> </a>
             </div>
-            <div class="fovoris">
-                <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Martin</span> </a>
+            <div class="favoris">
+                <a href="" target="_blank" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Martin Reboutier</span> </a>
             </div>
-            <div class="fovoris">
-                <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Ewan</span> </a>
+            <div class="favoris">
+                <a href="" target="_blank" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Ewan Questier</span> </a>
             </div>
-            <div class="fovoris">
-                <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Vitomir</span> </a>
+            <div class="favoris">
+                <a href="https://github.com/vitolinho" target="_blank" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Vitomir Laces</span> </a>
             </div>
-            <div class="fovoris">
-                <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Clément</span> </a>
+            <div class="favoris">
+                <a href="https://github.com/clementpnn" target="_blank" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Clément Phlipponneau</span> </a>
             </div>
-            <div class="fovoris">
-                <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Steven</span> </a>
+            <div class="favoris">
+                <a href="" target="_blank" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Steven Godin</span> </a>
             </div>
-            <div class="fovoris">
-                <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Anthony</span> </a>
+            <div class="favoris">
+                <a href="https://github.com/anthony-rgs" target="_blank" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Anthony Ringressi</span> </a>
             </div>
 
         </div>

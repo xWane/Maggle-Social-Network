@@ -24,11 +24,21 @@ if ($pot[6] == "profil") {
 
     <div class="block">
 <?php
+
+//     if ($pot[6] == "profil") {
+//     echo "<a href='../ami/ami.php'><span class='title-block'>$blockOne</span></a>";
+//   } else {
+//     echo "<a href=''><span class='title-block'><Favoris</span></a>";
+//   }
+
+
     if ($pot[6] == "profil") {
-    echo "<a href='../ami/ami.php'><span class='title-block'>$blockOne</span></a>";
-  } else {
-    echo "<a href=''><span class='title-block'><$blockOne</span></a>";
-  }
+        echo '<a href="ami.php"><span class="title-block">Amis</span></a>';
+    } else if($pot[6] == "ami"){
+        echo '<a href="./ami/ami.php"><span class="title-block">Amis</span></a>';
+    } else {
+        echo '<a href="../ami/ami.php"><span class="title-block">Amis</span></a>';
+    }
 ?>
 
 
@@ -42,8 +52,6 @@ if ($pot[6] == "profil") {
     <div class="fovoris">
         <a href="" class=" align"> <img src="../../public/img/pp.jpg" alt="Profile" class="icon profile-picture img-vide"> <span class="text-fovoris">Ewan</span> </a>
     </div>
-
-    <span class="more">Voir plus</span>
 
 </div>
 

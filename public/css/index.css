@@ -18,7 +18,6 @@ body {
 
 .landing-title {
   margin-left: 0;
-  margin-top: -60px;
 
   color: white;
   font-size: 4.4rem;
@@ -34,46 +33,40 @@ body {
 
   font-family: URWForm-ExtraBold;
 }
-
-.sign-up,
-.sign-in.show {
+.sign-up.hidden,
+.sign-in {
   display: flex;
   flex-direction: column;
   width: 410px;
   border-radius: 8px;
-  padding: 0 50px 0 50px;
+  padding: 50px;
 
   background: white;
   color: black;
 }
 
-.sign-up.hidden,
-.sign-in {
+.sign-up,
+.sign-in.show {
   display: none;
 }
 
+.name,
+.surname,
 .mail,
-.mdp,
-.mdp-comfirm {
+.password,
+.password-confirm {
   border-radius: 50px;
   height: 40px;
   display: flex;
   justify-content: left;
-  padding: 5px 20px 0 20px;
+  padding: 2px 20px 2px 20px;
+  margin-bottom: 30px;
+  width: 267px;
 
   background-color: #f4f4f4;
   color: black;
   font-size: 0.9rem;
   font-family: URWForm-Medium;
-}
-
-.mail {
-  margin-top: 50px;
-  margin-bottom: 30px;
-}
-
-.mdp-comfirm {
-  margin-top: 30px;
 }
 
 .create-account,
@@ -93,8 +86,6 @@ body {
 }
 
 .sign-button {
-  margin-bottom: 50px;
-
   text-decoration: none;
   text-align: center;
   align-items: center;
@@ -124,13 +115,4 @@ input {
 .create-account input,
 .log-account input {
   width: auto;
-}
-
-@media screen and (max-width: 1200px) {
-  :root {
-    --bg-color: #161b33;
-  }
-  body {
-    padding: 0 90px 0 90px;
-  }
 }

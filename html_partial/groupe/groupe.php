@@ -41,6 +41,7 @@
     }
     ?>
 </div>
+
 <!-- Description -->
 <div class="border">
 <span class="title-bio">Desciption</span>

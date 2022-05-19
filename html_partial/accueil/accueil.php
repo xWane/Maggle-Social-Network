@@ -1,41 +1,32 @@
 <?php require '../head.php'; ?>
 <?php require '../left.php'; ?>
 <?php require_once '../../database/create_db.php'; ?>
-
 <?php require '../publication/get_post.php';?> 
 
 <style>
-<?php include '../../public/css/style.css' ?>
+<?php 
+    include '../../public/css/style.css';
+
+?>
 </style>
 
 <!-- SECTION : Center Container -->
 <main class="container-center">
     <!-- User text -->
     <div class="border">
-        <div class="user-text align">
-            <div class="align">
-                <img src="../../public/img/<?php echo $profilPic ?>" alt="Profile" class="pic profile-picture img-vide">
-            </div>
+        <div class="user-text">
+                <img src="../../public/img/<?php echo $profilPic ?>" class="pic profile-picture img-vide">
 
-            <form method="POST" action="../publication/post.php"> 
-                <textarea  minlength="1" name="publi-content" class="read-text" placeholder="Écrire une publication ..."></textarea>
-                <input type="submit" value="Envoyer" class="btn-send" onclick="clearTextarea()"/>
+            <form method="POST" action="../publication/post_home.php"> 
+                <textarea minlength="1" name="publi-content" class="read-text" placeholder="Écrire une publication ..."></textarea>
+                <div class="user-send align">
+                    <input type="submit" class="btn-send" value="Envoyer">
+                </div>
             </form>
         </div>
-        <div class="user-send align">
-            <button type="button" class="btn-send"><a href="" class="btn">Envoyer</a></button>
-        </div>
     </div>
-    <!-- Clear textarea -->
-    <script> 
-        const textarea = document.querySelector(".read-text")
-        if (textarea.value !== '') {
-            textarea.value = ''; // pour vider l'input
-    }
-    </script>
 
     <!-- Create publication -->
-
     <?php foreach($publications as $publication){
 
         $user = $pdo->prepare("SELECT userName, userSurname, profil_pic FROM `user` WHERE `user_id` = :id");
@@ -47,12 +38,12 @@
         ?>
         <div class="border publication">
             <div class="align">
-                <a href="" class="align"> <img src="../../public/img/<?= ucfirst($name['profil_pic']) ?>" alt="Profile" class="pic profile-picture img-vide"> </a>
+                <a href="" class="align"> <img src="../../public/img/<?= ucfirst($name['profil_pic']) ?>" class="pic profile-picture img-vide"> </a>
                 <div class="user-publication">
                     <span class="name-publication"><?= ucfirst($name['userName']) ?> <?= ucfirst($name['userSurname']) ?></span>
                     <span class="date-publication"><?= $publication['creation_date'] ?></span>
                 </div>
-                <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>
+                <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="more"> </a>
             </div>
 
             <div class="text-publication">
@@ -60,184 +51,21 @@
             </div>
             <div class="react">
 
-            <div class="react-like flex-end">
-                <div class="all-react align">
-                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
-                    <span class="nb-react"><?= $publication['reaction_nb'] ?></span>
+                <div class="react-like flex-end">
+                    <div class="all-react align">
+                        <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
+                        <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
+                        <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
+                        <span class="nb-react"><?= $publication['reaction_nb'] ?></span>
+                    </div>
                 </div>
-            </div>
 
-            <div class="comment flex-end">
-                <span class="nb-comment"> Commentaires</span>
-            </div>
+                <div class="comment flex-end">
+                    <p><span class="nb-comment">0 </span> Commentaires</p>
+                </div>
             </div> 
         </div>
     <?php } ?>
-</main>
-
-
-<!-- publication -->
-<!-- <div class="border publication">
-
-    <div class="align">
-
-        <a href="" class="align"> <img src="../../public/img/jh.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
-        <div class="user-publication">
-            <span class="name-publication">Jhon Doe</span>
-            <span class="date-publication">10/05/2022</span>
-        </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon img"> </a>
-    </div>
-
-    <div class="text-publication">
-
-        <p class="text-user">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus repellat, iusto id sit repudiandae enim illum beatae quos officiis, expedita ad nesciunt! Ipsam illo, nihil vel soluta voluptatibus vitae harum reprehenderit sint exercitationem unde, dolorem doloremque corporis quidem. Voluptatum atque error in esse! Voluptas nobis sed assumenda quis nihil molestiae!
-        </p>
-        <div class="img-publication">
-
-            <img src="../../public/img/img-random.jpg" alt="" class="img-user img-vide">
-        </div>
-        
-    </div> -->
-
-    <!-- Reaction -->
-    <!-- <div class="react">
-
-        <div class="react-like flex-end">
-                <div class="all-react align">
-                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
-
-                    <span class="nb-react">18 567</span>
-                    
-                </div>
-                <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
-        </div>
-
-        <div class="react-share flex-end">
-            <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
-        </div>
-
-        <div class="comment flex-end">
-            
-                <span class="nb-comment">4 287 Commentaires</span>
-            <button type="button" class="btn-react"><a href="" class="end"> <img src="../../public/icon/comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="border publication">
-
-    <div class="align">
-
-        <a href="" class="align"> <img src="../../public/img/br.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
-        <div class="user-publication">
-            <span class="name-publication">Brontis</span>
-            <span class="date-publication">08/05/2022</span>
-        </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="icon"> </a>
-    </div>
-
-    <div class="text-publication">
-
-        <p class="text-user">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt dolorem dolorum quae provident nesciunt atque tempore molestiae laboriosam eveniet, soluta incidunt voluptatibus facere repudiandae. Debitis distinctio natus numquam veniam, sapiente perspiciatis provident quo voluptate obcaecati autem dolore explicabo voluptas eligendi culpa a quas amet dignissimos quis. Ad error est rem facilis voluptatum placeat quo unde quaerat doloremque necessitatibus. Maiores mollitia at hic, inventore soluta consequuntur est rem ut consectetur quia temporibus sunt! Veniam voluptas, veritatis soluta aliquam alias obcaecati dignissimos iure. Dolores, tempore. Aut adipisci saepe numquam culpa ex libero! Illo id iste eius magnam ex consequatur tempore sequi eligendi!
-        </p>
-        <div class="img-publication">
-
-        </div>
-        
-    </div>
-
-
-    <div class="react">
-
-        <div class="react-like flex-end">
-                <div class="all-react align">
-                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
-
-                    <span class="nb-react">25 123</span>
-                    
-                </div>
-                <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
-        </div>
-
-        <div class="react-share flex-end">
-            <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
-        </div>
-
-        <div class="comment flex-end">
-            
-                <span class="nb-comment">7 456 Commentaires</span>
-            <button type="button" class="btn-react"><a href="" class="end"> <img src="../../public/icon/comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="border publication">
-
-    <div class="align">
-
-        <a href="" class="align"> <img src="../../public/img/fa.jpg" alt="Profile" class="pic profile-picture img-vide"> </a>
-        <div class="user-publication">
-            <span class="name-publication">Fabien</span>
-            <span class="date-publication">07/05/2022</span>
-        </div>
-        <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="little-icon"> </a>
-    </div>
-
-    <div class="text-publication">
-
-        <p class="text-user">
-           
-        </p>
-        <div class="img-publication">
-
-            <img src="../../public/img/img-test.jpg" alt="" class="img-user img-vide">
-        </div>
-        
-    </div>
-
-    <div class="react">
-
-        <div class="react-like flex-end">
-                <div class="all-react align">
-                    <div class="border-react"><img src="../../public/icon/like.svg" alt="Like" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/love.svg" alt="Love" class="react-list"></div>
-                    <div class="border-react"><img src="../../public/icon/wow.svg" alt="Wow" class="react-list"></div>
-
-                    <span class="nb-react">180 789</span>
-                    
-                </div>
-                <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/like-r.svg" alt="Like" class="icon"> <span class="text-nav-bar">J'aime</span> </a></button>
-        </div>
-
-        <div class="react-share flex-end">
-            <button type="button" class="btn-react"><a href="" class=" align"> <img src="../../public/icon/share.svg" alt="Partager" class="icon"> <span class="text-nav-bar">Partager</span> </a></button>
-        </div>
-
-        <div class="comment flex-end">
-            
-                <span class="nb-comment">12 903 Commentaires</span>
-            <button type="button" class="btn-react"><a href="" class="end"> <img src="../../public/icon/comment.svg" alt="Commenter" class="icon"> <span class="text-nav-bar">Commenter</span> </a></button>
-        </div>
-
-    </div> 
-
-</div> -->
-
 </main>
 
 <?php require '../right-fovoris.php'; ?>

@@ -19,8 +19,7 @@
 @font-face {
   font-family: URWForm-Regular;
   src: url(public/fonts/URWForm-Regular.otf),
-    url(public/fonts/URWForm-Regular.eot),
-    url(public/fonts/URWForm-Regular.ttf),
+    url(public/fonts/URWForm-Regular.eot), url(public/fonts/URWForm-Regular.ttf),
     url(public/fonts/URWForm-Regular.woff),
     url(public/fonts/URWForm-Regular.woff2);
 }
@@ -52,9 +51,8 @@
 
 @font-face {
   font-family: URWForm-Heavy;
-  src: url(public/fonts/URWForm-Heavy.otf),
-    url(public/fonts/URWForm-Heavy.eot), url(public/fonts/URWForm-Heavy.ttf),
-    url(public/fonts/URWForm-Heavy.woff),
+  src: url(public/fonts/URWForm-Heavy.otf), url(public/fonts/URWForm-Heavy.eot),
+    url(public/fonts/URWForm-Heavy.ttf), url(public/fonts/URWForm-Heavy.woff),
     url(public/fonts/URWForm-Heavy.woff2);
 }
 
@@ -63,5 +61,6 @@ body {
 }
 
 :root {
-  --bg-color: #54a0d6;
+  --bg-color: #ca3f4f;
+  opacity: 100%;
 }
