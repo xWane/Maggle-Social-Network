@@ -16,8 +16,13 @@ if ($pot[6] == "profil") {
 
     <div class="research align">
 
-        <a href="" class="align"> <img src="../../public/icon/search.svg" alt="Rechercher" class="little-icon"> </a>
-        <input type="search" name="" class="search" placeholder="Recherche">
+    <form method="post" action="/reseaux_php/search.form.php">
+        <input type="text" name="search" placeholder="Search..." >
+        <input type="submit" name="submit">
+    </form>
+
+        <!-- <a href="" class="align"> <img src="../../public/icon/search.svg" alt="Rechercher" class="little-icon"> </a>
+        <input type="search" name="" class="search" placeholder="Recherche"> -->
 
     </div>
 
