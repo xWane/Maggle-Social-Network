@@ -39,7 +39,7 @@
 
 </div>
 
-<form class="modif-profil g4" method="POST" action="export_public.php">
+<form class="modif-profil g4" method="POST" action="export_privee.php">
 
     <label class="custom-file-upload deux">
         <input class="modif-box" type="text" name="name_groupe" placeholder="Nom">

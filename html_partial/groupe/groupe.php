@@ -21,29 +21,29 @@
 $pos = $url;
 $pos = explode("err=",$pos);
 
-$inserte = $pdo->prepare('SELECT * FROM `group` WHERE group_id = :id');
+$inserte = $pdo->prepare('SELECT * FROM `page` WHERE page_id = :id');
 $inserte->execute(array(':id' => $pos[1]));
 $groupess = $inserte->fetch();
 
-$gname = $groupess['group_name'];
-$gpic = $groupess['group_pic'];
-$gbanner = $groupess['group_banner'];
+$pname = $groupess['page_name'];
+$ppic = $groupess['page_pic'];
+$pbanner = $groupess['pager_banner'];
 
 ?>
 
 <!-- Info groupe -->
 
 <div class="bg">
-    <img src="../../public/img/<?php echo $gbanner ?>" alt="Banière de groupe" class="bg-img img-vide">
+    <img src="../../public/img/<?php echo $pbanner ?>" alt="Banière de groupe" class="bg-img img-vide">
 </div>
 
 <div class="info">
 
-    <img src="../../public/img/<?php echo $gpic ?>" alt="Image de groupe" class="pp img-vide">
-    <h2 class="profil"><?php echo $gname ?></h2>
+    <img src="../../public/img/<?php echo $ppic ?>" alt="Image de groupe" class="pp img-vide">
+    <h2 class="profil"><?php echo $pname ?></h2>
     <?php 
 
-$inserte = $pdo->prepare('SELECT admin FROM `group_user` WHERE group_id = :gname AND user_id = :gusr');
+$inserte = $pdo->prepare('SELECT admin FROM `page_member` WHERE page_id = :gname AND user_id = :gusr');
 $inserte->execute(array(
     ':gname' => $pos[1],
     ':gusr' => $userId
