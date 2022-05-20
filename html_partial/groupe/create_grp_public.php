@@ -28,7 +28,7 @@
 
 </div>
 
-<form class="modif-profil g4" method="POST" action="export_groupe.php" enctype="multipart/form-data">
+<form class="modif-profil g4" method="POST" action="export_public.php">
 
     <label class="custom-file-upload deux">
         <input class="modif-box" type="text" name="name_groupe" placeholder="Nom">
@@ -38,6 +38,7 @@
         <input type="submit" class="hidden"/>
         <p>Créer</p> 
     </label>
+</form>
 
 </main>
 
