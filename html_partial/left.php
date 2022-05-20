@@ -34,9 +34,9 @@ if ($pot[6] == "accueil") {
 $nb = 1;
 } else if ($pot[6] == "profil" or $pot[6] == "ami" or $pot[6] == "profil-modif") {
 $nb = 2;
-} else if ($pot[6] == "list-g" or $pot[6] == "groupe") {
+} else if ($pot[6] == "list-g" or $pot[6] == "groupe" or $pot[6] == "create_grp") {
 $nb = 3;
-} else if ($pot[6] == "list-p" or $pot[6] == "page") {
+} else if ($pot[6] == "list-p" or $pot[6] == "page" or $pot[6] == "create_page") {
 $nb = 4;
 } else if ($pot[6] == "messagerie") {
 $nb = 5;
