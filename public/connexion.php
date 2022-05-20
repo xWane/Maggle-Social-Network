@@ -16,7 +16,6 @@
         $data = $check->fetch();
         $row = $check->rowCount();
         
-        var_dump($mdp);
         // Si > à 0 alors l'utilisateur existe
         if($row > 0)
         {

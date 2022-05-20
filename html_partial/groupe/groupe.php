@@ -16,18 +16,41 @@
 <!-- SECTION : Center Container -->
 <main class="container-center">
 
+<?php
+
+$pos = $url;
+$pos = explode("err=",$pos);
+
+$inserte = $pdo->prepare('SELECT * FROM `group` WHERE group_id = :id');
+$inserte->execute(array(':id' => $pos[1]));
+$groupess = $inserte->fetch();
+
+$gname = $groupess['group_name'];
+$gpic = $groupess['group_pic'];
+$gbanner = $groupess['group_banner'];
+
+?>
+
 <!-- Info groupe -->
 
 <div class="bg">
-    <img src="../../public/img/<?php echo $bannerg ?>" alt="Banière de groupe" class="bg-img img-vide">
+    <img src="../../public/img/<?php echo $gbanner ?>" alt="Banière de groupe" class="bg-img img-vide">
 </div>
 
 <div class="info">
 
-    <img src="../../public/img/<?php echo $ppg ?>" alt="Image de groupe" class="pp img-vide">
-    <h2 class="profil"><?php echo $nameGroupe ?></h2>
+    <img src="../../public/img/<?php echo $gpic ?>" alt="Image de groupe" class="pp img-vide">
+    <h2 class="profil"><?php echo $gname ?></h2>
     <?php 
-    if($admin == false) {
+
+$inserte = $pdo->prepare('SELECT admin FROM `group_user` WHERE group_id = :gname AND user_id = :gusr');
+$inserte->execute(array(
+    ':gname' => $pos[1],
+    ':gusr' => $userId
+));
+$adm = $inserte->fetch();
+
+    if($adm["admin"] == 0) {
         if($statut == true) {
             $ing = "un";
             $sui = "Suivre";
