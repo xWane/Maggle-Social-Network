@@ -6,7 +6,7 @@
 <div class="sticky">
 
     <div class="research align">
-        <form class="search-form" method="post" action="/reseaux_php/html_partial/profil/profil_search.php">
+        <form class="search-form" method="post" action="/reseaux_php/search_form.php">
             <button class="btn-style" type="submit" name="submit"><img src="../../public/icon/search.svg" class="little-icon"></button>
             <input class="search-input" type="text" name="search" placeholder="Rechercher" >
         </form>

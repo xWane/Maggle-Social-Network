@@ -1,6 +1,7 @@
 <?php require '../head.php'; ?>
 <?php require '../left.php';?> 
 <?php require '../publication/search_get_user_post.php';?> 
+
 <?php 
   require '../../search_form.php';
   $userId = $id;
@@ -27,6 +28,7 @@
     <img src="../../public/img/<?php echo $profilPic ?>" alt="Image de profil" class="pp img-vide">
     <div></div>
     <h2 class="profil"><?php echo $name ?> <?php echo $surname ?></h2>
+    
     <?php 
     $you = true;
     if($you == false) {
@@ -39,9 +41,10 @@
         }
         echo "<a href='' class='btn-bio $ing '><span class='text-bio'>$sui</span></a>";
     } else {
-        echo "<a class='btn-bio un'><span class='text-bio'>Suivre</span></a>";
+        echo "<a class='btn-bio un btn-cursor'><span class='text-bio'>Suivre</span></a>";
     }
     ?>
+    
 </div>
 
 <!-- Description -->
@@ -50,13 +53,7 @@
     <p class="text-bio"><?= $bio ?></p>
 </div>
 
-<?php
-// if($you == true) {
-//     require 'post-profil.php';}
-?>
-
 <!-- publication -->
-
 <?php foreach($publications as $publication){
     $user = $pdo->prepare("SELECT userName, userSurname, profil_pic FROM `user` WHERE `user_id` = :id");
     $user->execute(array(

@@ -17,11 +17,10 @@ if(isset($_POST["submit"]));
         
     {
         ?>
-        <?php $id = $row->user_id;?>
+        <?php $id = $row->user_id;
+        header("location: /reseaux_php/html_partial/profil/profil.php?reg_err=$id");
 
-        <!-- <?php echo $row ->user_id; ?> -->
-        <!-- <?php echo $row ->userName; ?> -->
-        <!-- <?php echo $row ->userSurname; ?> -->
+        ?>
         <?php
     }
     else{
