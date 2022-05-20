@@ -77,8 +77,8 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
       `private` INT NOT NULL,
       `publi_id` INT,
       `group_name` VARCHAR(255) NOT NULL,
-      `group_pic` VARCHAR(255) NOT NULL,
-      `group_banner` VARCHAR(255) NOT NULL,
+      `group_pic` VARCHAR(255) ,
+      `group_banner` VARCHAR(255),
       PRIMARY KEY (`group_id`),
       FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`)
       ) ENGINE=InnoDB;
