@@ -11,11 +11,11 @@
 
 
 <div class="bg">
-    <img src="../../public/img/chevre.webp" alt="Banière de profil" class="bg-img img-vide">
+    <img src="../../public/img/banner.jpg" alt="Banière de profil" class="bg-img img-vide">
 </div>
 
 <div class="info">
-    <img src="../../public/img/img-test.jpg" alt="Image de profil" class="pp img-vide">
+    <img src="../../public/img/pp.png" alt="Image de profil" class="pp img-vide">
     <div></div>
     <h2 class="profil">Nom du Groupe</h2>
     <a href='change-img-profil.php' class='btn-bio un visibility-none'><span class='text-bio'>Créer</span></a>
@@ -24,7 +24,7 @@
 
 <div class="border">
 <span class="title-bio">Bio</span>
-<p class="text-bio">Ajouter bio du groupe</p>
+<p class="text-bio"></p>
 
 </div>
 
