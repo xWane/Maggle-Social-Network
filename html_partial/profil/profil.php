@@ -31,7 +31,7 @@ if($pose[1] !== "") {
     $bio = ucfirst($datase['biograph']);
     $visi = $datase['visibility'];
 
-    $req = $pdo->prepare('SELECT * FROM friends WHERE user_id = :id AND friend_id = :idi OR user_id = :idi AND friend_id = :id');
+    $req = $pdo->prepare('SELECT status FROM friends WHERE user_id = :id AND friend_id = :idi OR user_id = :idi AND friend_id = :id');
     $req->execute(array(':id' => $userId,
                         ':idi' => $userID_));
     $statue = $req->fetch();
@@ -56,8 +56,11 @@ if($pose[1] !== "") {
     <?php 
 
     if($you == false) {
-        if($statue['statue'] == 2) {
-            echo "<button class='btn-bio deux text-bio'>Suivie</button>";
+        if($statue['status'] == 2) {
+            echo "
+            <form method='POST' action='../demande/refuse.php?reg_err=$userID_'>
+            <button class='btn-bio deux text-bio'>Suivie</button>
+            </form>";
         } else {
             echo "
         <form class='' method='POST' action='add-friend.php?reg_err=$userID_'>
