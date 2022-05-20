@@ -84,11 +84,15 @@ $nb = 8;
             <a href="../demande/demande.php" class="color7 align"> <img src="../../public/icon/add.svg" alt="Demandes" class="icon"> <span class="text-nav-bar">Demandes</span> </a>
         </div>
         <div class="item" id="visible">
-            <a href="" class="color8 align" > <img src="../../public/icon/more.svg" alt="Plus" class="icon"> <span class="text-nav-bar" >Plus</span> </a>
+            <span class="color8 align" > <img src="../../public/icon/more.svg" alt="Plus" class="icon"> <span class="text-nav-bar" >Plus</span> </span>
             <ul class="ul-plus" id="hidden">
-              <li><a href="../../public/deconexion.php">Se déconnecter</a></li>
-              <li><a href="">Désactiver son compte</a></li>
-              <li><a href="">Supprimer son compte</a></li>
+              <li><a class="custom-file-upload deux modif-box" href="../../public/deconexion.php">Déconnection</a></li>
+              <form method="post" action="../profil/desactive.php" >
+              <li><input class="custom-file-upload deux modif-box" type="submit" name="hideAccount" value="désactiver"></li>
+              </form>
+              <form method="post" action="../profil/delete.php">
+              <li><input class="custom-file-upload deux modif-box" type="button" name="delete_account" value="Supprimer"></li>
+              </form>
             <ul>
         </div>
     </div>

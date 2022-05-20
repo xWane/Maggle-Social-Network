@@ -69,12 +69,6 @@ if($visi == 1) {
         <input class="modif-box" type="password" name="rptpwd" placeholder="Répéter mdp">
     </label>
 
-
-    <span>Visible</span>
-    <input type="checkbox" name="visibility" <?php echo $vis ?>>
-    <span>Supprimer le compte</span>
-    <input type="checkbox" name="sup">
-
     <label class="custom-file-upload un">
         <input type="submit" class="hidden"/>
         <p>Valider</p> 
