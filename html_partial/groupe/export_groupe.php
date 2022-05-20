@@ -15,6 +15,6 @@ $insert->execute(array(
     ':pic' => "pp.png",
     ':banner' => "banner.jpg"
 ));
-header('location: ./index.php');
+header('location: groupe.php');
 }
 ?>
