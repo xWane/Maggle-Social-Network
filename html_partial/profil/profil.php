@@ -35,6 +35,11 @@ if($pose[1] !== "") {
     $req->execute(array(':id' => $userId,
                         ':idi' => $userID_));
     $statue = $req->fetch();
+
+    $publications = $pdo->prepare("SELECT * FROM publication WHERE userId = :id ORDER BY creation_date DESC");
+    $publications->execute(array(
+      ":id" => $userID_ ,
+      ));
 }
 
 ?>
@@ -56,11 +61,10 @@ if($pose[1] !== "") {
     <?php 
 
     if($you == false) {
-        if($statue['status'] == 2) {
-            echo "
-            <form method='POST' action='../demande/refuse.php?reg_err=$userID_'>
-            <button class='btn-bio deux text-bio'>Suivie</button>
-            </form>";
+        if($statue == 2) {
+            echo "<button class='btn-bio deux text-bio'>Suivie</button>";
+            $ing = "deux";
+            $sui = "Suivie";
         } else {
             echo "
         <form class='' method='POST' action='add-friend.php?reg_err=$userID_'>
@@ -90,17 +94,17 @@ if($you == true) {
 
 <?php foreach($publications as $publication){
 
-    $user = $pdo->prepare("SELECT userName, userSurname, profil_pic FROM `user` WHERE `user_id` = :id");
-    $user->execute(array(
-    ":id" => $publication['userId'],
-    ));
-    $name = $user->fetch() ?>
+    // $user = $pdo->prepare("SELECT userName, userSurname, profil_pic FROM `user` WHERE `user_id` = $id");
+    // $user->execute(array(
+    // ":id" => $publication['userId'],
+    // ));
+    ?>
 
     <div class="border publication">
         <div class="align">
-            <a href="" class="align"> <img src="../../public/img/<?= ucfirst($name['profil_pic']) ?>" class="pic profile-picture img-vide"> </a>
+            <a href="" class="align"> <img src="../../public/img/<?= $profilPic ?>" class="pic profile-picture img-vide"> </a>
             <div class="user-publication">
-                <span class="name-publication"><?= ucfirst($name['userName']) ?> <?= ucfirst($name['userSurname']) ?></span>
+                <span class="name-publication"><?= $name ?> <?= $surname ?></span>
                 <span class="date-publication"><?= $publication['creation_date'] ?></span>
             </div>
             <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="more"> </a>
