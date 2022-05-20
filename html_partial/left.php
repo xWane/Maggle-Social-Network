@@ -91,7 +91,7 @@ $nb = 8;
               <li><input class="custom-file-upload deux modif-box" type="submit" name="hideAccount" value="désactiver"></li>
               </form>
               <form method="post" action="../profil/delete.php">
-              <li><input class="custom-file-upload deux modif-box" type="button" name="delete_account" value="Supprimer"></li>
+              <li><input class="custom-file-upload deux modif-box" type="submit" name="delete_account" value="Supprimer"></li>
               </form>
             <ul>
         </div>

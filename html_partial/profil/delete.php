@@ -12,7 +12,7 @@ $userId = $data['user_id'];
 
 $userID = $userId;
 
-$reply = $pdo->prepare("DELETE `user` where user_id = :userID;");
+$reply = $pdo->prepare("DELETE FROM `user` WHERE user_id = :userID;");
 $reply->execute(array(
     ":userID" => $userID
 ));
