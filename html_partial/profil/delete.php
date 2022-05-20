@@ -1,10 +1,26 @@
 <?php
-require '/database/pdo.php';
-require '/html_partial/data.php';
-if(isset($_POST["action"]));
-$userId = "UserID";
-$action = $pdo->prepare("DELETE 'user' WHERE 'user_id' = :UserID ");
+require "../../database/pdo.php";
 
- header("location:/reseaux_php/index.php");
+session_start();
+
+$req = $pdo->prepare('SELECT * FROM user WHERE user_id = :id');
+$req->execute(array(':id' => $_SESSION['user']));
+$data = $req->fetch();
+
+$userId = $data['user_id'];
+
+
+$userID = $userId;
+
+$reply = $pdo->prepare("DELETE `user` where user_id = :userID;");
+$reply->execute(array(
+    ":userID" => $userID
+));
+
+header('Location: /reseaux_php/');
+
+
 
 ?>
+
+
