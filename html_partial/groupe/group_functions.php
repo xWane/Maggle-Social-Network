@@ -1,15 +1,18 @@
 <?php
 
-/* 
-Récupérer grâce à session mon id / prénom / nom / adresse mail
-Nouvelle query pour :  UPDATE `group_user` SET group_user.user_id = (SELECT user_id FROM `user` WHERE userMail = :userMail); 
-*/
+if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['createGroup'])) {
+    echo createGroup();
+}
+
 function createGroup()
 {
-    require "database\pdo.php";
+
+    require "../../database/pdo.php";
+    require "../data.php";
 
     $group_name = $_POST['group_name'];
-    $admins = $_POST['admins'];
+    $group_pic = $_POST['group_pic'];
+    $group_banner = $_POST['group_banner'];
 
     // Vérifie si le groupe est privé ou public
     if (
@@ -29,17 +32,23 @@ function createGroup()
     $groupExist = $groupListRequest->fetch();
 
     if ($pdo and $groupExist === false) {
-        $ins = $pdo->prepare("INSERT INTO `group` (group_name, private) VALUES (:group_name, :private)");
+        $ins = $pdo->prepare("INSERT INTO `group` (group_name, private, group_pic, group_banner) VALUES (:group_name, :private, :group_pic, :group_banner);
+        UPDATE `group` SET members = 1;
+        INSERT INTO `group_user` (group_id) SELECT group_id FROM `group` WHERE group_name = :group_name;
+        UPDATE `group_user` SET group_user.user_id = (SELECT user_id FROM `user` WHERE user_id = $user_id) WHERE group_id = LAST_INSERT_ID();
+        UPDATE `group_user` SET admin = 1 WHERE group_id = LAST_INSERT_ID()");
         $ins->execute(array(
             ":group_name" => $group_name,
-            ":private" => $private
+            ":private" => $private,
+            ":group_pic" => $group_pic,
+            ":group_banner" => $group_banner
         ));
     }
 }
 
 function addMember()
 {
-    require "database\pdo.php";
+    require "../../database/pdo.php";
 
     $userName = $_POST['userName'];
     $userSurname = $_POST['userSurname'];
@@ -87,7 +96,7 @@ function addMember()
 
 function showGroup()
 {
-    require "database\pdo.php";
+    require "../../database/pdo.php";
 
     if ($pdo) {
         $groupList = $pdo->prepare("SELECT * from `group`");
@@ -115,7 +124,7 @@ function showGroup()
 
 function showGroup_user()
 {
-    require "database\pdo.php";
+    require "../../database/pdo.php";
 
     if ($pdo) {
         // Fonctionne plus ou moins, affiche que le 1er SELECT
@@ -146,7 +155,7 @@ function showGroup_user()
 
 function privateGroup()
 {
-    require "database\pdo.php";
+    require "../../database/pdo.php";
 
     if ($pdo) {
         $private = $pdo->prepare("SELECT private from `group` WHERE group_id = 1 /* à remplacer le where par truc du genre 'WHERE group_id = groupe_loaded' */ ");
@@ -160,7 +169,7 @@ function privateGroup()
 
 function membersGroup()
 {
-    require "database\pdo.php";
+    require "../../database/pdo.php";
 
     if ($pdo) {
         $members = $pdo->prepare("SELECT members from `group` WHERE group_id = 1 /* à remplacer le where par truc du genre 'WHERE group_id = groupe_loaded' */ ");

@@ -1,13 +1,7 @@
 <?php require '../head.php'; ?>
 <?php require '../left.php'; ?>
 <?php require '../data.php'; ?>
-<?php require './group_functions.php'; ?>
-
-<?php
-if (isset($_POST['submit'])) {
-    echo createGroup();
-}
-?>
+<?php require __DIR__ . './group_functions.php'; ?>
 
 <style>
     <?php include '../../public/css/style.css' ?>
@@ -15,7 +9,6 @@ if (isset($_POST['submit'])) {
 
 <!-- SECTION : Center Container -->
 <main class="container-center">
-
 
     <div class="bg">
         <img src="../../public/img/chevre.webp" alt="Banière de profil" class="bg-img img-vide">
@@ -28,36 +21,19 @@ if (isset($_POST['submit'])) {
         <a href='change-img-profil.php' class='btn-bio un visibility-none'><span class='text-bio'>Créer</span></a>
     </div>
 
-
-    <div class="border">
-        <span class="title-bio">Bio</span>
-        <p class="text-bio">Ajouter bio du groupe</p>
-
-    </div>
-
-    <form class="modif-profil g4" method="POST" action="change-img-profil.php" enctype="multipart/form-data">
+    <form class="modif-profil g4" method="POST">
 
         <label class="custom-file-upload deux">
-            <input type="file" name="avatar" id="" />
-            <p>Profil</p>
+            <input type="file" name="group_pic" id="" />
+            <p>Image de profil</p>
         </label>
         <label class="custom-file-upload deux">
-            <input type="file" name="back" id="" />
+            <input type="file" name="group_banner" id="" />
             <p>Bannière</p>
         </label>
 
-        <!-- <label class="custom-file-upload deux">
-            <input class="modif-box" type="text" name="group_name" placeholder="Nom">
-        </label>
-
         <label class="custom-file-upload deux">
-            <input class="modif-box" type="text" name="bio" placeholder="Bio">
-        </label> -->
-        <label class="custom-file-upload deux">
-            <input class="modif-box" type="text" name="admins" placeholder="Admins">
-        </label>
-        <label class="custom-file-upload deux">
-            <input class="modif-box" type="text" name="members" placeholder="Expulser">
+            <input class="modif-box" type="text" name="group_name" placeholder="Nom du groupe">
         </label>
 
         <div>
@@ -66,15 +42,11 @@ if (isset($_POST['submit'])) {
                 <span class=" slider"></span>
             </label> Privé
         </div>
-        <!-- <label class="custom-file-upload deux">
-            <input class="modif-box btn-cursor" name="confidentiality" type="checkbox">
-        </label> -->
 
         <label class="custom-file-upload un">
-            <input type="submit" class="hidden">
+            <input type="submit" name="createGroup" class=" hidden">
             <p>Créer</p>
         </label>
-
 
 </main>
 

@@ -5,3 +5,4 @@ $port = 3306;
 $dbname = "db_maggle";
 $username = "root";
 $password = "";
+$pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);

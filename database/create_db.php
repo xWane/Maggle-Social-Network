@@ -1,10 +1,18 @@
 <?php
-require_once 'pdo.php';
-$pdo = new PDO("$engine:host=$host:$port;dbname=", $username, $password);
-$maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
+
+$engine = "mysql";
+$host = "localhost";
+$port = 3306;
+$dbname = "";
+$username = "root";
+$password = "";
+
+$pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
+$maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
 $maRequete->execute();
 $maRequete->closeCursor();
+
+require_once __DIR__ . './pdo.php';
 
 $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
 $maRequete = $pdo->prepare(
@@ -70,7 +78,7 @@ $maRequete = $pdo->prepare(
       `publi_id` INT,
       `group_name` VARCHAR(255) NOT NULL,
       `group_pic` VARCHAR(255) NOT NULL,
-      `group_ banner` VARCHAR(255) NOT NULL,
+      `group_banner` VARCHAR(255) NOT NULL,
       PRIMARY KEY (`group_id`),
       FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`)
       ) ENGINE=InnoDB;
