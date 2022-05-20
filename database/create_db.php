@@ -1,5 +1,4 @@
 <?php
-require "pdo.php";
 $engine = "mysql";
 $host = "localhost";
 $port = 3306;
@@ -7,10 +6,14 @@ $dbname = "db_maggle";
 $username = "root";
 $password = "root";
 
+$pdo = new PDO("$engine:host=$host:$port;", $username, $password);
+
   $maRequete = $pdo->prepare("CREATE DATABASE IF NOT EXISTS `db_maggle`
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;");
   $maRequete->execute();
   $maRequete->closeCursor();
+
+  $pdo = new PDO("$engine:host=$host:$port;dbname=$dbname", $username, $password);
 
   $maRequete = $pdo->prepare(
 
@@ -70,47 +73,47 @@ $password = "root";
     
       CREATE TABLE IF NOT EXISTS `group`(
       `group_id` INT NOT NULL AUTO_INCREMENT,
-      `members` INT NOT NULL,
-      `private` TINYINT(1) NOT NULL,
+      `members` INT,
+      `private` INT NOT NULL,
       `publi_id` INT,
       `group_name` VARCHAR(255) NOT NULL,
-      `group_pic` VARCHAR(255) NOT NULL,
-      `group_ banner` VARCHAR(255) NOT NULL,
+      `group_pic` VARCHAR(255) ,
+      `group_banner` VARCHAR(255),
       PRIMARY KEY (`group_id`),
       FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`)
       ) ENGINE=InnoDB;
 
     CREATE TABLE IF NOT EXISTS `group_user`(
-      `group_id` INT,
-      `user_id` INT,
-      `admin` INT(1),
+      `group_id` INT NOT NULL,
+      `user_id` INT NOT NULL,
+      `admin` INT,
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`),
       FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
       ) ENGINE=InnoDB;
 
-    CREATE TABLE IF NOT EXISTS `group_list`(
-      `group_id` INT NOT NULL,
-      FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
-      )ENGINE=InnoDB;
+    -- CREATE TABLE IF NOT EXISTS `group_list`(
+    --   `group_id` INT NOT NULL,
+    --   FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
+    --   )ENGINE=InnoDB;
     
-    CREATE TABLE IF NOT EXISTS `page_admin`(
-      `page_id` INT NOT NULL AUTO_INCREMENT,
-      `user_id` INT NOT NULL,
-      PRIMARY KEY (`page_id`),
-      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
-      ) ENGINE=InnoDB;
+    -- CREATE TABLE IF NOT EXISTS `page_admin`(
+    --   `page_id` INT NOT NULL AUTO_INCREMENT,
+    --   `user_id` INT NOT NULL,
+    --   PRIMARY KEY (`page_id`),
+    --   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
+    --   ) ENGINE=InnoDB;
 
-    CREATE TABLE IF NOT EXISTS `group_admin`(
-      `groupe_id` INT NOT NULL AUTO_INCREMENT,
-      `user_id` INT NOT NULL,
-      PRIMARY KEY (`groupe_id`),
-      FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
-      ) ENGINE=InnoDB;
+    -- CREATE TABLE IF NOT EXISTS `group_admin`(
+    --   `groupe_id` INT NOT NULL AUTO_INCREMENT,
+    --   `user_id` INT NOT NULL,
+    --   PRIMARY KEY (`groupe_id`),
+    --   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
+    --   ) ENGINE=InnoDB;
 
     CREATE TABLE IF NOT EXISTS `page`(
       `page_id` INT NOT NULL AUTO_INCREMENT,
-      `member` INT NOT NULL,
-      `publi_id` INT NOT NULL,
+      `member` INT,
+      `publi_id` INT,
       `page_name` VARCHAR(255) NOT NULL,
       `page_pic` VARCHAR(255) NOT NULL,
       `pager_banner` VARCHAR(255) NOT NULL,
@@ -119,15 +122,16 @@ $password = "root";
       FOREIGN KEY (`member`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
     
-    CREATE TABLE IF NOT EXISTS `page_list`(
-      `page_id`  INT NOT NULL AUTO_INCREMENT,
-      PRIMARY KEY (`page_id`),
-      FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
-      ) ENGINE=InnoDB;
+    -- CREATE TABLE IF NOT EXISTS `page_list`(
+    --   `page_id`  INT NOT NULL AUTO_INCREMENT,
+    --   PRIMARY KEY (`page_id`),
+    --   FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
+    --   ) ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `page_member`(
       `page_id`  INT NOT NULL AUTO_INCREMENT,
       `user_id` INT NOT NULL,
+      `admin` INT,
       PRIMARY KEY (`page_id`),
       FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`),
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)

@@ -9,7 +9,8 @@
 
     <div class="name-section">
         <h3>Mes groupes</h3>
-        <a href="../groupe/create_grp.php" class="btn-bio deux .btn-cursor">Créer un groupe</a>
+        <a href="../groupe/create_grp_public.php" class="btn-bio deux .btn-cursor">Créer un groupe public</a>
+        <a href="../groupe/create_grp_privee.php" class="btn-bio deux .btn-cursor">Créer un groupe privée</a>
     </div>
 
     <div class="g">

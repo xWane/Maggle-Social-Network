@@ -14,7 +14,6 @@ $you = true;
 $pose = $url;
 $pose = explode(".php",$pose);
 
-
 if($pose[1] !== "") {
     $you = false;
     $pose = $url;
@@ -24,16 +23,25 @@ if($pose[1] !== "") {
     $req->execute(array(':id' => $pose[1]));
     $datase = $req->fetch();
 
-    $userId = $datase['user_id'];
+    $userID_ = $datase['user_id']; // suprimer pour utiliser pour ajouter aux amis
     $profilPic = $datase['profil_pic'];
     $profilBanner = $datase['profil_banner'];
     $name = ucfirst($datase['userName']);
     $surname = ucfirst($datase['userSurname']);
     $bio = ucfirst($datase['biograph']);
     $visi = $datase['visibility'];
+
+    $req = $pdo->prepare('SELECT status FROM friends WHERE user_id = :id AND friend_id = :idi OR user_id = :idi AND friend_id = :id');
+    $req->execute(array(':id' => $userId,
+                        ':idi' => $userID_));
+    $statue = $req->fetch();
+
+    $publications = $pdo->prepare("SELECT * FROM publication WHERE userId = :id ORDER BY creation_date DESC");
+    $publications->execute(array(
+      ":id" => $userID_ ,
+      ));
 }
 
-$amies = false;
 ?>
 
 <!-- SECTION : Center Container -->
@@ -52,16 +60,18 @@ $amies = false;
     <h2 class="profil"><?php echo $name ?> <?php echo $surname ?></h2>
     <?php 
 
-
     if($you == false) {
-        if($amies == false) {
-            $ing = "un";
-            $sui = "Suivre";
-        } else {
+        if($statue == 2) {
+            echo "<button class='btn-bio deux text-bio'>Suivie</button>";
             $ing = "deux";
             $sui = "Suivie";
+        } else {
+            echo "
+        <form class='' method='POST' action='add-friend.php?reg_err=$userID_'>
+        <button class='btn-bio un text-bio'>Suivre</button>
+        </form>";
         }
-        echo "<a href='' class='btn-bio $ing '><span class='text-bio'>$sui</span></a>";
+
     } else {
         echo "<a href='profil-modif.php' class='btn-bio deux'><span class='text-bio'>Modifier</span></a>";
     }
@@ -84,17 +94,17 @@ if($you == true) {
 
 <?php foreach($publications as $publication){
 
-    $user = $pdo->prepare("SELECT userName, userSurname, profil_pic FROM `user` WHERE `user_id` = :id");
-    $user->execute(array(
-    ":id" => $publication['userId'],
-    ));
-    $name = $user->fetch() ?>
+    // $user = $pdo->prepare("SELECT userName, userSurname, profil_pic FROM `user` WHERE `user_id` = $id");
+    // $user->execute(array(
+    // ":id" => $publication['userId'],
+    // ));
+    ?>
 
     <div class="border publication">
         <div class="align">
-            <a href="" class="align"> <img src="../../public/img/<?= ucfirst($name['profil_pic']) ?>" class="pic profile-picture img-vide"> </a>
+            <a href="" class="align"> <img src="../../public/img/<?= $profilPic ?>" class="pic profile-picture img-vide"> </a>
             <div class="user-publication">
-                <span class="name-publication"><?= ucfirst($name['userName']) ?> <?= ucfirst($name['userSurname']) ?></span>
+                <span class="name-publication"><?= $name ?> <?= $surname ?></span>
                 <span class="date-publication"><?= $publication['creation_date'] ?></span>
             </div>
             <a href="" class="align"> <img src="../../public/icon/more-horiz.svg" alt="Image" class="more"> </a>
