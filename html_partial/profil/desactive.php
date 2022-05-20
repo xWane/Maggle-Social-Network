@@ -1,12 +1,26 @@
 <?php
 require "../../database/pdo.php";
-// require "../data.php";
-echo"Hello world";
 
-if(isset($_POST["hideAccount"]));
-    $ask = $_POST["hideAccount"];
-    $userId = "userID";
-    $reply = $pdo->prepare("UPDATE 'user' WHERE 'user_id' = :userID;
-    SET 'visibilty' = NOT visibility ");
+session_start();
 
-    
+$req = $pdo->prepare('SELECT * FROM user WHERE user_id = :id');
+$req->execute(array(':id' => $_SESSION['user']));
+$data = $req->fetch();
+
+$userId = $data['user_id'];
+
+
+$userID = $userId;
+
+$reply = $pdo->prepare("UPDATE user SET `visibility` = NOT visibility WHERE user_id = :userID;");
+$reply->execute(array(
+    ":userID" => $userID
+));
+
+header('Location: /reseaux_php/');
+
+
+
+?>
+
+
