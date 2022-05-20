@@ -56,10 +56,8 @@ if($pose[1] !== "") {
     <?php 
 
     if($you == false) {
-        if($statue == 2) {
+        if($statue['statue'] == 2) {
             echo "<button class='btn-bio deux text-bio'>Suivie</button>";
-            $ing = "deux";
-            $sui = "Suivie";
         } else {
             echo "
         <form class='' method='POST' action='add-friend.php?reg_err=$userID_'>
