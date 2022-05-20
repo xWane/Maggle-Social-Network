@@ -1,6 +1,6 @@
 <?php
 
-require 'left.php';
+require '../left.php';
 
 $pose = $url;
 $pose = explode("err=",$pose);

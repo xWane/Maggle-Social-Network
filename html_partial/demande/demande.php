@@ -13,19 +13,18 @@
 
     <?php
 
-    $check = $pdo->prepare('SELECT friend_id, id FROM friends WHERE status = 1');
+    $check = $pdo->prepare('SELECT user_id, id FROM friends WHERE status = 1');
     $check->execute();
     $friendss = $check->fetchAll(PDO::FETCH_ASSOC);
     $row = $check->rowCount();
 
     
 if($row > 0) {
-    if($friendss == $userId) {
 
         foreach($friendss as $friendss) {
 
             $check = $pdo->prepare('SELECT user_id, userName, userSurname, profil_pic, visibility FROM user WHERE user_id = :id');
-            $check->execute([':id' => $friendss['friend_id']]);
+            $check->execute([':id' => $friendss['user_id']]);
             $userDemF = $check->fetch();
 
             $pic = $userDemF['profil_pic'];
@@ -35,17 +34,18 @@ if($row > 0) {
             $useridf = $userDemF['user_id'];
 
             if($visibi == 1){
-
+            if($friendss['user_id'] !== $userId) {
+            $ids = $friendss['id'];
             echo "
             <div class='user align'>
             <a href='../profil/profil.php?reg_err=$useridf'><img src='../../public/img/$pic' alt='' class='img-use'></a>
             <div class='text-user'>
             <a href='../profil/profil.php?reg_err=$useridf'><span class='t-u'>$nam $surnam</span></a>
             <div class='hor'>
-            <form method='POST' action='accept.php?reg_err=$friendss'['id']''>
+            <form method='POST' action='accept.php?reg_err=$ids'>
                 <button class='btn-user un'>Accepter</button>
             </form>
-            <form method='POST' action='refuse.php?reg_err=$friendss'['id']''>
+            <form method='POST' action='refuse.php?reg_err=$ids'>
                 <button class='btn-user deux'>Refuser</button>
             </form>
             </div>
@@ -57,7 +57,6 @@ if($row > 0) {
         }
     }
 }
-
 
     ?>
 
