@@ -86,7 +86,7 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
     CREATE TABLE IF NOT EXISTS `group_user`(
       `group_id` INT,
       `user_id` INT,
-      `admin` INT(1),
+      `admin` INT,
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`),
       FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
       ) ENGINE=InnoDB;
@@ -122,15 +122,16 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
       FOREIGN KEY (`member`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
     
-    CREATE TABLE IF NOT EXISTS `page_list`(
-      `page_id`  INT NOT NULL AUTO_INCREMENT,
-      PRIMARY KEY (`page_id`),
-      FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
-      ) ENGINE=InnoDB;
+    -- CREATE TABLE IF NOT EXISTS `page_list`(
+    --   `page_id`  INT NOT NULL AUTO_INCREMENT,
+    --   PRIMARY KEY (`page_id`),
+    --   FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
+    --   ) ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `page_member`(
       `page_id`  INT NOT NULL AUTO_INCREMENT,
       `user_id` INT NOT NULL,
+      `admin` INT,
       PRIMARY KEY (`page_id`),
       FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`),
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
