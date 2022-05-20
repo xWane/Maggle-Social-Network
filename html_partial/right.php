@@ -37,13 +37,9 @@ if ($pot[6] == "profil") {
 //   }
 
 
-    if ($pot[6] == "profil") {
-        echo '<a href="ami.php"><span class="title-block">Amis</span></a>';
-    } else if($pot[6] == "ami"){
-        echo '<a href="./ami/ami.php"><span class="title-block">Amis</span></a>';
-    } else {
-        echo '<a href="../ami/ami.php"><span class="title-block">Amis</span></a>';
-    }
+  
+  echo '<a href="../ami/ami.php"><span class="title-block">Amis</span></a>';
+ 
 ?>
 <div class="item-block">
 <?php

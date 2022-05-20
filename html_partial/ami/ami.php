@@ -8,173 +8,67 @@
 <main class="container-center">
 <h3 class="marg-bot">Amis</h3>
 <div class="u">
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
+<?php
+$reqe = $pdo->prepare('SELECT user_id, friend_id, id FROM friends WHERE status = 2');
+    $reqe->execute();
+    $datass = $reqe->fetchAll(PDO::FETCH_ASSOC);
+        
+        foreach($datass as $datass) {
 
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
+            if($datass['user_id'] == $userId or $datass['friend_id'] == $userId) {
+                $ide = $datass['id'];
 
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
+                if($datass['user_id'] !== $userId){
 
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
+                    $reqe = $pdo->prepare('SELECT user_id, profil_pic, userName, userSurname, visibility FROM user WHERE user_id = :id');
+                    $reqe->execute([':id' => $datass['user_id']]);
+                    $datas = $reqe->fetch();
 
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
+                    $user_ids = $datas['user_id'];
+                    $user_pics = $datas['profil_pic'];
+                    $user_names = $datas['userName'];
+                    $user_surnames = $datas['userSurname'];
+                    $user_visibilis = $datas['visibility'];
+                    if ($user_visibilis == 1) {
+                    echo    "
+                            <div class='user align'>
+                            <a href='../profil/profil.php?reg_err=$user_ids'><img src='../../public/img/$user_pics' alt='' class='img-use'></a>
+                            <div class='text-user'>
+                            <a href='../profil/profil.php?reg_err=$user_ids'><span class='t-u'>$user_names $user_surnames</span></a>
+                            <form method='POST' action='../demande/refuse.php?reg_err=$ide'>
+                            <button class='btn-user deux'>Retirer</button>
+                            </form
+                            </div>
+                            </div>
+                            ";
+                    }
+                } else {
+                    $reqe = $pdo->prepare('SELECT user_id, profil_pic, userName, userSurname, visibility FROM user WHERE user_id = :id');
+                    $reqe->execute([':id' => $datass['friend_id']]);
+                    $datas = $reqe->fetch();
 
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
-
-<div class="user align">
-    <a href=""><img src="../../public/img/fa.jpg" alt="" class="img-use"></a>
-    <div class="text-user">
-    <a href=""><span class="t-u">Anthony Ringressi</span></a>
-    <a href="" class="btn-user deux"><span>Retirer</span></a>
-    </div>
-</div>
+                    $user_ids = $datas['user_id'];
+                    $user_pics = $datas['profil_pic'];
+                    $user_names = $datas['userName'];
+                    $user_surnames = $datas['userSurname'];
+                    $user_visibilis = $datas['visibility'];
+                    if ($user_visibilis == 1) {
+                    echo    "
+                    <div class='user align'>
+                    <a href='../profil/profil.php?reg_err=$user_ids'><img src='../../public/img/$user_pics' alt='' class='img-use'></a>
+                    <div class='text-user'>
+                    <a href='../profil/profil.php?reg_err=$user_ids'><span class='t-u'>$user_names $user_surnames</span></a>
+                    <form method='POST' action='../demande/refuse.php?reg_err=$ide'>
+                    <button class='btn-user deux'>Retirer</button>
+                    </form>
+                    </div>
+                    </div>
+                    ";
+                    }
+                }
+            }
+        }
+?>
 
 </div>
 
