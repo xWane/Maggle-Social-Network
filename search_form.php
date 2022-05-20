@@ -13,15 +13,17 @@ if(isset($_POST["submit"]));
         ":ask" => $ask
     ]);
 
-    if($row = $reply->fetch())
-        
-    {
-        ?>
-        <?php $id = $row->user_id;
-        header("location: /reseaux_php/html_partial/profil/profil.php?reg_err=$id");
+    if($row = $reply->fetch()){
+        $visibility = $row->visibility;
+        echo $visibility;
 
-        ?>
-        <?php
+        if ($visibility == 0) {
+            header('Location: /reseaux_php/html_partial/accueil/accueil.php');
+        }
+        else{
+            $id = $row->user_id;
+            header("location: /reseaux_php/html_partial/profil/profil.php?reg_err=$id");
+        }
     }
     else{
         header('Location: /reseaux_php/html_partial/accueil/accueil.php');
