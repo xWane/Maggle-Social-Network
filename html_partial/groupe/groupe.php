@@ -61,6 +61,12 @@ if($adm["admin"] == 1) {
             <button class='btn-bio un text-bio'>Suivre</button>
             </form>";
     } else {
+        echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+            <button class='btn-bio un text-bio'>Droits</button>
+            </form>";
+        echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+            <button class='btn-bio deux text-bio'>Quitter</button>
+            </form>";
         echo "<a href='groupe_modif.php?reg_err=$pos[1]' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
     }
     ?>
