@@ -9,17 +9,6 @@
 <!-- SECTION : Center Container -->
 <main class="container-center">
 
-<?php require '../head.php'; ?>
-<?php require '../left.php'; ?>
-<?php require '../data.php'; ?>
-
-<style>
-<?php include '../../public/css/style.css' ?>
-</style>
-
-<!-- SECTION : Center Container -->
-<main class="container-center">
-
 
 <div class="bg">
     <img src="../../public/img/banner.jpg" alt="Banière de profil" class="bg-img img-vide">
