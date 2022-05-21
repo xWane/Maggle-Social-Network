@@ -73,7 +73,7 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
     
       CREATE TABLE IF NOT EXISTS `group`(
       `group_id` INT NOT NULL AUTO_INCREMENT,
-      `members` INT,
+      `bio` VARCHAR(255),
       `private` INT NOT NULL,
       `publi_id` INT,
       `group_name` VARCHAR(255) NOT NULL,
@@ -112,7 +112,7 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
 
     CREATE TABLE IF NOT EXISTS `page`(
       `page_id` INT NOT NULL AUTO_INCREMENT,
-      `member` INT,
+      `bio` VARCHAR(255),
       `publi_id` INT,
       `page_name` VARCHAR(255) NOT NULL,
       `page_pic` VARCHAR(255) NOT NULL,
