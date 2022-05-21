@@ -4,8 +4,6 @@ require '../left.php';
 
 $posez = $url;
 $posez = explode("err=",$posez);
-var_dump($posez[1]);
-exit();
 
 
     if(!empty($_FILES['avatar']))
@@ -145,11 +143,11 @@ exit();
             }
     }
 
-    if(!empty($_POST['name'])) {
+    if(!empty($_POST['surname'])) {
 
-        $name_mod = htmlspecialchars($_POST['name']);
+        $name_mod = htmlspecialchars($_POST['surname']);
         $name_mod = strtolower($name_mod);
-
+        
         $add = $pdo->prepare('UPDATE `page` SET page_name = :name WHERE page_id = :id');
             $add->execute(array(
             ':name' => $name_mod,

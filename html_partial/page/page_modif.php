@@ -43,7 +43,7 @@ $pos = explode("err=",$pos);
 </div>
 
 
-<form class="modif-profil g4" method="POST" action="change_page.php?reg_err=<?php $pos[1] ?>" enctype="multipart/form-data">
+<form class="modif-profil g4" method="POST" action="change_page.php?reg_err=<?php echo $pos[1] ?>" enctype="multipart/form-data">
 
     <label class="custom-file-upload deux">
         <input type="file" name="avatar" id=""/>
@@ -64,7 +64,7 @@ $pos = explode("err=",$pos);
 
     <label class="custom-file-upload un">
         <input type="submit" class="hidden"/>
-        <p>Créer</p> 
+        <p>Modifier</p> 
     </label> 
 </form>
 
