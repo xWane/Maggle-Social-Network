@@ -41,26 +41,25 @@ $inserte->execute(array(
     ':gusr' => $userId
 ));
 $adm = $inserte->fetch();
-$row = $inserte->rowCount();
 
 if($adm["admin"] == 1) {
     $admin = true;
 }
-    
-if($row > 0) {
-    $statut = true;
-}
 
     if($adm["admin"] == 0) {
+        $statut = true;
         if($statut == true) {
             echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
             <button class='btn-bio deux text-bio'>Suivie</button>
             </form>";
-        } else {
+        } else if($groupess['private'] == 0) {
+            echo "<form class='' method='POST' action='addpv_groupe.php?reg_err=$pos[1]'>
+            <button class='btn-bio un text-bio'>Suivre groupe privée</button>
+            </form>";
+        }
             echo "<form class='' method='POST' action='add_groupe.php?reg_err=$pos[1]'>
             <button class='btn-bio un text-bio'>Suivre</button>
             </form>";
-        }
     } else {
         echo "<a href='groupe_modif.php?reg_err=$pos[1]' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
     }
@@ -76,7 +75,7 @@ if($row > 0) {
 
 <?php 
 
-    if($statut == true) {
+    if($adm["admin"] == 0 or $adm["admin"] == 1) {
         require 'in-groupe.php';
     }
 
