@@ -147,7 +147,7 @@ $posez = explode("err=",$posez);
 
         $name_mod = htmlspecialchars($_POST['surname']);
         $name_mod = strtolower($name_mod);
-        
+
         $add = $pdo->prepare('UPDATE `page` SET page_name = :name WHERE page_id = :id');
             $add->execute(array(
             ':name' => $name_mod,
@@ -156,17 +156,17 @@ $posez = explode("err=",$posez);
     }
 
 
-    // if(!empty($_POST['bio'])) {
+    if(!empty($_POST['bio'])) {
 
-    //     $bio_mod = htmlspecialchars($_POST['bio']);
-    //     $bio_mod = strtolower($bio_mod);
+        $bio_mod = htmlspecialchars($_POST['bio']);
+        $bio_mod = strtolower($bio_mod);
 
-    //     $add = $pdo->prepare('UPDATE user SET biograph = :biog WHERE page_id = :id');
-    //         $add->execute(array(
-    //         ':biog' => $bio_mod,
-    //         ':id' => $userId
-    //         ));
-    // }
+        $add = $pdo->prepare('UPDATE `page` SET bio_p = :biog WHERE page_id = :id');
+            $add->execute(array(
+            ':biog' => $bio_mod,
+            ':id' => $posez[1]
+            ));
+    }
 
 
     

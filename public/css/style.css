@@ -748,3 +748,8 @@ input[type='file'] {
   width: 30px;
   height: 30px;
 }
+
+.icon-lock {
+  width: 24px;
+  margin-left: auto;
+}

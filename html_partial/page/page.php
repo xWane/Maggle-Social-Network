@@ -10,13 +10,14 @@ $pos = $url;
 $pos = explode("err=",$pos);
 
 
-    $inserte = $pdo->prepare('SELECT page_name, page_pic, pager_banner FROM `page` WHERE page_id = :id');
+    $inserte = $pdo->prepare('SELECT page_name, page_pic, pager_banner, bio_p FROM `page` WHERE page_id = :id');
     $inserte->execute([':id' => $pos[1]]);
     $dat = $inserte->fetch();
     
         $namePage = $dat['page_name'];
         $bannerpa = $dat['pager_banner'];
         $pppa = $dat['page_pic'];
+        $biop = $dat['bio_p'];
     
     $inserte = $pdo->prepare('SELECT admin FROM `page_member` WHERE user_id = :id');
     $inserte->execute([':id' => $userId]);
@@ -67,8 +68,8 @@ $pos = explode("err=",$pos);
 
 <!-- Description -->
 <div class="border">
-<span class="title-bio">Desciption</span>
-<p class="text-bio"></p>
+<span class="title-bio">Bio</span>
+<p class="text-bio"><?php echo $biop ?></p>
 
 </div>
 
