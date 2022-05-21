@@ -52,12 +52,10 @@ $pos = explode("err=",$pos);
             echo "<form class='' method='POST' action='del_page.php?reg_err=$pos[1]'>
             <button class='btn-bio deux text-bio'>Suivie</button>
             </form>";
-            echo "<a href='' class='btn-bio deux'><span class='text-bio'> Suivie </span></a>";
         } else {
             echo "<form class='' method='POST' action='add_page.php?reg_err=$pos[1]'>
-            <button class='btn-bio deux text-bio'>Suivie</button>
+            <button class='btn-bio un text-bio'>Suivre</button>
             </form>";
-            echo "<a href='' class='btn-bio un'><span class='text-bio'> Suivre </span></a>";
         }
         
     } else {

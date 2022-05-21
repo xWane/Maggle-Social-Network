@@ -10,14 +10,14 @@ $pos = $url;
 $pos = explode("err=",$pos);
 
 
-    $inserte = $pdo->prepare('SELECT page_name, page_pic, pager_banner, bio_p FROM `page` WHERE page_id = :id');
+    $inserte = $pdo->prepare('SELECT group_name, group_pic, group_banner, bio_g FROM `group` WHERE group_id = :id');
     $inserte->execute([':id' => $pos[1]]);
     $dat = $inserte->fetch();
     
-        $namePage = $dat['page_name'];
-        $bannerpa = $dat['pager_banner'];
-        $pppa = $dat['page_pic'];
-        $biop = $dat['bio_p'];
+        $namePage = $dat['group_name'];
+        $bannerpa = $dat['group_banner'];
+        $pppa = $dat['group_pic'];
+        $biog = $dat['bio_g'];
 
 ?>
 
@@ -39,12 +39,12 @@ $pos = explode("err=",$pos);
 <!-- Description -->
 <div class="border">
 <span class="title-bio">Bio</span>
-<p class="text-bio"><?php $biop ?></p>
+<p class="text-bio"><?php $biog ?></p>
 
 </div>
 
 
-<form class="modif-profil g4" method="POST" action="change_page.php?reg_err=<?php echo $pos[1] ?>" enctype="multipart/form-data">
+<form class="modif-profil g4" method="POST" action="change_groupe.php?reg_err=<?php echo $pos[1] ?>" enctype="multipart/form-data">
 
     <label class="custom-file-upload deux">
         <input type="file" name="avatar" id=""/>

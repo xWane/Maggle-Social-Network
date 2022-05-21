@@ -91,25 +91,6 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
       FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
       ) ENGINE=InnoDB;
 
-    -- CREATE TABLE IF NOT EXISTS `group_list`(
-    --   `group_id` INT NOT NULL,
-    --   FOREIGN KEY (`group_id`) REFERENCES `group`(`group_id`)
-    --   )ENGINE=InnoDB;
-    
-    -- CREATE TABLE IF NOT EXISTS `page_admin`(
-    --   `page_id` INT NOT NULL AUTO_INCREMENT,
-    --   `user_id` INT NOT NULL,
-    --   PRIMARY KEY (`page_id`),
-    --   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
-    --   ) ENGINE=InnoDB;
-
-    -- CREATE TABLE IF NOT EXISTS `group_admin`(
-    --   `groupe_id` INT NOT NULL AUTO_INCREMENT,
-    --   `user_id` INT NOT NULL,
-    --   PRIMARY KEY (`groupe_id`),
-    --   FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
-    --   ) ENGINE=InnoDB;
-
     CREATE TABLE IF NOT EXISTS `page`(
       `page_id` INT NOT NULL AUTO_INCREMENT,
       `bio_p` VARCHAR(255),
@@ -120,12 +101,6 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
       PRIMARY KEY (`page_id`),
       FOREIGN KEY (`publi_id`) REFERENCES `publication`(`publi_id`)
       ) ENGINE=InnoDB;
-    
-    -- CREATE TABLE IF NOT EXISTS `page_list`(
-    --   `page_id`  INT NOT NULL AUTO_INCREMENT,
-    --   PRIMARY KEY (`page_id`),
-    --   FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`)
-    --   ) ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `page_member`(
       `page_id`  INT NOT NULL AUTO_INCREMENT,

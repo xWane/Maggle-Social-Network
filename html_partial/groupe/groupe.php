@@ -1,12 +1,3 @@
-<?php 
-    $statut = false;
-    $idGroupe = "...";
-    $nameGroupe = ucfirst("the pomme groupe");
-    $admin = true;
-    $bannerg = "bg.jpg";
-    $ppg = "pp-g.jpg"
-?>
-
 <?php require '../head.php'; ?>
 <?php require '../left.php'; ?>
 <style>
@@ -21,13 +12,14 @@
 $pos = $url;
 $pos = explode("err=",$pos);
 
-$inserte = $pdo->prepare('SELECT * FROM `page` WHERE page_id = :id');
+$inserte = $pdo->prepare('SELECT * FROM `group` WHERE group_id = :id');
 $inserte->execute(array(':id' => $pos[1]));
 $groupess = $inserte->fetch();
 
-$pname = $groupess['page_name'];
-$ppic = $groupess['page_pic'];
-$pbanner = $groupess['pager_banner'];
+$pname = $groupess['group_name'];
+$ppic = $groupess['group_pic'];
+$pbanner = $groupess['group_banner'];
+$biog = $groupess['bio_g'];
 
 ?>
 
@@ -43,38 +35,48 @@ $pbanner = $groupess['pager_banner'];
     <h2 class="profil"><?php echo $pname ?></h2>
     <?php 
 
-$inserte = $pdo->prepare('SELECT admin FROM `page_member` WHERE page_id = :gname AND user_id = :gusr');
+$inserte = $pdo->prepare('SELECT admin FROM `group_user` WHERE group_id = :gname AND user_id = :gusr');
 $inserte->execute(array(
     ':gname' => $pos[1],
     ':gusr' => $userId
 ));
 $adm = $inserte->fetch();
+$row = $inserte->rowCount();
+
+if($adm["admin"] == 1) {
+    $admin = true;
+}
+    
+if($row > 0) {
+    $statut = true;
+}
 
     if($adm["admin"] == 0) {
         if($statut == true) {
-            $ing = "un";
-            $sui = "Suivre";
+            echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+            <button class='btn-bio deux text-bio'>Suivie</button>
+            </form>";
         } else {
-            $ing = "deux";
-            $sui = "Suivie";
+            echo "<form class='' method='POST' action='add_groupe.php?reg_err=$pos[1]'>
+            <button class='btn-bio un text-bio'>Suivre</button>
+            </form>";
         }
-        echo "<a href='' class='btn-bio $ing '><span class='text-bio'> $sui </span></a>";
     } else {
-        echo "<a href='' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
+        echo "<a href='groupe_modif.php?reg_err=$pos[1]' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
     }
     ?>
 </div>
 
 <!-- Description -->
 <div class="border">
-<span class="title-bio">Desciption</span>
-<p class="text-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. A mollitia soluta qui, maxime, libero voluptatibus id dolor ad placeat necessitatibus voluptatem expedita quas nihil exercitationem. Iste quis exercitationem velit quos?</p>
+<span class="title-bio">Bio</span>
+<p class="text-bio"><?php $biog ?></p>
 
 </div>
 
 <?php 
 
-    if($statut == false) {
+    if($statut == true) {
         require 'in-groupe.php';
     }
 
