@@ -11,7 +11,7 @@ if(!empty($_POST['name_groupe'])) {
     $name_g = strtolower($name_g);
     $name = $name_g;
     var_dump($name);
-    $inserte = $pdo->prepare('SELECT * FROM `page` WHERE group_name = :test');
+    $inserte = $pdo->prepare('SELECT * FROM `page` WHERE page_name = :test');
     $inserte->execute(array(':test' => $name));
     $row = $inserte->rowCount();
 
@@ -36,7 +36,7 @@ if(!empty($_POST['name_groupe'])) {
         header("location: page.php?reg_err=$grp[0]");
 
     } else {
-        header('location: ../list/list-p.php?reg_err=groupe_existant');
+        header('location: ../list/list-p.php?reg_err=page_existante');
     }
     // On insère dans la base de données
 

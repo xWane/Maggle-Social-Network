@@ -8,66 +8,31 @@
 <main class="container-center">
 
     <div class="name-section">
-            <h3>Mes pages</h3>
+            <h3>Pages</h3>
             <a href="../page/create_page.php" class="btn-bio deux .btn-cursor">Créer une page</a>
     </div>
 
     <div class="g"> 
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
-            </a>
-        </div>
+<?php
+    $inserte = $pdo->prepare('SELECT page_id, page_name, page_pic, pager_banner FROM `page`');
+    $inserte->execute();
+    $dat = $inserte->fetchAll(PDO::FETCH_ASSOC);
 
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
-            </a>
-        </div>
+    foreach($dat as $dat) {
+        $pid = $dat['page_id'];
+        $pna = $dat['page_name'];
+        $ppi = $dat['page_pic'];
+        $pba = $dat['pager_banner'];
 
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
+        echo "<div class='list'>
+            <a href='../page/page.php?reg_err=$pid'>
+            <div class='back-list'><img src='../../public/img/$pba' alt='' class='bg-list'><img src='../../public/img/$ppi' alt='' class='pp-list'></div>
+            <span class='text-list'>$pna</span>
             </a>
-        </div>
+        </div>";
+    }
 
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
-            </a>
-        </div>
-
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
-            </a>
-        </div>
-
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
-            </a>
-        </div>
-
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
-            </a>
-        </div>
-
-        <div class="list">
-            <a href="../page/page.php">
-            <div class="back-list"><img src="../../public/img/backpa.jpg" alt="" class="bg-list"><img src="../../public/img/pppa.jpg" alt="" class="pp-list"></div>
-            <span class="text-list">The pug community</span>
-            </a>
-        </div>
+?>
     </div>
 </main>
 

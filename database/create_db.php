@@ -1,7 +1,7 @@
 <?php
 $engine = "mysql";
 $host = "localhost";
-$port = 8889;
+$port = 3306;
 $dbname = "db_maggle";
 $username = "root";
 $password = "root";

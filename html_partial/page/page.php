@@ -1,17 +1,26 @@
-<?php 
-    $statut = true;
-    $idPage = "...";
-    $namePage = ucfirst("the pug community");
-    $admin = true;
-    $bannerpa = "backpa.jpg";
-    $pppa = "pppa.jpg"
-?>
-
 <?php require '../head.php'; ?>
 <?php require '../left.php'; ?>
 <style>
 <?php include '../../public/css/style.css' ?>
 </style>
+
+<?php 
+
+$pos = $url;
+$pos = explode("err=",$pos);
+
+
+    $inserte = $pdo->prepare('SELECT page_name, page_pic, pager_banner FROM `page` WHERE page_id = :id');
+    $inserte->execute([':id' => $pos[1]]);
+    $dat = $inserte->fetch();
+    
+        $namePage = $dat['page_name'];
+        $bannerpa = $dat['pager_banner'];
+        $pppa = $dat['page_pic'];
+        
+        $admin = true;
+    $statut = true;
+?>
 
 <!-- SECTION : Center Container -->
 <main class="container-center">
@@ -45,7 +54,7 @@
 <!-- Description -->
 <div class="border">
 <span class="title-bio">Desciption</span>
-<p class="text-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. A mollitia soluta qui, maxime, libero voluptatibus id dolor ad placeat necessitatibus voluptatem expedita quas nihil exercitationem. Iste quis exercitationem velit quos?</p>
+<p class="text-bio"></p>
 
 </div>
 
