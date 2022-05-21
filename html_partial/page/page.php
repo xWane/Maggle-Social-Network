@@ -17,9 +17,19 @@ $pos = explode("err=",$pos);
         $namePage = $dat['page_name'];
         $bannerpa = $dat['pager_banner'];
         $pppa = $dat['page_pic'];
-        
+    
+    $inserte = $pdo->prepare('SELECT admin FROM `page_member` WHERE user_id = :id');
+    $inserte->execute([':id' => $userId]);
+    $adm = $inserte->fetch();
+    $row = $inserte->rowCount();
+
+    if($adm["admin"] == 1) {
         $admin = true;
-    $statut = true;
+    }
+        
+    if($row > 0) {
+        $statut = true;
+    }
 ?>
 
 <!-- SECTION : Center Container -->
@@ -38,15 +48,19 @@ $pos = explode("err=",$pos);
     <?php 
     if($admin == false) {
         if($statut == true) {
-            $ing = "un";
-            $sui = "Suivre";
+            echo "<form class='' method='POST' action='del_page.php?reg_err=$pos[1]'>
+            <button class='btn-bio deux text-bio'>Suivie</button>
+            </form>";
+            echo "<a href='' class='btn-bio deux'><span class='text-bio'> Suivie </span></a>";
         } else {
-            $ing = "deux";
-            $sui = "Suivie";
+            echo "<form class='' method='POST' action='add_page.php?reg_err=$pos[1]'>
+            <button class='btn-bio deux text-bio'>Suivie</button>
+            </form>";
+            echo "<a href='' class='btn-bio un'><span class='text-bio'> Suivre </span></a>";
         }
-        echo "<a href='' class='btn-bio $ing '><span class='text-bio'> $sui </span></a>";
+        
     } else {
-        echo "<a href='' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
+        echo "<a href='page_modif.php?reg_err=$pos[1]' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
     }
     ?>
 </div>
