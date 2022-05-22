@@ -16,7 +16,7 @@
 $pos = $url;
 $pos = explode("err=",$pos);
 
-    $check = $pdo->prepare('SELECT user_id FROM group_user WHERE admin = 2 AND groupe_id = :gid');
+    $check = $pdo->prepare('SELECT user_id FROM group_user WHERE admin = 2 AND group_id = :gid');
     $check->execute([':gid' => $pos[1]]);
     $friendss = $check->fetchAll(PDO::FETCH_ASSOC);
     $row = $check->rowCount();

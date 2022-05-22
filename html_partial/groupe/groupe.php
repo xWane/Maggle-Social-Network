@@ -41,37 +41,46 @@ $inserte->execute(array(
     ':gusr' => $userId
 ));
 $adm = $inserte->fetch();
+$row = $inserte->rowCount();
 
+$admin = false;
+$statut = false;
+
+if($row > 0) {
 if($adm["admin"] == 1) {
     $admin = true;
 }
 
-    if($adm["admin"] == 0) {
-        $statut = true;
-        if($statut == true) {
-            echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
-            <button class='btn-bio deux text-bio'>Suivie</button>
-            </form>";
-        } else if($groupess['private'] == 0) {
-            echo "<form class='' method='POST' action='addpv_groupe.php?reg_err=$pos[1]'>
-            <button class='btn-bio un text-bio'>Suivre groupe privée</button>
-            </form>";
-        }
-            echo "<form class='' method='POST' action='add_groupe.php?reg_err=$pos[1]'>
-            <button class='btn-bio un text-bio'>Suivre</button>
-            </form>";
+if($adm["admin"] == 0) {
+    $statut = true;
+} else if($admin = true) {
+    echo "<form class='' method='POST' action='demande_groupe.php?reg_err=$pos[1]'>
+        <button class='btn-bio deux text-bio' style='margin: 0 10px 0 0'>Demandes</button>
+        </form>";
+    echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+        <button class='btn-bio un text-bio' style='margin: 0'>Droits</button>
+        </form>";
+    echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+        <button class='btn-bio deux text-bio' style='margin: 0 10px'>Quitter</button>
+        </form>";
+    echo "<a href='groupe_modif.php?reg_err=$pos[1]' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
+}
+}
+    
+    if($statut == true) {
+        echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+        <button class='btn-bio deux text-bio'>Suivie</button>
+        </form>";
+    } else if($groupess['private'] == 0) {
+        echo "<form class='' method='POST' action='addpv_groupe.php?reg_err=$pos[1]'>
+        <button class='btn-bio un text-bio'>Suivre groupe privée</button>
+        </form>";
     } else {
-        echo "<form class='' method='POST' action='del_page.php?reg_err=$pos[1]'>
-            <button class='btn-bio deux text-bio' style='margin: 0 10px 0 0'>Demandes</button>
-            </form>";
-        echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
-            <button class='btn-bio un text-bio' style='margin: 0'>Droits</button>
-            </form>";
-        echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
-            <button class='btn-bio deux text-bio' style='margin: 0 10px'>Quitter</button>
-            </form>";
-        echo "<a href='groupe_modif.php?reg_err=$pos[1]' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
-    }
+        echo "<form class='' method='POST' action='add_groupe.php?reg_err=$pos[1]'>
+        <button class='btn-bio un text-bio'>Suivre</button>
+        </form>";
+}
+    
     ?>
 </div>
 
@@ -83,11 +92,11 @@ if($adm["admin"] == 1) {
 </div>
 
 <?php 
-
+if($row > 0) {
     if($adm["admin"] == 0 or $adm["admin"] == 1) {
         require 'in-groupe.php';
     }
-
+}
 ?>
 
 </main>

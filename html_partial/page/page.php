@@ -19,16 +19,19 @@ $pos = explode("err=",$pos);
         $pppa = $dat['page_pic'];
         $biop = $dat['bio_p'];
     
-    $inserte = $pdo->prepare('SELECT admin FROM `page_member` WHERE user_id = :id');
-    $inserte->execute([':id' => $userId]);
+    $inserte = $pdo->prepare('SELECT admin FROM `page_member` WHERE user_id = :id AND page_id = :pid');
+    $inserte->execute([':id' => $userId,
+                        ':pid' => $pos[1]]);
     $adm = $inserte->fetch();
     $row = $inserte->rowCount();
 
+$admin = false;
+$statut = false;
+
+if($row > 0) {
     if($adm["admin"] == 1) {
         $admin = true;
     }
-        
-    if($row > 0) {
         $statut = true;
     }
 ?>

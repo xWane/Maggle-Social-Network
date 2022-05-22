@@ -103,10 +103,9 @@ $pdo = new PDO("$engine:host=$host:$port;", $username, $password);
       ) ENGINE=InnoDB;
     
     CREATE TABLE IF NOT EXISTS `page_member`(
-      `page_id`  INT NOT NULL AUTO_INCREMENT,
+      `page_id`  INT NOT NULL,
       `user_id` INT NOT NULL,
       `admin` INT,
-      PRIMARY KEY (`page_id`),
       FOREIGN KEY (`page_id`) REFERENCES `page`(`page_id`),
       FOREIGN KEY (`user_id`) REFERENCES `user`(`user_id`)
       ) ENGINE=InnoDB;
