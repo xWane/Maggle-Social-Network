@@ -619,6 +619,7 @@ input[type='file'] {
   padding: 4px 15px;
   border-radius: 20px;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .hor {

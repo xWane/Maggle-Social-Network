@@ -62,7 +62,7 @@ if($row > 0) {
         }
         
     } else {
-        echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+        echo "<form class='' method='POST' action='droit_page.php?reg_err=$pos[1]'>
             <button class='btn-bio un text-bio' style='margin: 0'>Droits</button>
             </form>";
         echo "<form class='' method='POST' action='del_page.php?reg_err=$pos[1]'>
