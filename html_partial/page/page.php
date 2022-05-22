@@ -59,6 +59,12 @@ $pos = explode("err=",$pos);
         }
         
     } else {
+        echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
+            <button class='btn-bio un text-bio' style='margin: 0'>Droits</button>
+            </form>";
+        echo "<form class='' method='POST' action='del_page.php?reg_err=$pos[1]'>
+            <button class='btn-bio deux text-bio' style='margin: 0 10px'>Quitter</button>
+            </form>";
         echo "<a href='page_modif.php?reg_err=$pos[1]' class='align'> <img src='../../public/icon/more-horiz-black.svg' alt='Image' class='mod-icon'> </a>";
     }
     ?>

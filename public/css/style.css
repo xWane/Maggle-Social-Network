@@ -498,8 +498,9 @@ ul a:hover {
 }
 
 .btn-bio {
-  padding: 4px 40px;
+  padding: 4px 8px;
   border-radius: 50px;
+  cursor: pointer;
 }
 
 .un {
