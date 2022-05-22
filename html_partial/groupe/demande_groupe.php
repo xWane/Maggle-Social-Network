@@ -8,13 +8,16 @@
 <main class="container-center">
 
 <div class="demande">
-<h3 class="marg-bot">Demande d'amis</h3>
+<h3 class="marg-bot">Demande de groupe</h3>
 <div class="u">
 
     <?php
 
-    $check = $pdo->prepare('SELECT user_id, id FROM friends WHERE status = 1');
-    $check->execute();
+$pos = $url;
+$pos = explode("err=",$pos);
+
+    $check = $pdo->prepare('SELECT user_id FROM group_user WHERE admin = 2 AND groupe_id = :gid');
+    $check->execute([':gid' => $pos[1]]);
     $friendss = $check->fetchAll(PDO::FETCH_ASSOC);
     $row = $check->rowCount();
 
@@ -34,18 +37,16 @@ if($row > 0) {
             $useridf = $userDemF['user_id'];
 
             if($visibi == 1){
-            if($friendss['user_id'] !== $userId) {
-            $ids = $friendss['id'];
             echo "
             <div class='user align'>
             <a href='../profil/profil.php?reg_err=$useridf'><img src='../../public/img/$pic' alt='' class='img-use'></a>
             <div class='text-user'>
             <a href='../profil/profil.php?reg_err=$useridf'><span class='t-u'>$nam $surnam</span></a>
             <div class='hor'>
-            <form method='POST' action='accept.php?reg_err=$ids'>
+            <form method='POST' action='accept_pv.php?reg_err=$pos[1]_$useridf'>
                 <button class='btn-user un'>Accepter</button>
             </form>
-            <form method='POST' action='refuse.php?reg_err=$ids'>
+            <form method='POST' action='refuse.php?reg_err=$pos[1]_$useridf'>
                 <button class='btn-user deux'>Refuser</button>
             </form>
             </div>
@@ -56,7 +57,6 @@ if($row > 0) {
             }
         }
     }
-}
 
     ?>
 
