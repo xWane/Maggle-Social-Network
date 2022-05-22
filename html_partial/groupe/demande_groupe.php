@@ -46,7 +46,7 @@ if($row > 0) {
             <form method='POST' action='accept_pv.php?reg_err=$pos[1]_$useridf'>
                 <button class='btn-user un'>Accepter</button>
             </form>
-            <form method='POST' action='refuse.php?reg_err=$pos[1]_$useridf'>
+            <form method='POST' action='refuse_pv.php?reg_err=$pos[1]_$useridf'>
                 <button class='btn-user deux'>Refuser</button>
             </form>
             </div>

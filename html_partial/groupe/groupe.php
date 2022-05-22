@@ -20,6 +20,8 @@ $pname = $groupess['group_name'];
 $ppic = $groupess['group_pic'];
 $pbanner = $groupess['group_banner'];
 $biog = $groupess['bio_g'];
+$pv = $groupess['private'];
+
 
 ?>
 
@@ -53,10 +55,12 @@ if($adm["admin"] == 1) {
 
 if($adm["admin"] == 0) {
     $statut = true;
-} else if($admin = true) {
+} else if($admin == true) {
+    if($pv == 0) {
     echo "<form class='' method='POST' action='demande_groupe.php?reg_err=$pos[1]'>
         <button class='btn-bio deux text-bio' style='margin: 0 10px 0 0'>Demandes</button>
         </form>";
+    }
     echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
         <button class='btn-bio un text-bio' style='margin: 0'>Droits</button>
         </form>";
@@ -71,11 +75,11 @@ if($adm["admin"] == 0) {
         echo "<form class='' method='POST' action='del_groupe.php?reg_err=$pos[1]'>
         <button class='btn-bio deux text-bio'>Suivie</button>
         </form>";
-    } else if($groupess['private'] == 0) {
+    } else if($pv == 0 AND $admin == false) {
         echo "<form class='' method='POST' action='addpv_groupe.php?reg_err=$pos[1]'>
         <button class='btn-bio un text-bio'>Suivre groupe privée</button>
         </form>";
-    } else {
+    } else if($admin == false AND $statut == false){
         echo "<form class='' method='POST' action='add_groupe.php?reg_err=$pos[1]'>
         <button class='btn-bio un text-bio'>Suivre</button>
         </form>";
